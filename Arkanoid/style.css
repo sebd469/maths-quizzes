@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #111827;
+  color: white;
+  text-align: center;
+}
+
+.page {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.game-card {
+  background: #1f2937;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  background: #050816;
+  border: 3px solid #374151;
+  border-radius: 12px;
+  max-width: 100%;
+  height: auto;
+}
+
+.controls {
+  margin-top: 16px;
+  line-height: 1.4;
+}
+
+.controls p {
+  margin: 5px;
+}
+
+.teacher-note {
+  margin-top: 24px;
+  background: #1f2937;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.teacher-note h2 {
+  margin-top: 0;
+}
