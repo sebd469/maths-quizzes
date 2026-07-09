@@ -221,6 +221,17 @@
       border: 1px solid #ef4444;
     }
 
+
+    .locked-working {
+      margin-top: 12px;
+      border: 1px dashed #9ca3af;
+      background: #f9fafb;
+      color: #4b5563;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-weight: bold;
+    }
+
     .working-details {
       margin-top: 12px;
       border: 1px solid #bfdbfe;
@@ -275,7 +286,7 @@
   <header>
     <h1>Partial Fractions A Quiz</h1>
     <p>Check each question as you go.</p>
-    <p class="small-note">Choose one answer, then press <strong>Check this question</strong>. Use the worked solution dropdown if you need help.</p>
+    <p class="small-note">Choose one answer, then press <strong>Check this question</strong>. The worked solution unlocks after you have checked the question.</p>
   </header>
 
   <div class="top-bar">
@@ -288,7 +299,7 @@
     <section class="instructions">
       <strong>Instructions:</strong>
       Answer each multiple-choice question. You will receive feedback immediately after checking that question.
-      Your score updates as you go. Each question also has a <strong>Show worked solution</strong> dropdown.
+      Your score updates as you go. The <strong>Show worked solution</strong> dropdown only appears after you have checked that question.
     </section>
 
     <div id="quizContainer"></div>
@@ -671,9 +682,13 @@
 
           <div class="feedback" id="feedback-${index}"></div>
 
-          <details class="working-details" id="working-${index}">
+          <div class="locked-working" id="locked-working-${index}">
+            🔒 Worked solution locked — check this question first.
+          </div>
+
+          <details class="working-details" id="working-${index}" style="display: none;">
             <summary>Show worked solution</summary>
-            <div class="working-content">${q.working}</div>
+            <div class="working-content" id="working-content-${index}"></div>
           </details>
         `;
 
@@ -722,8 +737,16 @@
         feedback.innerHTML = `Not quite. The correct answer is ${questions[index].solution}`;
       }
 
+      const lockedWorking = document.getElementById(`locked-working-${index}`);
+      const workingDetails = document.getElementById(`working-${index}`);
+      const workingContent = document.getElementById(`working-content-${index}`);
+
+      lockedWorking.style.display = "none";
+      workingDetails.style.display = "block";
+      workingContent.innerHTML = questions[index].working;
+
       updateScore();
-      if (window.MathJax) MathJax.typesetPromise([feedback]);
+      if (window.MathJax) MathJax.typesetPromise([feedback, workingDetails]);
     }
 
     function updateScore() {
