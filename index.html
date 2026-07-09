@@ -2,17 +2,180 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Maths Quizzes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maths Quizzes by Mr D.</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f0f9ff;
+      color: #111827;
+    }
+
+    main {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #0369a1;
+      font-size: 48px;
+      margin: 20px 0 24px;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .sea-image {
+      width: 100%;
+      min-height: 260px;
+      border-radius: 22px;
+      overflow: hidden;
+      margin: 0 auto 32px;
+      box-shadow: 0 16px 35px rgba(2, 132, 199, 0.25);
+      position: relative;
+      background:
+        radial-gradient(circle at 85% 18%, #fde68a 0 5%, transparent 5.5%),
+        linear-gradient(to bottom, #7dd3fc 0%, #bae6fd 38%, #38bdf8 39%, #0284c7 62%, #0369a1 100%);
+    }
+
+    .sea-image::before {
+      content: "";
+      position: absolute;
+      left: -10%;
+      right: -10%;
+      bottom: 35%;
+      height: 80px;
+      background:
+        radial-gradient(ellipse at center, rgba(255, 255, 255, 0.75) 0 16%, transparent 17%),
+        radial-gradient(ellipse at center, rgba(255, 255, 255, 0.55) 0 14%, transparent 15%);
+      background-size: 140px 35px, 180px 42px;
+      background-position: 0 18px, 50px 38px;
+      opacity: 0.8;
+    }
+
+    .sea-image::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 90px;
+      background:
+        linear-gradient(160deg, transparent 0 35%, rgba(255, 255, 255, 0.35) 36% 39%, transparent 40%),
+        linear-gradient(20deg, transparent 0 42%, rgba(255, 255, 255, 0.28) 43% 46%, transparent 47%),
+        linear-gradient(to bottom, rgba(14, 165, 233, 0.35), rgba(7, 89, 133, 0.2));
+      background-size: 180px 90px, 220px 90px, 100% 100%;
+    }
+
+    .caption {
+      position: absolute;
+      left: 20px;
+      bottom: 18px;
+      background: rgba(255, 255, 255, 0.85);
+      color: #075985;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .quiz-card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.1);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .quiz-card h2 {
+      margin-top: 0;
+      color: #0f172a;
+      font-size: 28px;
+    }
+
+    .quiz-card p {
+      color: #475569;
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+
+    .quiz-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .quiz-links a {
+      display: block;
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: #e0f2fe;
+      color: #075985;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      border: 2px solid #bae6fd;
+      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .quiz-links a:hover {
+      background: #bae6fd;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(14, 165, 233, 0.25);
+    }
+
+    footer {
+      margin-top: 30px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      .sea-image {
+        min-height: 200px;
+      }
+
+      .quiz-card {
+        padding: 22px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Maths Quizzes</h1>
+  <main>
+    <h1>Maths Quizzes by Mr D.</h1>
 
-  <p>Choose a quiz below:</p>
+    <div class="sea-image" role="img" aria-label="Blue Caribbean sea illustration">
+      <div class="caption">Blue Caribbean Sea</div>
+    </div>
 
-  <ul>
-    <li><a href="partial-fractions-a/">Partial Fractions A</a></li>
-    <li><a href="quadratics-quiz/">Quadratics Quiz</a></li>
-    <li><a href="arkanoid-game/">Arkanoid Game</a></li>
-  </ul>
+    <section class="quiz-card">
+      <h2>Choose a quiz below</h2>
+      <p>Click a topic to open the quiz or activity.</p>
+
+      <ul class="quiz-links">
+        <li><a href="partial-fractions-a/">Partial Fractions A</a></li>
+        <li><a href="quadratics-quiz/">Quadratics Quiz</a></li>
+        <li><a href="arkanoid-game/">Arkanoid Game</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      Maths practice website for class use
+    </footer>
+  </main>
 </body>
 </html>
