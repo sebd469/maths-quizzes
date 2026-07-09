@@ -3,135 +3,150 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>C4 Partial Fractions Quiz</title>
+  <title>Partial Fractions A Quiz</title>
   <script>
     window.MathJax = { tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] }, svg: { fontCache: 'global' } };
   </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <style>
-    :root { --bg:#f6f7fb; --card:#ffffff; --text:#1f2937; --muted:#6b7280; --border:#d1d5db; --accent:#2563eb; --right:#dcfce7; --wrong:#fee2e2; }
     * { box-sizing: border-box; }
-    body { margin:0; font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height:1.5; }
-    header { background:#111827; color:white; padding: 28px 18px; text-align:center; }
-    header h1 { margin:0 0 8px; font-size: clamp(1.6rem, 3vw, 2.4rem); }
-    header p { margin:0; color:#d1d5db; }
-    main { max-width: 980px; margin: 24px auto; padding: 0 16px 48px; }
-    .intro, .question, #results { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; margin: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
-    .question h2 { font-size: 1.05rem; margin:0 0 10px; color: var(--muted); }
-    .prompt { font-size: 1.12rem; margin-bottom: 14px; }
-    .options { display:grid; gap:10px; }
-    label.option { border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; cursor:pointer; background:#fff; display:flex; gap:10px; align-items:flex-start; transition: .12s ease; }
-    label.option:hover { border-color: var(--accent); background:#f8fbff; }
-    label.option input { margin-top: 4px; }
-    label.option.selected { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(37,99,235,.12); }
-    label.option.correct { background: var(--right); border-color:#16a34a; }
-    label.option.incorrect { background: var(--wrong); border-color:#dc2626; }
-    .controls { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin: 24px 0; }
-    button { border:0; border-radius: 10px; padding: 12px 18px; font-size: 1rem; font-weight:700; cursor:pointer; }
-    #submitBtn { background: var(--accent); color:#fff; }
-    #resetBtn { background:#e5e7eb; color:#111827; }
-    #warning { color:#b45309; font-weight:700; }
-    #results { display:none; border-width:2px; }
-    .score { font-size:1.4rem; font-weight:800; margin:0 0 8px; }
-    .small { color: var(--muted); font-size:.95rem; }
-    .footer-note { color: var(--muted); font-size:.9rem; text-align:center; margin-top:28px; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f3f4f6; color: #111827; }
+    header { background: #111827; color: white; padding: 28px 20px; text-align: center; }
+    header h1 { margin: 0 0 8px 0; font-size: 34px; }
+    header p { margin: 4px 0; color: #d1d5db; }
+    .top-bar { position: sticky; top: 0; z-index: 10; background: white; border-bottom: 1px solid #d1d5db; padding: 12px 20px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .score-box { font-weight: bold; background: #eef2ff; color: #3730a3; padding: 10px 14px; border-radius: 999px; }
+    .reset-button, .home-link { border: none; border-radius: 999px; padding: 10px 14px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; }
+    .reset-button { background: #ef4444; color: white; }
+    .home-link { background: #e5e7eb; color: #111827; }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 18px 60px; }
+    .instructions { background: white; border-radius: 16px; padding: 20px; margin-bottom: 22px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); line-height: 1.5; }
+    .section-title { margin: 32px 0 12px; padding: 12px 16px; background: #1f2937; color: white; border-radius: 12px; font-size: 22px; }
+    .question-card { background: white; border-radius: 16px; padding: 20px; margin-bottom: 18px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); border: 2px solid transparent; }
+    .question-card.correct { border-color: #22c55e; }
+    .question-card.incorrect { border-color: #ef4444; }
+    .question-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .question-number { background: #4f46e5; color: white; font-weight: bold; padding: 8px 12px; border-radius: 999px; flex-shrink: 0; }
+    .question-title { font-weight: bold; color: #374151; }
+    .prompt { font-size: 18px; line-height: 1.6; margin: 14px 0 18px; }
+    .options { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 14px; }
+    .option { display: flex; align-items: flex-start; gap: 10px; border: 1px solid #d1d5db; border-radius: 12px; padding: 12px; cursor: pointer; background: #f9fafb; line-height: 1.5; overflow-x: auto; }
+    .option:hover { background: #eef2ff; }
+    .option input { margin-top: 4px; transform: scale(1.1); }
+    .option.correct-choice { border-color: #22c55e; background: #dcfce7; }
+    .option.wrong-choice { border-color: #ef4444; background: #fee2e2; }
+    .check-button { background: #2563eb; color: white; border: none; padding: 11px 16px; border-radius: 10px; font-weight: bold; cursor: pointer; }
+    .check-button:hover { background: #1d4ed8; }
+    .check-button:disabled { background: #9ca3af; cursor: not-allowed; }
+    .feedback { margin-top: 12px; padding: 12px; border-radius: 12px; display: none; line-height: 1.5; overflow-x: auto; }
+    .feedback.correct-feedback { display: block; background: #dcfce7; color: #166534; border: 1px solid #22c55e; }
+    .feedback.incorrect-feedback { display: block; background: #fee2e2; color: #991b1b; border: 1px solid #ef4444; }
+    .small-note { color: #6b7280; font-size: 14px; margin-top: 6px; }
+    footer { text-align: center; color: #6b7280; padding: 24px; }
+    @media (min-width: 760px) { .options { grid-template-columns: 1fr 1fr; } }
   </style>
 </head>
 <body>
   <header>
-    <h1>C4 Partial Fractions Quiz</h1>
-    <p>Questions 1, 2 and 3 — choose one answer for each question. Your score appears at the end.</p>
+    <h1>Partial Fractions A Quiz</h1>
+    <p>Check each question as you go.</p>
+    <p class="small-note">Choose one answer, then press <strong>Check this question</strong>.</p>
   </header>
+  <div class="top-bar">
+    <div class="score-box" id="scoreBox">Score: 0 / 0 checked</div>
+    <button class="reset-button" onclick="resetQuiz()">Reset quiz</button>
+    <a class="home-link" href="../">Back to Maths Quizzes</a>
+  </div>
   <main>
-    <section class="intro">
-      <strong>Instructions:</strong> Answer every multiple-choice question. You will not see which answers are correct until you click <strong>Submit quiz</strong>.
-    </section>
-    <form id="quizForm"></form>
-    <div class="controls">
-      <button id="submitBtn" type="button">Submit quiz</button>
-      <button id="resetBtn" type="button">Reset</button>
-      <span id="warning"></span>
-    </div>
-    <section id="results"></section>
-    <p class="footer-note">Created from C4 Partial Fractions Worksheet A, Questions 1–3.</p>
+    <section class="instructions"><strong>Instructions:</strong> Answer each multiple-choice question. You will receive feedback immediately after checking that question. Your score updates as you go, rather than only at the end.</section>
+    <div id="quizContainer"></div>
   </main>
+  <footer>Partial Fractions A &mdash; question-by-question checking version</footer>
   <script>
-    const questions = [
-      {q:'1a. Find A and B: \\(x-8 \\equiv A(x-2)+B(x+4)\\)', opts:['\\(A=2,\\ B=-1\\)','\\(A=-2,\\ B=1\\)','\\(A=1,\\ B=2\\)','\\(A=2,\\ B=1\\)'], a:0},
-      {q:'1b. Find A and B: \\(6x+7 \\equiv A(2x-1)+B(x+2)\\)', opts:['\\(A=4,\\ B=1\\)','\\(A=1,\\ B=4\\)','\\(A=-1,\\ B=4\\)','\\(A=1,\\ B=-4\\)'], a:1},
+    const questions = [{"section": "Question 1 — Find A and B in each identity", "title": "1(a)", "prompt": "\\(x - 8 \\equiv A(x - 2) + B(x + 4)\\)", "options": ["\\(A = 2,\\ B = -1\\)", "\\(A = -1,\\ B = 2\\)", "\\(A = 2,\\ B = 1\\)", "\\(A = -2,\\ B = 1\\)"], "answer": 0, "solution": "\\(A = 2,\\ B = -1\\)"}, {"section": "Question 1 — Find A and B in each identity", "title": "1(b)", "prompt": "\\(6x + 7 \\equiv A(2x - 1) + B(x + 2)\\)", "options": ["\\(A = 4,\\ B = 1\\)", "\\(A = 1,\\ B = 4\\)", "\\(A = -1,\\ B = 4\\)", "\\(A = 1,\\ B = -4\\)"], "answer": 1, "solution": "\\(A = 1,\\ B = 4\\)"}, {"section": "Question 2 — Find A and B in each identity", "title": "2(a)", "prompt": "\\(\\frac{2}{(x+1)(x+3)} \\equiv \\frac{A}{x+1} + \\frac{B}{x+3}\\)", "options": ["\\(A = 1,\\ B = -1\\)", "\\(A = -1,\\ B = 1\\)", "\\(A = 2,\\ B = -2\\)", "\\(A = 1,\\ B = 1\\)"], "answer": 0, "solution": "\\(A = 1,\\ B = -1\\)"}, {"section": "Question 2 — Find A and B in each identity", "title": "2(b)", "prompt": "\\(\\frac{x - 3}{x(x-1)} \\equiv \\frac{A}{x} + \\frac{B}{x-1}\\)", "options": ["\\(A = -3,\\ B = 2\\)", "\\(A = 3,\\ B = -2\\)", "\\(A = 2,\\ B = -3\\)", "\\(A = 3,\\ B = 2\\)"], "answer": 1, "solution": "\\(A = 3,\\ B = -2\\)"}, {"section": "Question 2 — Find A and B in each identity", "title": "2(c)", "prompt": "\\(\\frac{x + 1}{(x-3)(x-5)} \\equiv \\frac{A}{x-3} + \\frac{B}{x-5}\\)", "options": ["\\(A = 2,\\ B = -3\\)", "\\(A = -2,\\ B = 3\\)", "\\(A = 3,\\ B = -2\\)", "\\(A = -3,\\ B = 2\\)"], "answer": 1, "solution": "\\(A = -2,\\ B = 3\\)"}, {"section": "Question 2 — Find A and B in each identity", "title": "2(d)", "prompt": "\\(\\frac{x + 10}{(1+x)(2-x)} \\equiv \\frac{A}{1+x} + \\frac{B}{2-x}\\)", "options": ["\\(A = 4,\\ B = 3\\)", "\\(A = 3,\\ B = -4\\)", "\\(A = 3,\\ B = 4\\)", "\\(A = -3,\\ B = 4\\)"], "answer": 2, "solution": "\\(A = 3,\\ B = 4\\)"}, {"section": "Question 2 — Find A and B in each identity", "title": "2(e)", "prompt": "\\(\\frac{4x - 1}{x^2+x-2} \\equiv \\frac{A}{x+2} + \\frac{B}{x-1}\\)", "options": ["\\(A = 3,\\ B = 1\\)", "\\(A = 1,\\ B = 3\\)", "\\(A = -3,\\ B = 1\\)", "\\(A = 3,\\ B = -1\\)"], "answer": 0, "solution": "\\(A = 3,\\ B = 1\\)"}, {"section": "Question 2 — Find A and B in each identity", "title": "2(f)", "prompt": "\\(\\frac{x - 9}{x^2-4x+3} \\equiv \\frac{A}{x-1} + \\frac{B}{x-3}\\)", "options": ["\\(A = -4,\\ B = 3\\)", "\\(A = 4,\\ B = -3\\)", "\\(A = 3,\\ B = -4\\)", "\\(A = 4,\\ B = 3\\)"], "answer": 1, "solution": "\\(A = 4,\\ B = -3\\)"}, {"section": "Question 3 — Express in partial fractions", "title": "3(a)", "prompt": "\\(\\frac{8}{(x-1)(x+3)}\\)", "options": ["\\(\\frac{2}{x-1} - \\frac{2}{x+3}\\)", "\\(\\frac{2}{x-1} + \\frac{2}{x+3}\\)", "\\(-\\frac{2}{x-1} + \\frac{2}{x+3}\\)", "\\(\\frac{4}{x-1} - \\frac{4}{x+3}\\)"], "answer": 0, "solution": "\\(\\frac{8}{(x-1)(x+3)} \\equiv \\frac{2}{x-1} - \\frac{2}{x+3}\\)"}, {"section": "Question 3 — Express in partial fractions", "title": "3(b)", "prompt": "\\(\\frac{x - 1}{(x+2)(x+3)}\\)", "options": ["\\(\\frac{3}{x+2} - \\frac{4}{x+3}\\)", "\\(\\frac{4}{x+3} - \\frac{3}{x+2}\\)", "\\(\\frac{4}{x+2} - \\frac{3}{x+3}\\)", "\\(-\\frac{4}{x+3} + \\frac{3}{x+2}\\)"], "answer": 1, "solution": "\\(\\frac{x - 1}{(x+2)(x+3)} \\equiv \\frac{4}{x+3} - \\frac{3}{x+2}\\)"}, {"section": "Question 3 — Express in partial fractions", "title": "3(c)", "prompt": "\\(\\frac{10x}{(x+4)(x-1)}\\)", "options": ["\\(\\frac{2}{x+4} + \\frac{8}{x-1}\\)", "\\(\\frac{8}{x+4} + \\frac{2}{x-1}\\)", "\\(\\frac{8}{x+4} - \\frac{2}{x-1}\\)", "\\(-\\frac{8}{x+4} + \\frac{2}{x-1}\\)"], "answer": 1, "solution": "\\(\\frac{10x}{(x+4)(x-1)} \\equiv \\frac{8}{x+4} + \\frac{2}{x-1}\\)"}, {"section": "Question 3 — Express in partial fractions", "title": "3(d)", "prompt": "\\(\\frac{5x + 7}{x^2+x}\\)", "options": ["\\(\\frac{7}{x} - \\frac{2}{x+1}\\)", "\\(\\frac{2}{x} + \\frac{7}{x+1}\\)", "\\(\\frac{7}{x} + \\frac{2}{x+1}\\)", "\\(-\\frac{7}{x} + \\frac{2}{x+1}\\)"], "answer": 0, "solution": "\\(\\frac{5x + 7}{x^2+x} \\equiv \\frac{7}{x} - \\frac{2}{x+1}\\)"}, {"section": "Question 3 — Express in partial fractions", "title": "3(e)", "prompt": "\\(\\frac{x+2}{x^2-5x+4}\\)", "options": ["\\(\\frac{2}{x-4} - \\frac{1}{x-1}\\)", "\\(\\frac{1}{x-4} - \\frac{2}{x-1}\\)", "\\(\\frac{2}{x-4} + \\frac{1}{x-1}\\)", "\\(-\\frac{2}{x-4} + \\frac{1}{x-1}\\)"], "answer": 0, "solution": "\\(\\frac{x+2}{x^2-5x+4} \\equiv \\frac{2}{x-4} - \\frac{1}{x-1}\\)"}, {"section": "Question 3 — Express in partial fractions", "title": "3(f)", "prompt": "\\(\\frac{4x+6}{x^2-9}\\)", "options": ["\\(\\frac{3}{x+3} + \\frac{1}{x-3}\\)", "\\(\\frac{1}{x+3} + \\frac{3}{x-3}\\)", "\\(\\frac{1}{x+3} - \\frac{3}{x-3}\\)", "\\(-\\frac{1}{x+3} + \\frac{3}{x-3}\\)"], "answer": 1, "solution": "\\(\\frac{4x+6}{x^2-9} \\equiv \\frac{1}{x+3} + \\frac{3}{x-3}\\)"}, {"section": "Question 3 — Express in partial fractions", "title": "3(g)", "prompt": "\\(\\frac{3x+2}{x^2-2x-24}\\)", "options": ["\\(\\frac{1}{x-6} + \\frac{2}{x+4}\\)", "\\(\\frac{2}{x-6} + \\frac{1}{x+4}\\)", "\\(\\frac{2}{x-6} - \\frac{1}{x+4}\\)", "\\(-\\frac{2}{x-6} + \\frac{1}{x+4}\\)"], "answer": 1, "solution": "\\(\\frac{3x+2}{x^2-2x-24} \\equiv \\frac{2}{x-6} + \\frac{1}{x+4}\\)"}, {"section": "Question 3 — Express in partial fractions", "title": "3(h)", "prompt": "\\(\\frac{38-x}{12-x-x^2}\\)", "options": ["\\(\\frac{6}{x+4} + \\frac{5}{3-x}\\)", "\\(\\frac{5}{x+4} + \\frac{6}{3-x}\\)", "\\(\\frac{6}{x+4} - \\frac{5}{3-x}\\)", "\\(-\\frac{6}{x+4} + \\frac{5}{3-x}\\)"], "answer": 0, "solution": "\\(\\frac{38-x}{12-x-x^2} \\equiv \\frac{6}{x+4} + \\frac{5}{3-x}\\)"}, {"section": "Question 3 — Express in partial fractions", "title": "3(i)", "prompt": "\\(\\frac{4x-5}{(2x+1)(x-3)}\\)", "options": ["\\(\\frac{1}{2x+1} + \\frac{2}{x-3}\\)", "\\(\\frac{2}{2x+1} + \\frac{1}{x-3}\\)", "\\(\\frac{2}{2x+1} - \\frac{1}{x-3}\\)", "\\(-\\frac{2}{2x+1} + \\frac{1}{x-3}\\)"], "answer": 1, "solution": "\\(\\frac{4x-5}{(2x+1)(x-3)} \\equiv \\frac{2}{2x+1} + \\frac{1}{x-3}\\)"}, {"section": "Question 3 — Express in partial fractions", "title": "3(j)", "prompt": "\\(\\frac{1-3x}{(3x+4)(2x+1)}\\)", "options": ["\\(\\frac{1}{2x+1} - \\frac{3}{3x+4}\\)", "\\(\\frac{3}{3x+4} - \\frac{1}{2x+1}\\)", "\\(\\frac{1}{2x+1} + \\frac{3}{3x+4}\\)", "\\(-\\frac{1}{2x+1} + \\frac{3}{3x+4}\\)"], "answer": 0, "solution": "\\(\\frac{1-3x}{(3x+4)(2x+1)} \\equiv \\frac{1}{2x+1} - \\frac{3}{3x+4}\\)"}, {"section": "Question 3 — Express in partial fractions", "title": "3(k)", "prompt": "\\(\\frac{x+1}{x-3x^2}\\)", "options": ["\\(\\frac{1}{x} - \\frac{4}{1-3x}\\)", "\\(\\frac{1}{x} + \\frac{4}{1-3x}\\)", "\\(\\frac{4}{x} + \\frac{1}{1-3x}\\)", "\\(-\\frac{1}{x} + \\frac{4}{1-3x}\\)"], "answer": 1, "solution": "\\(\\frac{x+1}{x-3x^2} \\equiv \\frac{1}{x} + \\frac{4}{1-3x}\\)"}, {"section": "Question 3 — Express in partial fractions", "title": "3(l)", "prompt": "\\(\\frac{5}{2x^2+3x-2}\\)", "options": ["\\(\\frac{2}{2x-1} + \\frac{1}{x+2}\\)", "\\(\\frac{1}{2x-1} - \\frac{2}{x+2}\\)", "\\(\\frac{2}{2x-1} - \\frac{1}{x+2}\\)", "\\(-\\frac{2}{2x-1} + \\frac{1}{x+2}\\)"], "answer": 2, "solution": "\\(\\frac{5}{2x^2+3x-2} \\equiv \\frac{2}{2x-1} - \\frac{1}{x+2}\\)"}, {"section": "Question 3 — Express in partial fractions", "title": "3(m)", "prompt": "\\(\\frac{2(x+5)}{8x^2+10x-3}\\)", "options": ["\\(\\frac{3}{4x-1} - \\frac{1}{2x+3}\\)", "\\(\\frac{1}{4x-1} - \\frac{3}{2x+3}\\)", "\\(\\frac{3}{4x-1} + \\frac{1}{2x+3}\\)", "\\(-\\frac{3}{4x-1} + \\frac{1}{2x+3}\\)"], "answer": 0, "solution": "\\(\\frac{2(x+5)}{8x^2+10x-3} \\equiv \\frac{3}{4x-1} - \\frac{1}{2x+3}\\)"}, {"section": "Question 3 — Express in partial fractions", "title": "3(n)", "prompt": "\\(\\frac{3x-7}{x^2-2x-3}\\)", "options": ["\\(\\frac{5}{2(x+1)} - \\frac{1}{2(x-3)}\\)", "\\(\\frac{1}{2(x+1)} + \\frac{5}{2(x-3)}\\)", "\\(\\frac{5}{2(x+1)} + \\frac{1}{2(x-3)}\\)", "\\(-\\frac{5}{2(x+1)} + \\frac{1}{2(x-3)}\\)"], "answer": 2, "solution": "\\(\\frac{3x-7}{x^2-2x-3} \\equiv \\frac{5}{2(x+1)} + \\frac{1}{2(x-3)}\\)"}, {"section": "Question 3 — Express in partial fractions", "title": "3(o)", "prompt": "\\(\\frac{1-3x}{1-x-2x^2}\\)", "options": ["\\(\\frac{4}{3(1+x)} + \\frac{1}{3(1-2x)}\\)", "\\(\\frac{1}{3(1+x)} - \\frac{4}{3(1-2x)}\\)", "\\(\\frac{4}{3(1+x)} - \\frac{1}{3(1-2x)}\\)", "\\(-\\frac{4}{3(1+x)} + \\frac{1}{3(1-2x)}\\)"], "answer": 2, "solution": "\\(\\frac{1-3x}{1-x-2x^2} \\equiv \\frac{4}{3(1+x)} - \\frac{1}{3(1-2x)}\\)"}];
+    const quizContainer = document.getElementById("quizContainer");
+    const scoreBox = document.getElementById("scoreBox");
+    let checked = new Array(questions.length).fill(false);
+    let correct = new Array(questions.length).fill(false);
 
-      {q:'2a. Find A and B: \\(\\frac{2}{(x+1)(x+3)} \\equiv \\frac{A}{x+1}+\\frac{B}{x+3}\\)', opts:['\\(A=1,\\ B=-1\\)','\\(A=-1,\\ B=1\\)','\\(A=2,\\ B=-2\\)','\\(A=1,\\ B=1\\)'], a:0},
-      {q:'2b. Find A and B: \\(\\frac{x-3}{x(x-1)} \\equiv \\frac{A}{x}+\\frac{B}{x-1}\\)', opts:['\\(A=-3,\\ B=2\\)','\\(A=3,\\ B=2\\)','\\(A=3,\\ B=-2\\)','\\(A=2,\\ B=-3\\)'], a:2},
-      {q:'2c. Find A and B: \\(\\frac{x+1}{(x-3)(x-5)} \\equiv \\frac{A}{x-3}+\\frac{B}{x-5}\\)', opts:['\\(A=2,\\ B=-3\\)','\\(A=-2,\\ B=3\\)','\\(A=-3,\\ B=2\\)','\\(A=3,\\ B=-2\\)'], a:1},
-      {q:'2d. Find A and B: \\(\\frac{x+10}{(1+x)(2-x)} \\equiv \\frac{A}{1+x}+\\frac{B}{2-x}\\)', opts:['\\(A=3,\\ B=4\\)','\\(A=4,\\ B=3\\)','\\(A=-3,\\ B=4\\)','\\(A=3,\\ B=-4\\)'], a:0},
-      {q:'2e. Find A and B: \\(\\frac{4x-1}{(x+2)(x-1)} \\equiv \\frac{A}{x+2}+\\frac{B}{x-1}\\)', opts:['\\(A=1,\\ B=3\\)','\\(A=3,\\ B=-1\\)','\\(A=3,\\ B=1\\)','\\(A=-3,\\ B=1\\)'], a:2},
-      {q:'2f. Find A and B: \\(\\frac{x-9}{(x-1)(x-3)} \\equiv \\frac{A}{x-1}+\\frac{B}{x-3}\\)', opts:['\\(A=4,\\ B=-3\\)','\\(A=-4,\\ B=3\\)','\\(A=3,\\ B=-4\\)','\\(A=4,\\ B=3\\)'], a:0},
-
-      {q:'3a. Express in partial fractions: \\(\\frac{8}{(x-1)(x+3)}\\)', opts:['\\(\\frac{2}{x-1}-\\frac{2}{x+3}\\)','\\(\\frac{2}{x-1}+\\frac{2}{x+3}\\)','\\(-\\frac{2}{x-1}+\\frac{2}{x+3}\\)','\\(\\frac{4}{x-1}-\\frac{4}{x+3}\\)'], a:0},
-      {q:'3b. Express in partial fractions: \\(\\frac{x-1}{(x+2)(x+3)}\\)', opts:['\\(\\frac{3}{x+2}-\\frac{4}{x+3}\\)','\\(-\\frac{3}{x+2}+\\frac{4}{x+3}\\)','\\(\\frac{4}{x+2}-\\frac{3}{x+3}\\)','\\(-\\frac{4}{x+2}+\\frac{3}{x+3}\\)'], a:1},
-      {q:'3c. Express in partial fractions: \\(\\frac{10x}{(x+4)(x-1)}\\)', opts:['\\(\\frac{2}{x+4}+\\frac{8}{x-1}\\)','\\(\\frac{8}{x+4}-\\frac{2}{x-1}\\)','\\(\\frac{8}{x+4}+\\frac{2}{x-1}\\)','\\(-\\frac{8}{x+4}+\\frac{2}{x-1}\\)'], a:2},
-      {q:'3d. Express in partial fractions: \\(\\frac{5x+7}{x(x+1)}\\)', opts:['\\(\\frac{7}{x}-\\frac{2}{x+1}\\)','\\(\\frac{2}{x}-\\frac{7}{x+1}\\)','\\(\\frac{7}{x}+\\frac{2}{x+1}\\)','\\(-\\frac{7}{x}+\\frac{2}{x+1}\\)'], a:0},
-      {q:'3e. Express in partial fractions: \\(\\frac{x+2}{x^2-5x+4}\\)', opts:['\\(\\frac{1}{x-1}+\\frac{2}{x-4}\\)','\\(-\\frac{1}{x-1}+\\frac{2}{x-4}\\)','\\(\\frac{2}{x-1}-\\frac{1}{x-4}\\)','\\(-\\frac{2}{x-1}+\\frac{1}{x-4}\\)'], a:1},
-      {q:'3f. Express in partial fractions: \\(\\frac{4x+6}{x^2-9}\\)', opts:['\\(\\frac{3}{x+3}+\\frac{1}{x-3}\\)','\\(\\frac{1}{x+3}+\\frac{3}{x-3}\\)','\\(-\\frac{1}{x+3}+\\frac{3}{x-3}\\)','\\(\\frac{1}{x+3}-\\frac{3}{x-3}\\)'], a:1},
-      {q:'3g. Express in partial fractions: \\(\\frac{3x+2}{x^2-2x-24}\\)', opts:['\\(\\frac{2}{x-6}+\\frac{1}{x+4}\\)','\\(\\frac{1}{x-6}+\\frac{2}{x+4}\\)','\\(\\frac{2}{x-6}-\\frac{1}{x+4}\\)','\\(-\\frac{2}{x-6}+\\frac{1}{x+4}\\)'], a:0},
-      {q:'3h. Express in partial fractions: \\(\\frac{38-x}{12+x-x^2}\\)', opts:['\\(\\frac{6}{x+4}+\\frac{5}{3-x}\\)','\\(\\frac{5}{x+4}+\\frac{6}{3-x}\\)','\\(\\frac{6}{x+4}-\\frac{5}{3-x}\\)','\\(-\\frac{6}{x+4}+\\frac{5}{3-x}\\)'], a:0},
-      {q:'3i. Express in partial fractions: \\(\\frac{4x-5}{(2x+1)(x-3)}\\)', opts:['\\(\\frac{1}{2x+1}+\\frac{2}{x-3}\\)','\\(\\frac{2}{2x+1}+\\frac{1}{x-3}\\)','\\(-\\frac{2}{2x+1}+\\frac{1}{x-3}\\)','\\(\\frac{2}{2x+1}-\\frac{1}{x-3}\\)'], a:1},
-      {q:'3j. Express in partial fractions: \\(\\frac{1-3x}{(3x+4)(2x+1)}\\)', opts:['\\(\\frac{1}{2x+1}-\\frac{3}{3x+4}\\)','\\(\\frac{3}{2x+1}-\\frac{1}{3x+4}\\)','\\(-\\frac{1}{2x+1}+\\frac{3}{3x+4}\\)','\\(\\frac{1}{2x+1}+\\frac{3}{3x+4}\\)'], a:0},
-      {q:'3k. Express in partial fractions: \\(\\frac{x+1}{x(1-3x)}\\)', opts:['\\(\\frac{1}{x}+\\frac{4}{1-3x}\\)','\\(\\frac{4}{x}+\\frac{1}{1-3x}\\)','\\(\\frac{1}{x}-\\frac{4}{1-3x}\\)','\\(-\\frac{1}{x}+\\frac{4}{1-3x}\\)'], a:0},
-      {q:'3l. Express in partial fractions: \\(\\frac{5}{2x^2+3x-2}\\)', opts:['\\(\\frac{2}{2x-1}+\\frac{1}{x+2}\\)','\\(\\frac{2}{2x-1}-\\frac{1}{x+2}\\)','\\(-\\frac{2}{2x-1}+\\frac{1}{x+2}\\)','\\(\\frac{1}{2x-1}-\\frac{2}{x+2}\\)'], a:1},
-      {q:'3m. Express in partial fractions: \\(\\frac{2(x+5)}{8x^2+10x-3}\\)', opts:['\\(\\frac{3}{4x-1}-\\frac{1}{2x+3}\\)','\\(\\frac{1}{4x-1}-\\frac{3}{2x+3}\\)','\\(-\\frac{3}{4x-1}+\\frac{1}{2x+3}\\)','\\(\\frac{3}{4x-1}+\\frac{1}{2x+3}\\)'], a:0},
-      {q:'3n. Express in partial fractions: \\(\\frac{3x-7}{x^2-2x-3}\\)', opts:['\\(\\frac{1}{2(x+1)}+\\frac{5}{2(x-3)}\\)','\\(\\frac{5}{2(x+1)}-\\frac{1}{2(x-3)}\\)','\\(\\frac{5}{2(x+1)}+\\frac{1}{2(x-3)}\\)','\\(-\\frac{5}{2(x+1)}+\\frac{1}{2(x-3)}\\)'], a:2},
-      {q:'3o. Express in partial fractions: \\(\\frac{1-3x}{1-x-2x^2}\\)', opts:['\\(\\frac{4}{3(1+x)}-\\frac{1}{3(1-2x)}\\)','\\(\\frac{1}{3(1+x)}-\\frac{4}{3(1-2x)}\\)','\\(-\\frac{4}{3(1+x)}+\\frac{1}{3(1-2x)}\\)','\\(\\frac{4}{3(1+x)}+\\frac{1}{3(1-2x)}\\)'], a:0}
-    ];
-
-    const form = document.getElementById('quizForm');
-    questions.forEach((item, i) => {
-      const section = document.createElement('section');
-      section.className = 'question';
-      section.innerHTML = `<h2>Question ${i + 1} of ${questions.length}</h2><div class="prompt">${item.q}</div><div class="options">${item.opts.map((opt, j) => `<label class="option"><input type="radio" name="q${i}" value="${j}"><span>${opt}</span></label>`).join('')}</div>`;
-      form.appendChild(section);
-    });
-
-    form.addEventListener('change', e => {
-      if (e.target.type === 'radio') {
-        document.querySelectorAll(`input[name="${e.target.name}"]`).forEach(input => input.closest('label').classList.remove('selected'));
-        e.target.closest('label').classList.add('selected');
-      }
-    });
-
-    document.getElementById('submitBtn').addEventListener('click', () => {
-      const warning = document.getElementById('warning');
-      let answered = 0;
-      let score = 0;
-      questions.forEach((item, i) => {
-        const chosen = document.querySelector(`input[name="q${i}"]:checked`);
-        if (chosen) answered++;
+    function renderQuiz() {
+      quizContainer.innerHTML = "";
+      let currentSection = "";
+      questions.forEach((q, index) => {
+        if (q.section !== currentSection) {
+          currentSection = q.section;
+          const sectionTitle = document.createElement("h2");
+          sectionTitle.className = "section-title";
+          sectionTitle.textContent = currentSection;
+          quizContainer.appendChild(sectionTitle);
+        }
+        const card = document.createElement("section");
+        card.className = "question-card";
+        card.id = `card-${index}`;
+        const optionHTML = q.options.map((option, optionIndex) => `
+          <label class="option" id="option-${index}-${optionIndex}">
+            <input type="radio" name="question-${index}" value="${optionIndex}">
+            <span><strong>${String.fromCharCode(65 + optionIndex)}.</strong> ${option}</span>
+          </label>
+        `).join("");
+        card.innerHTML = `
+          <div class="question-header"><span class="question-number">${q.title}</span><span class="question-title">Choose the correct answer</span></div>
+          <div class="prompt">${q.prompt}</div>
+          <div class="options">${optionHTML}</div>
+          <button class="check-button" id="check-${index}" onclick="checkQuestion(${index})">Check this question</button>
+          <div class="feedback" id="feedback-${index}"></div>
+        `;
+        quizContainer.appendChild(card);
       });
-      if (answered < questions.length) {
-        warning.textContent = `Please answer all questions first. You have answered ${answered}/${questions.length}.`;
+      updateScore();
+      if (window.MathJax) { MathJax.typesetPromise(); }
+    }
+
+    function checkQuestion(index) {
+      const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+      const feedback = document.getElementById(`feedback-${index}`);
+      const card = document.getElementById(`card-${index}`);
+      const checkButton = document.getElementById(`check-${index}`);
+      if (!selected) {
+        feedback.className = "feedback incorrect-feedback";
+        feedback.innerHTML = "Please choose an answer first.";
         return;
       }
-      warning.textContent = '';
-      questions.forEach((item, i) => {
-        const chosen = Number(document.querySelector(`input[name="q${i}"]:checked`).value);
-        if (chosen === item.a) score++;
-        document.querySelectorAll(`input[name="q${i}"]`).forEach((input, j) => {
-          input.disabled = true;
-          const label = input.closest('label');
-          label.classList.remove('correct','incorrect');
-          if (j === item.a) label.classList.add('correct');
-          if (j === chosen && chosen !== item.a) label.classList.add('incorrect');
-        });
-      });
-      const percentage = Math.round((score / questions.length) * 100);
-      const results = document.getElementById('results');
-      results.style.display = 'block';
-      results.innerHTML = `<p class="score">Score: ${score}/${questions.length} (${percentage}%)</p><p>Green shows the correct answer. Red shows any incorrect answer you selected.</p><p class="small">Use Reset to try again.</p>`;
-      results.scrollIntoView({behavior:'smooth'});
-      document.getElementById('submitBtn').disabled = true;
-    });
+      const selectedIndex = Number(selected.value);
+      const correctIndex = questions[index].answer;
+      checked[index] = true;
+      correct[index] = selectedIndex === correctIndex;
+      card.classList.remove("correct", "incorrect");
+      card.classList.add(correct[index] ? "correct" : "incorrect");
+      document.getElementById(`option-${index}-${correctIndex}`).classList.add("correct-choice");
+      if (!correct[index]) { document.getElementById(`option-${index}-${selectedIndex}`).classList.add("wrong-choice"); }
+      document.querySelectorAll(`input[name="question-${index}"]`).forEach(input => input.disabled = true);
+      checkButton.disabled = true;
+      if (correct[index]) {
+        feedback.className = "feedback correct-feedback";
+        feedback.innerHTML = `Correct. ${questions[index].solution}`;
+      } else {
+        feedback.className = "feedback incorrect-feedback";
+        feedback.innerHTML = `Not quite. The correct answer is ${questions[index].solution}`;
+      }
+      updateScore();
+      if (window.MathJax) { MathJax.typesetPromise([feedback, card]); }
+    }
 
-    document.getElementById('resetBtn').addEventListener('click', () => location.reload());
+    function updateScore() {
+      const checkedCount = checked.filter(Boolean).length;
+      const correctCount = correct.filter(Boolean).length;
+      scoreBox.textContent = `Score: ${correctCount} / ${checkedCount} checked`;
+    }
+
+    function resetQuiz() {
+      checked = new Array(questions.length).fill(false);
+      correct = new Array(questions.length).fill(false);
+      renderQuiz();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    renderQuiz();
   </script>
 </body>
 </html>
