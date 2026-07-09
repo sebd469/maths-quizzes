@@ -73,15 +73,8 @@
       display: inline-block;
     }
 
-    .reset-button {
-      background: #ef4444;
-      color: white;
-    }
-
-    .home-link {
-      background: #e5e7eb;
-      color: #111827;
-    }
+    .reset-button { background: #ef4444; color: white; }
+    .home-link { background: #e5e7eb; color: #111827; }
 
     main {
       max-width: 980px;
@@ -182,6 +175,14 @@
       background: #fee2e2;
     }
 
+    .button-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 8px;
+    }
+
     .check-button {
       background: #2563eb;
       color: white;
@@ -220,6 +221,38 @@
       border: 1px solid #ef4444;
     }
 
+    .working-details {
+      margin-top: 12px;
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .working-details summary {
+      cursor: pointer;
+      padding: 12px 14px;
+      font-weight: bold;
+      color: #1e40af;
+      list-style-position: inside;
+    }
+
+    .working-details summary:hover {
+      background: #dbeafe;
+    }
+
+    .working-content {
+      padding: 0 16px 14px;
+      line-height: 1.55;
+      color: #1f2937;
+      border-top: 1px solid #bfdbfe;
+      background: white;
+    }
+
+    .working-content p {
+      margin: 11px 0;
+    }
+
     .small-note {
       color: #6b7280;
       font-size: 14px;
@@ -242,7 +275,7 @@
   <header>
     <h1>Partial Fractions A Quiz</h1>
     <p>Check each question as you go.</p>
-    <p class="small-note">Choose one answer, then press <strong>Check this question</strong>.</p>
+    <p class="small-note">Choose one answer, then press <strong>Check this question</strong>. Use the worked solution dropdown if you need help.</p>
   </header>
 
   <div class="top-bar">
@@ -255,115 +288,341 @@
     <section class="instructions">
       <strong>Instructions:</strong>
       Answer each multiple-choice question. You will receive feedback immediately after checking that question.
-      Your score updates as you go, rather than only at the end.
+      Your score updates as you go. Each question also has a <strong>Show worked solution</strong> dropdown.
     </section>
 
     <div id="quizContainer"></div>
   </main>
 
   <footer>
-    Partial Fractions A &mdash; question-by-question checking version
+    Partial Fractions A &mdash; question-by-question checking version with worked solutions
   </footer>
 
   <script>
     const questions = [
       {
-        section: "Question 1 — Find A and B in each identity",
-        title: "1(a)",
-        prompt: "\\(x - 8 \\equiv A(x - 2) + B(x + 4)\\)",
-        options: ["\\(A = 2,\\ B = -1\\)", "\\(A = -1,\\ B = 2\\)", "\\(A = 2,\\ B = 1\\)", "\\(A = -2,\\ B = 1\\)"],
-        answer: 0,
-        solution: "\\(A = 2,\\ B = -1\\)"
+            "section": "Question 1 — Find A and B in each identity",
+            "title": "1(a)",
+            "prompt": "\\(x - 8 \\equiv A(x - 2) + B(x + 4)\\)",
+            "options": [
+                  "\\(A = 2,\\ B = -1\\)",
+                  "\\(A = -1,\\ B = 2\\)",
+                  "\\(A = 2,\\ B = 1\\)",
+                  "\\(A = -2,\\ B = 1\\)"
+            ],
+            "answer": 0,
+            "solution": "\\(A = 2,\\ B = -1\\)",
+            "working": "\n      <p>Use the values that make one bracket zero.</p>\n      <p>Put \\(x=-4\\):</p>\n      <p>\\[-12=-6A \\quad \\Rightarrow \\quad A=2\\]</p>\n      <p>Put \\(x=2\\):</p>\n      <p>\\[-6=6B \\quad \\Rightarrow \\quad B=-1\\]</p>\n      <p>So \\(A=2,\\ B=-1\\).</p>\n    "
       },
       {
-        section: "Question 1 — Find A and B in each identity",
-        title: "1(b)",
-        prompt: "\\(6x + 7 \\equiv A(2x - 1) + B(x + 2)\\)",
-        options: ["\\(A = 4,\\ B = 1\\)", "\\(A = 1,\\ B = 4\\)", "\\(A = -1,\\ B = 4\\)", "\\(A = 1,\\ B = -4\\)"],
-        answer: 1,
-        solution: "\\(A = 1,\\ B = 4\\)"
+            "section": "Question 1 — Find A and B in each identity",
+            "title": "1(b)",
+            "prompt": "\\(6x + 7 \\equiv A(2x - 1) + B(x + 2)\\)",
+            "options": [
+                  "\\(A = 4,\\ B = 1\\)",
+                  "\\(A = 1,\\ B = 4\\)",
+                  "\\(A = -1,\\ B = 4\\)",
+                  "\\(A = 1,\\ B = -4\\)"
+            ],
+            "answer": 1,
+            "solution": "\\(A = 1,\\ B = 4\\)",
+            "working": "\n      <p>Put \\(x=-2\\) to remove the \\(B\\)-term:</p>\n      <p>\\[-5=-5A \\quad \\Rightarrow \\quad A=1\\]</p>\n      <p>Put \\(x=\\frac12\\) to remove the \\(A\\)-term:</p>\n      <p>\\[10=\\frac52B \\quad \\Rightarrow \\quad B=4\\]</p>\n      <p>So \\(A=1,\\ B=4\\).</p>\n    "
       },
       {
-        section: "Question 2 — Find A and B in each identity",
-        title: "2(a)",
-        prompt: "\\(\\frac{2}{(x+1)(x+3)} \\equiv \\frac{A}{x+1} + \\frac{B}{x+3}\\)",
-        options: ["\\(A = 1,\\ B = -1\\)", "\\(A = -1,\\ B = 1\\)", "\\(A = 2,\\ B = -2\\)", "\\(A = 1,\\ B = 1\\)"],
-        answer: 0,
-        solution: "\\(A = 1,\\ B = -1\\)"
+            "section": "Question 2 — Find A and B in each identity",
+            "title": "2(a)",
+            "prompt": "\\(\\frac{2}{(x+1)(x+3)} \\equiv \\frac{A}{x+1} + \\frac{B}{x+3}\\)",
+            "options": [
+                  "\\(A = 1,\\ B = -1\\)",
+                  "\\(A = -1,\\ B = 1\\)",
+                  "\\(A = 2,\\ B = -2\\)",
+                  "\\(A = 1,\\ B = 1\\)"
+            ],
+            "answer": 0,
+            "solution": "\\(A = 1,\\ B = -1\\)",
+            "working": "\n      <p>Multiply through by \\((x+1)(x+3)\\):</p>\n      <p>\\[2 \\equiv A(x+3)+B(x+1)\\]</p>\n      <p>Put \\(x=-1\\): \\(2=2A\\), so \\(A=1\\).</p>\n      <p>Put \\(x=-3\\): \\(2=-2B\\), so \\(B=-1\\).</p>\n    "
       },
       {
-        section: "Question 2 — Find A and B in each identity",
-        title: "2(b)",
-        prompt: "\\(\\frac{x - 3}{x(x-1)} \\equiv \\frac{A}{x} + \\frac{B}{x-1}\\)",
-        options: ["\\(A = -3,\\ B = 2\\)", "\\(A = 3,\\ B = -2\\)", "\\(A = 2,\\ B = -3\\)", "\\(A = 3,\\ B = 2\\)"],
-        answer: 1,
-        solution: "\\(A = 3,\\ B = -2\\)"
+            "section": "Question 2 — Find A and B in each identity",
+            "title": "2(b)",
+            "prompt": "\\(\\frac{x - 3}{x(x-1)} \\equiv \\frac{A}{x} + \\frac{B}{x-1}\\)",
+            "options": [
+                  "\\(A = -3,\\ B = 2\\)",
+                  "\\(A = 3,\\ B = -2\\)",
+                  "\\(A = 2,\\ B = -3\\)",
+                  "\\(A = 3,\\ B = 2\\)"
+            ],
+            "answer": 1,
+            "solution": "\\(A = 3,\\ B = -2\\)",
+            "working": "\n      <p>Multiply through by \\(x(x-1)\\):</p>\n      <p>\\[x-3 \\equiv A(x-1)+Bx\\]</p>\n      <p>Put \\(x=0\\): \\(-3=-A\\), so \\(A=3\\).</p>\n      <p>Put \\(x=1\\): \\(-2=B\\), so \\(B=-2\\).</p>\n    "
       },
       {
-        section: "Question 2 — Find A and B in each identity",
-        title: "2(c)",
-        prompt: "\\(\\frac{x + 1}{(x-3)(x-5)} \\equiv \\frac{A}{x-3} + \\frac{B}{x-5}\\)",
-        options: ["\\(A = 2,\\ B = -3\\)", "\\(A = -2,\\ B = 3\\)", "\\(A = 3,\\ B = -2\\)", "\\(A = -3,\\ B = 2\\)"],
-        answer: 1,
-        solution: "\\(A = -2,\\ B = 3\\)"
+            "section": "Question 2 — Find A and B in each identity",
+            "title": "2(c)",
+            "prompt": "\\(\\frac{x + 1}{(x-3)(x-5)} \\equiv \\frac{A}{x-3} + \\frac{B}{x-5}\\)",
+            "options": [
+                  "\\(A = 2,\\ B = -3\\)",
+                  "\\(A = -2,\\ B = 3\\)",
+                  "\\(A = 3,\\ B = -2\\)",
+                  "\\(A = -3,\\ B = 2\\)"
+            ],
+            "answer": 1,
+            "solution": "\\(A = -2,\\ B = 3\\)",
+            "working": "\n      <p>Multiply through by \\((x-3)(x-5)\\):</p>\n      <p>\\[x+1 \\equiv A(x-5)+B(x-3)\\]</p>\n      <p>Put \\(x=3\\): \\(4=-2A\\), so \\(A=-2\\).</p>\n      <p>Put \\(x=5\\): \\(6=2B\\), so \\(B=3\\).</p>\n    "
       },
       {
-        section: "Question 2 — Find A and B in each identity",
-        title: "2(d)",
-        prompt: "\\(\\frac{x + 10}{(1+x)(2-x)} \\equiv \\frac{A}{1+x} + \\frac{B}{2-x}\\)",
-        options: ["\\(A = 4,\\ B = 3\\)", "\\(A = 3,\\ B = -4\\)", "\\(A = 3,\\ B = 4\\)", "\\(A = -3,\\ B = 4\\)"],
-        answer: 2,
-        solution: "\\(A = 3,\\ B = 4\\)"
+            "section": "Question 2 — Find A and B in each identity",
+            "title": "2(d)",
+            "prompt": "\\(\\frac{x + 10}{(1+x)(2-x)} \\equiv \\frac{A}{1+x} + \\frac{B}{2-x}\\)",
+            "options": [
+                  "\\(A = 4,\\ B = 3\\)",
+                  "\\(A = 3,\\ B = -4\\)",
+                  "\\(A = 3,\\ B = 4\\)",
+                  "\\(A = -3,\\ B = 4\\)"
+            ],
+            "answer": 2,
+            "solution": "\\(A = 3,\\ B = 4\\)",
+            "working": "\n      <p>Multiply through by \\((1+x)(2-x)\\):</p>\n      <p>\\[x+10 \\equiv A(2-x)+B(1+x)\\]</p>\n      <p>Put \\(x=-1\\): \\(9=3A\\), so \\(A=3\\).</p>\n      <p>Put \\(x=2\\): \\(12=3B\\), so \\(B=4\\).</p>\n    "
       },
       {
-        section: "Question 2 — Find A and B in each identity",
-        title: "2(e)",
-        prompt: "\\(\\frac{4x - 1}{x^2+x-2} \\equiv \\frac{A}{x+2} + \\frac{B}{x-1}\\)",
-        options: ["\\(A = 3,\\ B = 1\\)", "\\(A = 1,\\ B = 3\\)", "\\(A = -3,\\ B = 1\\)", "\\(A = 3,\\ B = -1\\)"],
-        answer: 0,
-        solution: "\\(A = 3,\\ B = 1\\)"
+            "section": "Question 2 — Find A and B in each identity",
+            "title": "2(e)",
+            "prompt": "\\(\\frac{4x - 1}{x^2+x-2} \\equiv \\frac{A}{x+2} + \\frac{B}{x-1}\\)",
+            "options": [
+                  "\\(A = 3,\\ B = 1\\)",
+                  "\\(A = 1,\\ B = 3\\)",
+                  "\\(A = -3,\\ B = 1\\)",
+                  "\\(A = 3,\\ B = -1\\)"
+            ],
+            "answer": 0,
+            "solution": "\\(A = 3,\\ B = 1\\)",
+            "working": "\n      <p>Factor the denominator: \\(x^2+x-2=(x+2)(x-1)\\).</p>\n      <p>Multiply through:</p>\n      <p>\\[4x-1 \\equiv A(x-1)+B(x+2)\\]</p>\n      <p>Put \\(x=-2\\): \\(-9=-3A\\), so \\(A=3\\).</p>\n      <p>Put \\(x=1\\): \\(3=3B\\), so \\(B=1\\).</p>\n    "
       },
       {
-        section: "Question 2 — Find A and B in each identity",
-        title: "2(f)",
-        prompt: "\\(\\frac{x - 9}{x^2-4x+3} \\equiv \\frac{A}{x-1} + \\frac{B}{x-3}\\)",
-        options: ["\\(A = -4,\\ B = 3\\)", "\\(A = 4,\\ B = -3\\)", "\\(A = 3,\\ B = -4\\)", "\\(A = 4,\\ B = 3\\)"],
-        answer: 1,
-        solution: "\\(A = 4,\\ B = -3\\)"
+            "section": "Question 2 — Find A and B in each identity",
+            "title": "2(f)",
+            "prompt": "\\(\\frac{x - 9}{x^2-4x+3} \\equiv \\frac{A}{x-1} + \\frac{B}{x-3}\\)",
+            "options": [
+                  "\\(A = -4,\\ B = 3\\)",
+                  "\\(A = 4,\\ B = -3\\)",
+                  "\\(A = 3,\\ B = -4\\)",
+                  "\\(A = 4,\\ B = 3\\)"
+            ],
+            "answer": 1,
+            "solution": "\\(A = 4,\\ B = -3\\)",
+            "working": "\n      <p>Factor the denominator: \\(x^2-4x+3=(x-1)(x-3)\\).</p>\n      <p>Multiply through:</p>\n      <p>\\[x-9 \\equiv A(x-3)+B(x-1)\\]</p>\n      <p>Put \\(x=1\\): \\(-8=-2A\\), so \\(A=4\\).</p>\n      <p>Put \\(x=3\\): \\(-6=2B\\), so \\(B=-3\\).</p>\n    "
       },
       {
-        section: "Question 3 — Express in partial fractions",
-        title: "3(a)",
-        prompt: "\\(\\frac{8}{(x-1)(x+3)}\\)",
-        options: ["\\(\\frac{2}{x-1} - \\frac{2}{x+3}\\)", "\\(\\frac{2}{x-1} + \\frac{2}{x+3}\\)", "\\(-\\frac{2}{x-1} + \\frac{2}{x+3}\\)", "\\(\\frac{4}{x-1} - \\frac{4}{x+3}\\)"],
-        answer: 0,
-        solution: "\\(\\frac{8}{(x-1)(x+3)} \\equiv \\frac{2}{x-1} - \\frac{2}{x+3}\\)"
+            "section": "Question 3 — Express in partial fractions",
+            "title": "3(a)",
+            "prompt": "\\(\\frac{8}{(x-1)(x+3)}\\)",
+            "options": [
+                  "\\(\\frac{2}{x-1} - \\frac{2}{x+3}\\)",
+                  "\\(\\frac{2}{x-1} + \\frac{2}{x+3}\\)",
+                  "\\(-\\frac{2}{x-1} + \\frac{2}{x+3}\\)",
+                  "\\(\\frac{4}{x-1} - \\frac{4}{x+3}\\)"
+            ],
+            "answer": 0,
+            "solution": "\\(\\frac{8}{(x-1)(x+3)} \\equiv \\frac{2}{x-1} - \\frac{2}{x+3}\\)",
+            "working": "\n      <p>Let \\(\\frac{8}{(x-1)(x+3)} \\equiv \\frac{A}{x-1}+\\frac{B}{x+3}\\).</p>\n      <p>Then \\(8 \\equiv A(x+3)+B(x-1)\\).</p>\n      <p>Put \\(x=1\\): \\(8=4A\\), so \\(A=2\\).</p>\n      <p>Put \\(x=-3\\): \\(8=-4B\\), so \\(B=-2\\).</p>\n      <p>Therefore \\(\\frac{8}{(x-1)(x+3)} \\equiv \\frac{2}{x-1}-\\frac{2}{x+3}\\).</p>\n    "
       },
       {
-        section: "Question 3 — Express in partial fractions",
-        title: "3(b)",
-        prompt: "\\(\\frac{x - 1}{(x+2)(x+3)}\\)",
-        options: ["\\(\\frac{3}{x+2} - \\frac{4}{x+3}\\)", "\\(\\frac{4}{x+3} - \\frac{3}{x+2}\\)", "\\(\\frac{4}{x+2} - \\frac{3}{x+3}\\)", "\\(-\\frac{4}{x+3} + \\frac{3}{x+2}\\)"],
-        answer: 1,
-        solution: "\\(\\frac{x - 1}{(x+2)(x+3)} \\equiv \\frac{4}{x+3} - \\frac{3}{x+2}\\)"
+            "section": "Question 3 — Express in partial fractions",
+            "title": "3(b)",
+            "prompt": "\\(\\frac{x - 1}{(x+2)(x+3)}\\)",
+            "options": [
+                  "\\(\\frac{3}{x+2} - \\frac{4}{x+3}\\)",
+                  "\\(\\frac{4}{x+3} - \\frac{3}{x+2}\\)",
+                  "\\(\\frac{4}{x+2} - \\frac{3}{x+3}\\)",
+                  "\\(-\\frac{4}{x+3} + \\frac{3}{x+2}\\)"
+            ],
+            "answer": 1,
+            "solution": "\\(\\frac{x - 1}{(x+2)(x+3)} \\equiv \\frac{4}{x+3} - \\frac{3}{x+2}\\)",
+            "working": "\n      <p>Let \\(\\frac{x-1}{(x+2)(x+3)} \\equiv \\frac{A}{x+2}+\\frac{B}{x+3}\\).</p>\n      <p>Then \\(x-1 \\equiv A(x+3)+B(x+2)\\).</p>\n      <p>Put \\(x=-2\\): \\(-3=A\\), so \\(A=-3\\).</p>\n      <p>Put \\(x=-3\\): \\(-4=-B\\), so \\(B=4\\).</p>\n      <p>Therefore \\(\\frac{x-1}{(x+2)(x+3)} \\equiv -\\frac{3}{x+2}+\\frac{4}{x+3}\\).</p>\n    "
       },
       {
-        section: "Question 3 — Express in partial fractions",
-        title: "3(c)",
-        prompt: "\\(\\frac{10x}{(x+4)(x-1)}\\)",
-        options: ["\\(\\frac{2}{x+4} + \\frac{8}{x-1}\\)", "\\(\\frac{8}{x+4} + \\frac{2}{x-1}\\)", "\\(\\frac{8}{x+4} - \\frac{2}{x-1}\\)", "\\(-\\frac{8}{x+4} + \\frac{2}{x-1}\\)"],
-        answer: 1,
-        solution: "\\(\\frac{10x}{(x+4)(x-1)} \\equiv \\frac{8}{x+4} + \\frac{2}{x-1}\\)"
+            "section": "Question 3 — Express in partial fractions",
+            "title": "3(c)",
+            "prompt": "\\(\\frac{10x}{(x+4)(x-1)}\\)",
+            "options": [
+                  "\\(\\frac{2}{x+4} + \\frac{8}{x-1}\\)",
+                  "\\(\\frac{8}{x+4} + \\frac{2}{x-1}\\)",
+                  "\\(\\frac{8}{x+4} - \\frac{2}{x-1}\\)",
+                  "\\(-\\frac{8}{x+4} + \\frac{2}{x-1}\\)"
+            ],
+            "answer": 1,
+            "solution": "\\(\\frac{10x}{(x+4)(x-1)} \\equiv \\frac{8}{x+4} + \\frac{2}{x-1}\\)",
+            "working": "\n      <p>Let \\(\\frac{10x}{(x+4)(x-1)} \\equiv \\frac{A}{x+4}+\\frac{B}{x-1}\\).</p>\n      <p>Then \\(10x \\equiv A(x-1)+B(x+4)\\).</p>\n      <p>Put \\(x=-4\\): \\(-40=-5A\\), so \\(A=8\\).</p>\n      <p>Put \\(x=1\\): \\(10=5B\\), so \\(B=2\\).</p>\n    "
       },
       {
-        section: "Question 3 — Express in partial fractions",
-        title: "3(d)",
-        prompt: "\\(\\frac{5x + 7}{x^2+x}\\)",
-        options: ["\\(\\frac{7}{x} - \\frac{2}{x+1}\\)", "\\(\\frac{2}{x} + \\frac{7}{x+1}\\)", "\\(\\frac{7}{x} + \\frac{2}{x+1}\\)", "\\(-\\frac{7}{x} + \\frac{2}{x+1}\\)"],
-        answer: 0,
-        solution: "\\(\\frac{5x + 7}{x^2+x} \\equiv \\frac{7}{x} - \\frac{2}{x+1}\\)"
+            "section": "Question 3 — Express in partial fractions",
+            "title": "3(d)",
+            "prompt": "\\(\\frac{5x + 7}{x^2+x}\\)",
+            "options": [
+                  "\\(\\frac{7}{x} - \\frac{2}{x+1}\\)",
+                  "\\(\\frac{2}{x} + \\frac{7}{x+1}\\)",
+                  "\\(\\frac{7}{x} + \\frac{2}{x+1}\\)",
+                  "\\(-\\frac{7}{x} + \\frac{2}{x+1}\\)"
+            ],
+            "answer": 0,
+            "solution": "\\(\\frac{5x + 7}{x^2+x} \\equiv \\frac{7}{x} - \\frac{2}{x+1}\\)",
+            "working": "\n      <p>Factor the denominator: \\(x^2+x=x(x+1)\\).</p>\n      <p>Let \\(\\frac{5x+7}{x(x+1)} \\equiv \\frac{A}{x}+\\frac{B}{x+1}\\).</p>\n      <p>Then \\(5x+7 \\equiv A(x+1)+Bx\\).</p>\n      <p>Put \\(x=0\\): \\(7=A\\), so \\(A=7\\).</p>\n      <p>Put \\(x=-1\\): \\(2=-B\\), so \\(B=-2\\).</p>\n    "
+      },
+      {
+            "section": "Question 3 — Express in partial fractions",
+            "title": "3(e)",
+            "prompt": "\\(\\frac{x+2}{x^2-5x+4}\\)",
+            "options": [
+                  "\\(\\frac{2}{x-4} - \\frac{1}{x-1}\\)",
+                  "\\(\\frac{1}{x-4} - \\frac{2}{x-1}\\)",
+                  "\\(\\frac{2}{x-4} + \\frac{1}{x-1}\\)",
+                  "\\(-\\frac{2}{x-4} + \\frac{1}{x-1}\\)"
+            ],
+            "answer": 0,
+            "solution": "\\(\\frac{x+2}{x^2-5x+4} \\equiv \\frac{2}{x-4} - \\frac{1}{x-1}\\)",
+            "working": "\n      <p>Factor the denominator: \\(x^2-5x+4=(x-1)(x-4)\\).</p>\n      <p>Let \\(\\frac{x+2}{(x-1)(x-4)} \\equiv \\frac{A}{x-1}+\\frac{B}{x-4}\\).</p>\n      <p>Then \\(x+2 \\equiv A(x-4)+B(x-1)\\).</p>\n      <p>Put \\(x=1\\): \\(3=-3A\\), so \\(A=-1\\).</p>\n      <p>Put \\(x=4\\): \\(6=3B\\), so \\(B=2\\).</p>\n      <p>Therefore \\(\\frac{x+2}{x^2-5x+4} \\equiv \\frac{2}{x-4}-\\frac{1}{x-1}\\).</p>\n    "
+      },
+      {
+            "section": "Question 3 — Express in partial fractions",
+            "title": "3(f)",
+            "prompt": "\\(\\frac{4x+6}{x^2-9}\\)",
+            "options": [
+                  "\\(\\frac{3}{x+3} + \\frac{1}{x-3}\\)",
+                  "\\(\\frac{1}{x+3} + \\frac{3}{x-3}\\)",
+                  "\\(\\frac{1}{x+3} - \\frac{3}{x-3}\\)",
+                  "\\(-\\frac{1}{x+3} + \\frac{3}{x-3}\\)"
+            ],
+            "answer": 1,
+            "solution": "\\(\\frac{4x+6}{x^2-9} \\equiv \\frac{1}{x+3} + \\frac{3}{x-3}\\)",
+            "working": "\n      <p>Factor the denominator: \\(x^2-9=(x+3)(x-3)\\).</p>\n      <p>Let \\(\\frac{4x+6}{(x+3)(x-3)} \\equiv \\frac{A}{x+3}+\\frac{B}{x-3}\\).</p>\n      <p>Then \\(4x+6 \\equiv A(x-3)+B(x+3)\\).</p>\n      <p>Put \\(x=-3\\): \\(-6=-6A\\), so \\(A=1\\).</p>\n      <p>Put \\(x=3\\): \\(18=6B\\), so \\(B=3\\).</p>\n    "
+      },
+      {
+            "section": "Question 3 — Express in partial fractions",
+            "title": "3(g)",
+            "prompt": "\\(\\frac{3x+2}{x^2-2x-24}\\)",
+            "options": [
+                  "\\(\\frac{1}{x-6} + \\frac{2}{x+4}\\)",
+                  "\\(\\frac{2}{x-6} + \\frac{1}{x+4}\\)",
+                  "\\(\\frac{2}{x-6} - \\frac{1}{x+4}\\)",
+                  "\\(-\\frac{2}{x-6} + \\frac{1}{x+4}\\)"
+            ],
+            "answer": 1,
+            "solution": "\\(\\frac{3x+2}{x^2-2x-24} \\equiv \\frac{2}{x-6} + \\frac{1}{x+4}\\)",
+            "working": "\n      <p>Factor the denominator: \\(x^2-2x-24=(x-6)(x+4)\\).</p>\n      <p>Let \\(\\frac{3x+2}{(x-6)(x+4)} \\equiv \\frac{A}{x-6}+\\frac{B}{x+4}\\).</p>\n      <p>Then \\(3x+2 \\equiv A(x+4)+B(x-6)\\).</p>\n      <p>Put \\(x=6\\): \\(20=10A\\), so \\(A=2\\).</p>\n      <p>Put \\(x=-4\\): \\(-10=-10B\\), so \\(B=1\\).</p>\n    "
+      },
+      {
+            "section": "Question 3 — Express in partial fractions",
+            "title": "3(h)",
+            "prompt": "\\(\\frac{38-x}{12-x-x^2}\\)",
+            "options": [
+                  "\\(\\frac{6}{x+4} + \\frac{5}{3-x}\\)",
+                  "\\(\\frac{5}{x+4} + \\frac{6}{3-x}\\)",
+                  "\\(\\frac{6}{x+4} - \\frac{5}{3-x}\\)",
+                  "\\(-\\frac{6}{x+4} + \\frac{5}{3-x}\\)"
+            ],
+            "answer": 0,
+            "solution": "\\(\\frac{38-x}{12-x-x^2} \\equiv \\frac{6}{x+4} + \\frac{5}{3-x}\\)",
+            "working": "\n      <p>Factor the denominator as \\(12-x-x^2=(x+4)(3-x)\\).</p>\n      <p>Let \\(\\frac{38-x}{(x+4)(3-x)} \\equiv \\frac{A}{x+4}+\\frac{B}{3-x}\\).</p>\n      <p>Then \\(38-x \\equiv A(3-x)+B(x+4)\\).</p>\n      <p>Put \\(x=-4\\): \\(42=7A\\), so \\(A=6\\).</p>\n      <p>Put \\(x=3\\): \\(35=7B\\), so \\(B=5\\).</p>\n    "
+      },
+      {
+            "section": "Question 3 — Express in partial fractions",
+            "title": "3(i)",
+            "prompt": "\\(\\frac{4x-5}{(2x+1)(x-3)}\\)",
+            "options": [
+                  "\\(\\frac{1}{2x+1} + \\frac{2}{x-3}\\)",
+                  "\\(\\frac{2}{2x+1} + \\frac{1}{x-3}\\)",
+                  "\\(\\frac{2}{2x+1} - \\frac{1}{x-3}\\)",
+                  "\\(-\\frac{2}{2x+1} + \\frac{1}{x-3}\\)"
+            ],
+            "answer": 1,
+            "solution": "\\(\\frac{4x-5}{(2x+1)(x-3)} \\equiv \\frac{2}{2x+1} + \\frac{1}{x-3}\\)",
+            "working": "\n      <p>Let \\(\\frac{4x-5}{(2x+1)(x-3)} \\equiv \\frac{A}{2x+1}+\\frac{B}{x-3}\\).</p>\n      <p>Then \\(4x-5 \\equiv A(x-3)+B(2x+1)\\).</p>\n      <p>Put \\(x=-\\frac12\\): \\(-7=-\\frac72A\\), so \\(A=2\\).</p>\n      <p>Put \\(x=3\\): \\(7=7B\\), so \\(B=1\\).</p>\n    "
+      },
+      {
+            "section": "Question 3 — Express in partial fractions",
+            "title": "3(j)",
+            "prompt": "\\(\\frac{1-3x}{(3x+4)(2x+1)}\\)",
+            "options": [
+                  "\\(\\frac{1}{2x+1} - \\frac{3}{3x+4}\\)",
+                  "\\(\\frac{3}{3x+4} - \\frac{1}{2x+1}\\)",
+                  "\\(\\frac{1}{2x+1} + \\frac{3}{3x+4}\\)",
+                  "\\(-\\frac{1}{2x+1} + \\frac{3}{3x+4}\\)"
+            ],
+            "answer": 0,
+            "solution": "\\(\\frac{1-3x}{(3x+4)(2x+1)} \\equiv \\frac{1}{2x+1} - \\frac{3}{3x+4}\\)",
+            "working": "\n      <p>Let \\(\\frac{1-3x}{(3x+4)(2x+1)} \\equiv \\frac{A}{3x+4}+\\frac{B}{2x+1}\\).</p>\n      <p>Then \\(1-3x \\equiv A(2x+1)+B(3x+4)\\).</p>\n      <p>Put \\(x=-\\frac43\\): \\(5=-\\frac53A\\), so \\(A=-3\\).</p>\n      <p>Put \\(x=-\\frac12\\): \\(\\frac52=\\frac52B\\), so \\(B=1\\).</p>\n      <p>Therefore \\(\\frac{1-3x}{(3x+4)(2x+1)} \\equiv -\\frac{3}{3x+4}+\\frac{1}{2x+1}\\).</p>\n    "
+      },
+      {
+            "section": "Question 3 — Express in partial fractions",
+            "title": "3(k)",
+            "prompt": "\\(\\frac{x+1}{x-3x^2}\\)",
+            "options": [
+                  "\\(\\frac{1}{x} - \\frac{4}{1-3x}\\)",
+                  "\\(\\frac{1}{x} + \\frac{4}{1-3x}\\)",
+                  "\\(\\frac{4}{x} + \\frac{1}{1-3x}\\)",
+                  "\\(-\\frac{1}{x} + \\frac{4}{1-3x}\\)"
+            ],
+            "answer": 1,
+            "solution": "\\(\\frac{x+1}{x-3x^2} \\equiv \\frac{1}{x} + \\frac{4}{1-3x}\\)",
+            "working": "\n      <p>Factor the denominator: \\(x-3x^2=x(1-3x)\\).</p>\n      <p>Let \\(\\frac{x+1}{x(1-3x)} \\equiv \\frac{A}{x}+\\frac{B}{1-3x}\\).</p>\n      <p>Then \\(x+1 \\equiv A(1-3x)+Bx\\).</p>\n      <p>Put \\(x=0\\): \\(1=A\\), so \\(A=1\\).</p>\n      <p>Put \\(x=\\frac13\\): \\(\\frac43=\\frac13B\\), so \\(B=4\\).</p>\n    "
+      },
+      {
+            "section": "Question 3 — Express in partial fractions",
+            "title": "3(l)",
+            "prompt": "\\(\\frac{5}{2x^2+3x-2}\\)",
+            "options": [
+                  "\\(\\frac{2}{2x-1} + \\frac{1}{x+2}\\)",
+                  "\\(\\frac{1}{2x-1} - \\frac{2}{x+2}\\)",
+                  "\\(\\frac{2}{2x-1} - \\frac{1}{x+2}\\)",
+                  "\\(-\\frac{2}{2x-1} + \\frac{1}{x+2}\\)"
+            ],
+            "answer": 2,
+            "solution": "\\(\\frac{5}{2x^2+3x-2} \\equiv \\frac{2}{2x-1} - \\frac{1}{x+2}\\)",
+            "working": "\n      <p>Factor the denominator: \\(2x^2+3x-2=(2x-1)(x+2)\\).</p>\n      <p>Let \\(\\frac{5}{(2x-1)(x+2)} \\equiv \\frac{A}{2x-1}+\\frac{B}{x+2}\\).</p>\n      <p>Then \\(5 \\equiv A(x+2)+B(2x-1)\\).</p>\n      <p>Put \\(x=\\frac12\\): \\(5=\\frac52A\\), so \\(A=2\\).</p>\n      <p>Put \\(x=-2\\): \\(5=-5B\\), so \\(B=-1\\).</p>\n    "
+      },
+      {
+            "section": "Question 3 — Express in partial fractions",
+            "title": "3(m)",
+            "prompt": "\\(\\frac{2(x+5)}{8x^2+10x-3}\\)",
+            "options": [
+                  "\\(\\frac{3}{4x-1} - \\frac{1}{2x+3}\\)",
+                  "\\(\\frac{1}{4x-1} - \\frac{3}{2x+3}\\)",
+                  "\\(\\frac{3}{4x-1} + \\frac{1}{2x+3}\\)",
+                  "\\(-\\frac{3}{4x-1} + \\frac{1}{2x+3}\\)"
+            ],
+            "answer": 0,
+            "solution": "\\(\\frac{2(x+5)}{8x^2+10x-3} \\equiv \\frac{3}{4x-1} - \\frac{1}{2x+3}\\)",
+            "working": "\n      <p>Factor the denominator: \\(8x^2+10x-3=(4x-1)(2x+3)\\).</p>\n      <p>Let \\(\\frac{2(x+5)}{(4x-1)(2x+3)} \\equiv \\frac{A}{4x-1}+\\frac{B}{2x+3}\\).</p>\n      <p>Then \\(2x+10 \\equiv A(2x+3)+B(4x-1)\\).</p>\n      <p>Put \\(x=\\frac14\\): \\(\\frac{21}{2}=\\frac72A\\), so \\(A=3\\).</p>\n      <p>Put \\(x=-\\frac32\\): \\(7=-7B\\), so \\(B=-1\\).</p>\n    "
+      },
+      {
+            "section": "Question 3 — Express in partial fractions",
+            "title": "3(n)",
+            "prompt": "\\(\\frac{3x-7}{x^2-2x-3}\\)",
+            "options": [
+                  "\\(\\frac{5}{2(x+1)} - \\frac{1}{2(x-3)}\\)",
+                  "\\(\\frac{1}{2(x+1)} + \\frac{5}{2(x-3)}\\)",
+                  "\\(\\frac{5}{2(x+1)} + \\frac{1}{2(x-3)}\\)",
+                  "\\(-\\frac{5}{2(x+1)} + \\frac{1}{2(x-3)}\\)"
+            ],
+            "answer": 2,
+            "solution": "\\(\\frac{3x-7}{x^2-2x-3} \\equiv \\frac{5}{2(x+1)} + \\frac{1}{2(x-3)}\\)",
+            "working": "\n      <p>Factor the denominator: \\(x^2-2x-3=(x+1)(x-3)\\).</p>\n      <p>Let \\(\\frac{3x-7}{(x+1)(x-3)} \\equiv \\frac{A}{x+1}+\\frac{B}{x-3}\\).</p>\n      <p>Then \\(3x-7 \\equiv A(x-3)+B(x+1)\\).</p>\n      <p>Put \\(x=-1\\): \\(-10=-4A\\), so \\(A=\\frac52\\).</p>\n      <p>Put \\(x=3\\): \\(2=4B\\), so \\(B=\\frac12\\).</p>\n      <p>Therefore \\(\\frac{3x-7}{x^2-2x-3} \\equiv \\frac{5}{2(x+1)}+\\frac{1}{2(x-3)}\\).</p>\n    "
+      },
+      {
+            "section": "Question 3 — Express in partial fractions",
+            "title": "3(o)",
+            "prompt": "\\(\\frac{1-3x}{1-x-2x^2}\\)",
+            "options": [
+                  "\\(\\frac{4}{3(1+x)} + \\frac{1}{3(1-2x)}\\)",
+                  "\\(\\frac{1}{3(1+x)} - \\frac{4}{3(1-2x)}\\)",
+                  "\\(\\frac{4}{3(1+x)} - \\frac{1}{3(1-2x)}\\)",
+                  "\\(-\\frac{4}{3(1+x)} + \\frac{1}{3(1-2x)}\\)"
+            ],
+            "answer": 2,
+            "solution": "\\(\\frac{1-3x}{1-x-2x^2} \\equiv \\frac{4}{3(1+x)} - \\frac{1}{3(1-2x)}\\)",
+            "working": "\n      <p>Factor the denominator: \\(1-x-2x^2=(1+x)(1-2x)\\).</p>\n      <p>Let \\(\\frac{1-3x}{(1+x)(1-2x)} \\equiv \\frac{A}{1+x}+\\frac{B}{1-2x}\\).</p>\n      <p>Then \\(1-3x \\equiv A(1-2x)+B(1+x)\\).</p>\n      <p>Put \\(x=-1\\): \\(4=3A\\), so \\(A=\\frac43\\).</p>\n      <p>Put \\(x=\\frac12\\): \\(-\\frac12=\\frac32B\\), so \\(B=-\\frac13\\).</p>\n      <p>Therefore \\(\\frac{1-3x}{1-x-2x^2} \\equiv \\frac{4}{3(1+x)}-\\frac{1}{3(1-2x)}\\).</p>\n    "
       }
-    ];
+];
 
     const quizContainer = document.getElementById("quizContainer");
     const scoreBox = document.getElementById("scoreBox");
@@ -400,10 +659,22 @@
             <span class="question-number">${q.title}</span>
             <span class="question-title">Choose the correct answer</span>
           </div>
+
           <div class="prompt">${q.prompt}</div>
           <div class="options">${optionHTML}</div>
-          <button class="check-button" id="check-${index}" onclick="checkQuestion(${index})">Check this question</button>
+
+          <div class="button-row">
+            <button class="check-button" id="check-${index}" onclick="checkQuestion(${index})">
+              Check this question
+            </button>
+          </div>
+
           <div class="feedback" id="feedback-${index}"></div>
+
+          <details class="working-details" id="working-${index}">
+            <summary>Show worked solution</summary>
+            <div class="working-content">${q.working}</div>
+          </details>
         `;
 
         quizContainer.appendChild(card);
