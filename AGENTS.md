@@ -14,6 +14,26 @@ for the common quiz behavior and data contract.
 4. Keep source PDFs unchanged. Use `scripts/extract-pdf-text.sh` for local text
    extraction and retain the worksheet reference with every question.
 
+## Folder structure and navigation
+
+- Create new quizzes at `<class>/<chapter, unit or topic>/<quiz name>/index.html`.
+  Do not place a new quiz directly under a class folder.
+- Match folder names, menu labels and page headings to the agreed names,
+  including numbering, spaces and capitalisation. Reuse existing class and
+  topic folders; ask for any name that cannot be inferred from the request.
+- Mirror the hierarchy for quiz-specific sources at
+  `Source Files/<class>/<chapter, unit or topic>/<quiz name>/`.
+  Sources shared by several quizzes may remain in the matching chapter, unit
+  or topic source folder; record their exact location instead of duplicating
+  or moving shared PDFs for each quiz.
+- Keep class and topic `index.html` menus so navigation follows
+  class → chapter, unit or topic → named quiz. Link the quiz back to its topic,
+  the topic back to its class, and the class back to the main menu.
+- Use relative links and URL-encode spaces in link targets. Verify that forward
+  and back links resolve after creating or renaming folders.
+- Keep source PDFs and extracted text local and out of quiz commits. Use a
+  `.gitkeep` marker when an empty source folder needs to be retained in Git.
+
 ## Mathematical and publishing standards
 
 - Independently solve every question and compare it with the source answer key.

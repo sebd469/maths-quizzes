@@ -2,6 +2,9 @@
   "quiz": {
     "title": "Replace with quiz title",
     "course": "Replace with course or class",
+    "topic": "Replace with the parent chapter, unit or topic label",
+    "instructions": "Replace with concise student instructions",
+    "review_status": "Draft — awaiting teacher review",
     "source_reference": "Replace with worksheet or mark Original"
   },
   "questions": [

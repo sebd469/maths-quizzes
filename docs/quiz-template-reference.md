@@ -65,8 +65,10 @@ unreviewed markup.
    public quiz output and Git unless explicitly approved.
 2. Draft structured question data from only the requested worksheet parts, or
    create original questions when requested without sources. Record the exact
-   source reference for every item, or `Original`. For original content, follow
-   `docs/original-quiz-build-method.md` and provide a teacher review copy.
+   source reference for every item, or `Original`. For supplied worksheets,
+   follow `docs/worksheet-quiz-build-method.md`; for original content, follow
+   `docs/original-quiz-build-method.md`. Provide a teacher review copy in either
+   case.
 3. Solve each question independently, compare with the answer key, and review
    boundaries, signs, units, and strict versus inclusive inequalities.
 4. Run `scripts/validate-quiz-data.sh path/to/quiz-data.json`.
