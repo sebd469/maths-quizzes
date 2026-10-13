@@ -1,0 +1,171 @@
+{
+  "quiz": {
+    "title": "Quiz 2 - Exercise 2B",
+    "course": "2iec Maths — Mechanics Chapt 01 SUVAT",
+    "topic": "Mechanics Chapt 01 SUVAT",
+    "source_reference": "M1, Kinematics of a particle moving in a straight line, Exercise 2B, Questions 1, 3, 5, 6, 8, 10, 12, 14, 15, 16. Questions: Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf. Worked solutions: Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf (Exercise B). © Pearson Education Ltd 2008.",
+    "instructions": "Use constant-acceleration models and SI units unless another unit is requested. Give exact answers unless a rounding instruction is stated. Deceleration is a positive magnitude; signed velocity depends on the chosen direction. Where a question has several parts, choose the option with every part correct."
+  },
+  "questions": [
+    {
+      "id": "m1-2b-q01",
+      "section": "Exercise 2B — Foundation",
+      "title": "2B Q1",
+      "prompt": "A particle moves in a straight line with constant acceleration \\(2.5\\,\\mathrm{m\\,s^{-2}}\\). It passes A at \\(3\\,\\mathrm{m\\,s^{-1}}\\) and later B, where \\(AB=8\\) m. Find its speed at B.",
+      "options": [
+        "\\(49\\,\\mathrm{m\\,s^{-1}}\\)",
+        "\\(5\\,\\mathrm{m\\,s^{-1}}\\)",
+        "\\(7\\,\\mathrm{m\\,s^{-1}}\\)",
+        "\\(23\\,\\mathrm{m\\,s^{-1}}\\)"
+      ],
+      "answer": 2,
+      "solution": "\\(7\\,\\mathrm{m\\,s^{-1}}\\)",
+      "working": "<p>Use \\(v^2=u^2+2as\\).</p><p>\\[v^2=3^2+2(2.5)(8)=49.\\]</p><p>Speed is non-negative: \\(v=\\sqrt{49}=7\\,\\mathrm{m\\,s^{-1}}\\).</p>",
+      "source_ref": "M1, Exercise 2B, Question 1; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 15; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 20 (Exercise B, Question 1)."
+    },
+    {
+      "id": "m1-2b-q03",
+      "section": "Exercise 2B — Foundation",
+      "title": "2B Q3",
+      "prompt": "A cyclist travelling at \\(12\\,\\mathrm{m\\,s^{-1}}\\) brakes and comes to rest after moving \\(36\\,\\mathrm{m}\\) in a straight line. Assuming uniform deceleration, find the deceleration.",
+      "options": [
+        "\\(2\\,\\mathrm{m\\,s^{-2}}\\)",
+        "\\(-2\\,\\mathrm{m\\,s^{-2}}\\)",
+        "\\(4\\,\\mathrm{m\\,s^{-2}}\\)",
+        "\\(0.5\\,\\mathrm{m\\,s^{-2}}\\)"
+      ],
+      "answer": 0,
+      "solution": "\\(2\\,\\mathrm{m\\,s^{-2}}\\)",
+      "working": "<p>Take the initial direction as positive and use \\(v^2=u^2+2as\\).</p><p>\\[0=12^2+2a(36),\\qquad a=-2\\,\\mathrm{m\\,s^{-2}}.\\]</p><p>The deceleration is the positive magnitude \\(2\\,\\mathrm{m\\,s^{-2}}\\).</p>",
+      "source_ref": "M1, Exercise 2B, Question 3; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 16; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 22 (Exercise B, Question 3)."
+    },
+    {
+      "id": "m1-2b-q05",
+      "section": "Exercise 2B — Foundation",
+      "title": "2B Q5",
+      "prompt": "A particle moves from O towards A along a straight line with constant acceleration \\(2\\,\\mathrm{m\\,s^{-2}}\\). Its speed at O is \\(5.5\\,\\mathrm{m\\,s^{-1}}\\) and \\(OA=20\\) m. Find the time taken from O to A.",
+      "options": [
+        "\\(-8\\,\\mathrm{s}\\)",
+        "\\(8\\,\\mathrm{s}\\)",
+        "\\(5\\,\\mathrm{s}\\)",
+        "\\(2.5\\,\\mathrm{s}\\)"
+      ],
+      "answer": 3,
+      "solution": "\\(2.5\\,\\mathrm{s}\\)",
+      "working": "<p>Use \\(s=ut+\\frac12at^2\\): \\(20=5.5t+t^2\\).</p><p>\\[2t^2+11t-40=(2t-5)(t+8)=0.\\]</p><p>The roots are \\(t=2.5\\) and \\(t=-8\\). Reject the negative elapsed time, leaving \\(2.5\\,\\mathrm{s}\\).</p>",
+      "source_ref": "M1, Exercise 2B, Question 5; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 16; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 24 (Exercise B, Question 5)."
+    },
+    {
+      "id": "m1-2b-q06",
+      "section": "Exercise 2B — Intermediate",
+      "title": "2B Q6",
+      "prompt": "A train accelerates uniformly along a straight horizontal track. It passes two signals at \\(54\\,\\mathrm{km\\,h^{-1}}\\) and \\(72\\,\\mathrm{km\\,h^{-1}}\\); they are \\(500\\,\\mathrm{m}\\) apart. Find its acceleration in m/s².",
+      "options": [
+        "\\(0.018\\,\\mathrm{m\\,s^{-2}}\\)",
+        "\\(0.175\\,\\mathrm{m\\,s^{-2}}\\)",
+        "\\(0.35\\,\\mathrm{m\\,s^{-2}}\\)",
+        "\\(2.268\\,\\mathrm{m\\,s^{-2}}\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(0.175\\,\\mathrm{m\\,s^{-2}}\\)",
+      "working": "<p>Convert to SI units: \\(54\\,\\mathrm{km\\,h^{-1}}=15\\,\\mathrm{m\\,s^{-1}}\\) and \\(72\\,\\mathrm{km\\,h^{-1}}=20\\,\\mathrm{m\\,s^{-1}}\\).</p><p>Use \\(v^2=u^2+2as\\):</p><p>\\[a=\\frac{20^2-15^2}{2(500)}=0.175\\,\\mathrm{m\\,s^{-2}}.\\]</p>",
+      "source_ref": "M1, Exercise 2B, Question 6; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 16; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 25 (Exercise B, Question 6)."
+    },
+    {
+      "id": "m1-2b-q08",
+      "section": "Exercise 2B — Intermediate",
+      "title": "2B Q8",
+      "prompt": "A particle moves \\(38\\,\\mathrm{m}\\) in \\(4\\,\\mathrm{s}\\) along a straight line with constant acceleration \\(3\\,\\mathrm{m\\,s^{-2}}\\). Find (a) its initial speed and (b) its final speed.",
+      "options": [
+        "a) \\(9.5\\,\\mathrm{m\\,s^{-1}}\\); b) \\(21.5\\,\\mathrm{m\\,s^{-1}}\\)",
+        "a) \\(3.5\\,\\mathrm{m\\,s^{-1}}\\); b) \\(12\\,\\mathrm{m\\,s^{-1}}\\)",
+        "a) \\(3.5\\,\\mathrm{m\\,s^{-1}}\\); b) \\(15.5\\,\\mathrm{m\\,s^{-1}}\\)",
+        "a) \\(15.5\\,\\mathrm{m\\,s^{-1}}\\); b) \\(3.5\\,\\mathrm{m\\,s^{-1}}\\)"
+      ],
+      "answer": 2,
+      "solution": "a) \\(3.5\\,\\mathrm{m\\,s^{-1}}\\); b) \\(15.5\\,\\mathrm{m\\,s^{-1}}\\)",
+      "working": "<p>(a) \\(s=ut+\\frac12at^2\\) gives \\(38=4u+\\frac12(3)(4^2)=4u+24\\). Thus \\(u=3.5\\,\\mathrm{m\\,s^{-1}}\\).</p><p>(b) \\(v=u+at=3.5+3(4)=15.5\\,\\mathrm{m\\,s^{-1}}\\).</p>",
+      "source_ref": "M1, Exercise 2B, Question 8; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 16; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 27 (Exercise B, Question 8)."
+    },
+    {
+      "id": "m1-2b-q10",
+      "section": "Exercise 2B — Intermediate",
+      "title": "2B Q10",
+      "prompt": "A stone slides in a straight line across a frozen lake, initially at \\(12\\,\\mathrm{m\\,s^{-1}}\\). Friction causes constant deceleration \\(0.8\\,\\mathrm{m\\,s^{-2}}\\). Find (a) the distance before it stops and (b) its speed after travelling half this distance. Give (b) to 3 significant figures.",
+      "options": [
+        "a) \\(90\\,\\mathrm{m}\\); b) \\(6\\,\\mathrm{m\\,s^{-1}}\\)",
+        "a) \\(45\\,\\mathrm{m}\\); b) \\(8.49\\,\\mathrm{m\\,s^{-1}}\\)",
+        "a) \\(180\\,\\mathrm{m}\\); b) \\(8.49\\,\\mathrm{m\\,s^{-1}}\\)",
+        "a) \\(90\\,\\mathrm{m}\\); b) \\(8.49\\,\\mathrm{m\\,s^{-1}}\\)"
+      ],
+      "answer": 3,
+      "solution": "a) \\(90\\,\\mathrm{m}\\); b) \\(8.49\\,\\mathrm{m\\,s^{-1}}\\)",
+      "working": "<p>(a) With \\(a=-0.8\\), \\(0=12^2-1.6s\\), so \\(s=90\\,\\mathrm{m}\\).</p><p>(b) Half the distance is \\(45\\,\\mathrm{m}\\).</p><p>\\[v^2=12^2+2(-0.8)(45)=72.\\]</p><p>Hence the speed is \\(\\sqrt{72}=8.48528\\ldots\\approx8.49\\,\\mathrm{m\\,s^{-1}}\\) (3 s.f.). It is not half the initial speed.</p>",
+      "source_ref": "M1, Exercise 2B, Question 10; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 16; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 29 (Exercise B, Question 10)."
+    },
+    {
+      "id": "m1-2b-q12",
+      "section": "Exercise 2B — Challenge",
+      "title": "2B Q12",
+      "prompt": "A particle moves horizontally with constant acceleration \\(-2\\,\\mathrm{m\\,s^{-2}}\\), taking AB as positive. At \\(t=0\\) it passes A at \\(12\\,\\mathrm{m\\,s^{-1}}\\); \\(AB=32\\) m. The acceleration remains constant after it reverses direction. Find (a) both times it is at B and (b) the corresponding signed velocities, in the same order.",
+      "options": [
+        "a) \\(4\\,\\mathrm{s}\\) and \\(8\\,\\mathrm{s}\\); b) \\(+4\\,\\mathrm{m\\,s^{-1}}\\) and \\(-4\\,\\mathrm{m\\,s^{-1}}\\)",
+        "a) \\(4\\,\\mathrm{s}\\) and \\(8\\,\\mathrm{s}\\); b) \\(+4\\,\\mathrm{m\\,s^{-1}}\\) and \\(+4\\,\\mathrm{m\\,s^{-1}}\\)",
+        "a) \\(4\\,\\mathrm{s}\\) only; b) \\(+4\\,\\mathrm{m\\,s^{-1}}\\) only",
+        "a) \\(2\\,\\mathrm{s}\\) and \\(8\\,\\mathrm{s}\\); b) \\(+8\\,\\mathrm{m\\,s^{-1}}\\) and \\(-4\\,\\mathrm{m\\,s^{-1}}\\)"
+      ],
+      "answer": 0,
+      "solution": "a) \\(4\\,\\mathrm{s}\\) and \\(8\\,\\mathrm{s}\\); b) \\(+4\\,\\mathrm{m\\,s^{-1}}\\) and \\(-4\\,\\mathrm{m\\,s^{-1}}\\)",
+      "working": "<p>(a) Use \\(s=ut+\\frac12at^2\\): \\(32=12t-t^2\\).</p><p>\\[(t-4)(t-8)=0,\\qquad t=4\\,\\mathrm{s}\\text{ or }8\\,\\mathrm{s}.\\]</p><p>(b) \\(v=12-2t\\), so the velocities are \\(+4\\,\\mathrm{m\\,s^{-1}}\\) at \\(t=4\\) and \\(-4\\,\\mathrm{m\\,s^{-1}}\\) at \\(t=8\\). The second crossing is on the return journey.</p>",
+      "source_ref": "M1, Exercise 2B, Question 12; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 16; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 31 (Exercise B, Question 12)."
+    },
+    {
+      "id": "m1-2b-q14",
+      "section": "Exercise 2B — Challenge",
+      "title": "2B Q14",
+      "prompt": "A particle P passes the origin at \\(t=0\\) with velocity \\(+14\\,\\mathrm{m\\,s^{-1}}\\) and constant acceleration \\(-4\\,\\mathrm{m\\,s^{-2}}\\). Point A has coordinate \\(x=22.5\\) m. Find (a) the difference between the two times P passes A and (b) the total distance travelled between these crossings.",
+      "options": [
+        "a) \\(2\\,\\mathrm{s}\\); b) \\(0\\,\\mathrm{m}\\)",
+        "a) \\(2\\,\\mathrm{s}\\); b) \\(4\\,\\mathrm{m}\\)",
+        "a) \\(4.5\\,\\mathrm{s}\\); b) \\(4\\,\\mathrm{m}\\)",
+        "a) \\(2\\,\\mathrm{s}\\); b) \\(2\\,\\mathrm{m}\\)"
+      ],
+      "answer": 1,
+      "solution": "a) \\(2\\,\\mathrm{s}\\); b) \\(4\\,\\mathrm{m}\\)",
+      "working": "<p>(a) \\(22.5=14t-2t^2\\), so</p><p>\\[(2t-5)(2t-9)=0.\\]</p><p>The crossing times are \\(2.5\\) and \\(4.5\\,\\mathrm{s}\\), a difference of \\(2\\,\\mathrm{s}\\).</p><p>(b) The turning time is \\(14/4=3.5\\,\\mathrm{s}\\). Its coordinate then is \\(14(3.5)-2(3.5)^2=24.5\\,\\mathrm{m}\\).</p><p>The distance out and back is \\(2(24.5-22.5)=4\\,\\mathrm{m}\\), although net displacement is zero.</p>",
+      "source_ref": "M1, Exercise 2B, Question 14; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 17; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 33 (Exercise B, Question 14)."
+    },
+    {
+      "id": "m1-2b-q15",
+      "section": "Exercise 2B — Challenge",
+      "title": "2B Q15",
+      "prompt": "A car moves forwards along a straight horizontal road with constant acceleration, passing consecutive points A, B and C. \\(AB=100\\) m, \\(BC=300\\) m, and its speeds at B and C are \\(14\\,\\mathrm{m\\,s^{-1}}\\) and \\(20\\,\\mathrm{m\\,s^{-1}}\\). Find (a) its acceleration and (b) the time from A to C, giving (b) to 3 significant figures.",
+      "options": [
+        "a) \\(0.34\\,\\mathrm{m\\,s^{-2}}\\); b) \\(17.6\\,\\mathrm{s}\\)",
+        "a) \\(0.68\\,\\mathrm{m\\,s^{-2}}\\); b) \\(25.5\\,\\mathrm{s}\\)",
+        "a) \\(0.34\\,\\mathrm{m\\,s^{-2}}\\); b) \\(25.5\\,\\mathrm{s}\\)",
+        "a) \\(0.255\\,\\mathrm{m\\,s^{-2}}\\); b) \\(25.5\\,\\mathrm{s}\\)"
+      ],
+      "answer": 2,
+      "solution": "a) \\(0.34\\,\\mathrm{m\\,s^{-2}}\\); b) \\(25.5\\,\\mathrm{s}\\)",
+      "working": "<p>(a) On BC, \\(20^2=14^2+2a(300)\\), giving \\(a=0.34\\,\\mathrm{m\\,s^{-2}}\\).</p><p>(b) The distance AC is \\(400\\,\\mathrm{m}\\). Hence \\(20^2=u_A^2+2(0.34)(400)\\), so \\(u_A^2=128\\).</p><p>The car is moving forwards, so \\(u_A=\\sqrt{128}=8\\sqrt2\\), not the negative square root.</p><p>\\[t=\\frac{20-8\\sqrt2}{0.34}.\\]</p><p>This is \\(25.5479\\ldots\\,\\mathrm{s}\\), so \\(t=25.5\\,\\mathrm{s}\\) (3 s.f.). Keep unrounded values until the final step.</p>",
+      "source_ref": "M1, Exercise 2B, Question 15; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 17; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 34 (Exercise B, Question 15)."
+    },
+    {
+      "id": "m1-2b-q16",
+      "section": "Exercise 2B — Challenge",
+      "title": "2B Q16",
+      "prompt": "P and Q move along the same straight horizontal line with constant accelerations \\(2\\,\\mathrm{m\\,s^{-2}}\\) and \\(3.6\\,\\mathrm{m\\,s^{-2}}\\). P passes A at \\(t=0\\) at \\(4\\,\\mathrm{m\\,s^{-1}}\\). One second later Q passes A at \\(3\\,\\mathrm{m\\,s^{-1}}\\), in the same direction. For \\(t\\geq1\\), find (a) their displacements from A as functions of t, (b) when they meet, measured from P passing A, and (c) the distance of the meeting point from A.",
+      "options": [
+        "a) \\(s_P=4t+t^2\\) and \\(s_Q=3t+1.8t^2\\) (in metres); b) \\(6\\,\\mathrm{s}\\); c) \\(60\\,\\mathrm{m}\\)",
+        "a) \\(s_P=4t+t^2\\) and \\(s_Q=3(t-1)+1.8(t-1)^2\\) (in metres); b) \\(5\\,\\mathrm{s}\\); c) \\(60\\,\\mathrm{m}\\)",
+        "a) \\(s_P=4t+t^2\\) and \\(s_Q=3(t-1)+1.8(t-1)^2\\) (in metres); b) \\(6\\,\\mathrm{s}\\); c) \\(36\\,\\mathrm{m}\\)",
+        "a) \\(s_P=4t+t^2\\) and \\(s_Q=3(t-1)+1.8(t-1)^2\\) (in metres); b) \\(6\\,\\mathrm{s}\\); c) \\(60\\,\\mathrm{m}\\)"
+      ],
+      "answer": 3,
+      "solution": "a) \\(s_P=4t+t^2\\) and \\(s_Q=3(t-1)+1.8(t-1)^2\\) (in metres); b) \\(6\\,\\mathrm{s}\\); c) \\(60\\,\\mathrm{m}\\)",
+      "working": "<p>(a) Measure displacement in the common forward direction. P has travelled for \\(t\\) seconds; Q has travelled for \\(t-1\\) seconds since passing A.</p><p>\\[s_P=4t+t^2.\\]</p><p>\\[s_Q=3(t-1)+1.8(t-1)^2.\\]</p><p>(b) Set \\(s_P=s_Q\\) and simplify: \\(0.8t^2-4.6t-1.2=0\\).</p><p>\\[4t^2-23t-6=(t-6)(4t+1)=0.\\]</p><p>Reject \\(t=-\\frac14\\); the applicable meeting time is \\(6\\,\\mathrm{s}\\), measured from P passing A (5 s after Q passes A).</p><p>(c) \\(s_P=4(6)+6^2=60\\,\\mathrm{m}\\).</p>",
+      "source_ref": "M1, Exercise 2B, Question 16; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 17; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF pages 35–36 (Exercise B, Question 16)."
+    }
+  ]
+}

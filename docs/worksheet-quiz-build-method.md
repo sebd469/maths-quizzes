@@ -17,6 +17,13 @@ the question PDF and answer PDF, their one-based PDF page numbers and any
 printed answer-page label. Do not confuse a printed page label with the PDF
 page number.
 
+When only a question count is specified, choose a spread across the entire
+exercise, including later harder problems, rather than taking the first items.
+Record the exact selection and difficulty rationale. Multipart source questions
+may remain single scored cards with complete-answer choices; state that choice
+explicitly and preserve all parts. For the mechanics example and modelling
+checks, see `docs/mechanics-quiz-build-notes.md`.
+
 ## 2. Extract, then visually verify
 
 Use the existing helper and an external scratch directory so extracted source

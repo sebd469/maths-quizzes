@@ -55,6 +55,19 @@ When creating questions from supplied worksheets and worked answers:
   publication rights and publishing authorisation are resolved. Approval for
   an earlier quiz does not approve new source-derived content.
 
+When selecting a fixed number of questions from a longer exercise:
+
+- Select across the full exercise, including later challenge questions, unless
+  the user specifies an exact range. Record the source numbers and rationale
+  in the teacher review; do not default to the first requested number of items.
+- State whether a multipart source question stays one scored question or is
+  split into separately scored parts. Preserve every selected part and keep
+  the final question count exact.
+- For mechanics, distinguish signed velocity from speed and deceleration,
+  convert units before substitution, handle turning points and separate stages,
+  account for delayed starts, and postpone rounding until the final result.
+  See `docs/mechanics-quiz-build-notes.md` for the mixed-difficulty example.
+
 When creating original questions without source files:
 
 - Follow the requested question count and topic split exactly. Record the

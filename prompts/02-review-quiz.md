@@ -30,6 +30,12 @@ the user's requested review is complete.
   folder renames. Flag missing or broken menus and links.
 - Confirm that source PDFs, extracted text and unrelated local changes are
   excluded from any proposed quiz commit.
+- For a mixed selection, verify the exact question count, coverage across the
+  full exercise and inclusion of later challenge questions. Check all parts
+  of multipart answers together and record the source-number selection.
+- For mechanics, check signs, units, constant-acceleration assumptions for each
+  stage, both crossings after a turn, distance versus displacement, delayed
+  launch times, speed ratios versus height ratios, and final rounding.
 - Check that every requested source part appears once and is transcribed
   accurately.
 - Solve every question independently. Compare the result with the answer key

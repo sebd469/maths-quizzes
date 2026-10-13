@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz 2 - Exercise 2B - 2iec Maths — Mechanics Chapt 01 SUVAT</title>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+    }
+
+    header p {
+      margin: 4px 0;
+      color: #d1d5db;
+    }
+
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: white;
+      border-bottom: 1px solid #d1d5db;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .score-box {
+      font-weight: bold;
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+
+    .reset-button,
+    .home-link {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .reset-button { background: #ef4444; color: white; }
+    .home-link { background: #e5e7eb; color: #111827; }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 18px 60px;
+    }
+
+    .instructions {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      line-height: 1.5;
+    }
+
+    .section-title {
+      margin: 32px 0 12px;
+      padding: 12px 16px;
+      background: #1f2937;
+      color: white;
+      border-radius: 12px;
+      font-size: 22px;
+    }
+
+    .question-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      border: 2px solid transparent;
+    }
+
+    .question-card.correct { border-color: #22c55e; }
+    .question-card.incorrect { border-color: #ef4444; }
+
+    .question-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .question-number {
+      background: #4f46e5;
+      color: white;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .question-title { font-weight: bold; color: #374151; }
+
+    .prompt {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 14px 0 18px;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      padding: 12px;
+      cursor: pointer;
+      background: #f9fafb;
+      line-height: 1.5;
+    }
+
+    :focus-visible { outline: 3px solid #4f46e5; outline-offset: 3px; }
+    .option:focus-within { outline: 3px solid #4f46e5; outline-offset: 2px; }
+
+    .option:hover { background: #eef2ff; }
+    .option input { margin-top: 4px; transform: scale(1.1); }
+
+    .option.correct-choice {
+      border-color: #22c55e;
+      background: #dcfce7;
+    }
+
+    .option.wrong-choice {
+      border-color: #ef4444;
+      background: #fee2e2;
+    }
+
+    .check-button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 11px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .check-button:hover { background: #1d4ed8; }
+    .check-button:disabled { background: #9ca3af; cursor: not-allowed; }
+
+    .feedback {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 12px;
+      display: none;
+      line-height: 1.5;
+    }
+
+    .feedback.correct-feedback {
+      display: block;
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #22c55e;
+    }
+
+    .feedback.incorrect-feedback {
+      display: block;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #ef4444;
+    }
+
+    .locked-working {
+      margin-top: 12px;
+      border: 1px dashed #9ca3af;
+      background: #f9fafb;
+      color: #4b5563;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-weight: bold;
+    }
+
+    .working-details {
+      margin-top: 12px;
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .working-details summary {
+      cursor: pointer;
+      padding: 12px 14px;
+      font-weight: bold;
+      color: #1e40af;
+      list-style-position: inside;
+    }
+
+    .working-details summary:hover { background: #dbeafe; }
+
+    .working-content {
+      padding: 0 16px 14px;
+      line-height: 1.55;
+      color: #1f2937;
+      border-top: 1px solid #bfdbfe;
+      background: white;
+    }
+
+    .working-content p { margin: 11px 0; }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      padding: 24px;
+    }
+
+    @media (min-width: 760px) {
+      .options { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Quiz 2 - Exercise 2B</h1>
+    <p>2iec Maths — Mechanics Chapt 01 SUVAT</p>
+
+    <p>Choose an answer, then check it to unlock the worked solution.</p>
+  </header>
+
+  <div class="top-bar">
+    <div class="score-box" id="scoreBox" aria-live="polite">Score: 0 / 0 checked</div>
+    <button class="reset-button" type="button" onclick="resetQuiz()">Reset quiz</button>
+    <a class="home-link" href="../index.html">Back to Mechanics Chapt 01 SUVAT</a>
+  </div>
+
+  <main>
+    <section class="instructions">
+      <strong>Instructions:</strong>
+      Use constant-acceleration models and SI units unless another unit is requested. Give exact answers unless a rounding instruction is stated. Deceleration is a positive magnitude; signed velocity depends on the chosen direction. Where a question has several parts, choose the option with every part correct.
+      Select one answer for each part. Your score updates as you go, and the worked solution appears after checking.
+    </section>
+
+    <div id="quizContainer"></div>
+  </main>
+
+  <footer>2iec Maths — Mechanics Chapt 01 SUVAT - Quiz 2 - Exercise 2B</footer>
+
+  <script>
+    const questions = [
+  {
+    "id": "m1-2b-q01",
+    "section": "Exercise 2B \u2014 Foundation",
+    "title": "2B Q1",
+    "prompt": "A particle moves in a straight line with constant acceleration \\(2.5\\,\\mathrm{m\\,s^{-2}}\\). It passes A at \\(3\\,\\mathrm{m\\,s^{-1}}\\) and later B, where \\(AB=8\\) m. Find its speed at B.",
+    "options": [
+      "\\(49\\,\\mathrm{m\\,s^{-1}}\\)",
+      "\\(5\\,\\mathrm{m\\,s^{-1}}\\)",
+      "\\(7\\,\\mathrm{m\\,s^{-1}}\\)",
+      "\\(23\\,\\mathrm{m\\,s^{-1}}\\)"
+    ],
+    "answer": 2,
+    "solution": "\\(7\\,\\mathrm{m\\,s^{-1}}\\)",
+    "working": "\u003cp\u003eUse \\(v^2=u^2+2as\\).\u003c/p\u003e\u003cp\u003e\\[v^2=3^2+2(2.5)(8)=49.\\]\u003c/p\u003e\u003cp\u003eSpeed is non-negative: \\(v=\\sqrt{49}=7\\,\\mathrm{m\\,s^{-1}}\\).\u003c/p\u003e",
+    "source_ref": "M1, Exercise 2B, Question 1; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 15; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 20 (Exercise B, Question 1)."
+  },
+  {
+    "id": "m1-2b-q03",
+    "section": "Exercise 2B \u2014 Foundation",
+    "title": "2B Q3",
+    "prompt": "A cyclist travelling at \\(12\\,\\mathrm{m\\,s^{-1}}\\) brakes and comes to rest after moving \\(36\\,\\mathrm{m}\\) in a straight line. Assuming uniform deceleration, find the deceleration.",
+    "options": [
+      "\\(2\\,\\mathrm{m\\,s^{-2}}\\)",
+      "\\(-2\\,\\mathrm{m\\,s^{-2}}\\)",
+      "\\(4\\,\\mathrm{m\\,s^{-2}}\\)",
+      "\\(0.5\\,\\mathrm{m\\,s^{-2}}\\)"
+    ],
+    "answer": 0,
+    "solution": "\\(2\\,\\mathrm{m\\,s^{-2}}\\)",
+    "working": "\u003cp\u003eTake the initial direction as positive and use \\(v^2=u^2+2as\\).\u003c/p\u003e\u003cp\u003e\\[0=12^2+2a(36),\\qquad a=-2\\,\\mathrm{m\\,s^{-2}}.\\]\u003c/p\u003e\u003cp\u003eThe deceleration is the positive magnitude \\(2\\,\\mathrm{m\\,s^{-2}}\\).\u003c/p\u003e",
+    "source_ref": "M1, Exercise 2B, Question 3; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 16; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 22 (Exercise B, Question 3)."
+  },
+  {
+    "id": "m1-2b-q05",
+    "section": "Exercise 2B \u2014 Foundation",
+    "title": "2B Q5",
+    "prompt": "A particle moves from O towards A along a straight line with constant acceleration \\(2\\,\\mathrm{m\\,s^{-2}}\\). Its speed at O is \\(5.5\\,\\mathrm{m\\,s^{-1}}\\) and \\(OA=20\\) m. Find the time taken from O to A.",
+    "options": [
+      "\\(-8\\,\\mathrm{s}\\)",
+      "\\(8\\,\\mathrm{s}\\)",
+      "\\(5\\,\\mathrm{s}\\)",
+      "\\(2.5\\,\\mathrm{s}\\)"
+    ],
+    "answer": 3,
+    "solution": "\\(2.5\\,\\mathrm{s}\\)",
+    "working": "\u003cp\u003eUse \\(s=ut+\\frac12at^2\\): \\(20=5.5t+t^2\\).\u003c/p\u003e\u003cp\u003e\\[2t^2+11t-40=(2t-5)(t+8)=0.\\]\u003c/p\u003e\u003cp\u003eThe roots are \\(t=2.5\\) and \\(t=-8\\). Reject the negative elapsed time, leaving \\(2.5\\,\\mathrm{s}\\).\u003c/p\u003e",
+    "source_ref": "M1, Exercise 2B, Question 5; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 16; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 24 (Exercise B, Question 5)."
+  },
+  {
+    "id": "m1-2b-q06",
+    "section": "Exercise 2B \u2014 Intermediate",
+    "title": "2B Q6",
+    "prompt": "A train accelerates uniformly along a straight horizontal track. It passes two signals at \\(54\\,\\mathrm{km\\,h^{-1}}\\) and \\(72\\,\\mathrm{km\\,h^{-1}}\\); they are \\(500\\,\\mathrm{m}\\) apart. Find its acceleration in m/s\u00b2.",
+    "options": [
+      "\\(0.018\\,\\mathrm{m\\,s^{-2}}\\)",
+      "\\(0.175\\,\\mathrm{m\\,s^{-2}}\\)",
+      "\\(0.35\\,\\mathrm{m\\,s^{-2}}\\)",
+      "\\(2.268\\,\\mathrm{m\\,s^{-2}}\\)"
+    ],
+    "answer": 1,
+    "solution": "\\(0.175\\,\\mathrm{m\\,s^{-2}}\\)",
+    "working": "\u003cp\u003eConvert to SI units: \\(54\\,\\mathrm{km\\,h^{-1}}=15\\,\\mathrm{m\\,s^{-1}}\\) and \\(72\\,\\mathrm{km\\,h^{-1}}=20\\,\\mathrm{m\\,s^{-1}}\\).\u003c/p\u003e\u003cp\u003eUse \\(v^2=u^2+2as\\):\u003c/p\u003e\u003cp\u003e\\[a=\\frac{20^2-15^2}{2(500)}=0.175\\,\\mathrm{m\\,s^{-2}}.\\]\u003c/p\u003e",
+    "source_ref": "M1, Exercise 2B, Question 6; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 16; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 25 (Exercise B, Question 6)."
+  },
+  {
+    "id": "m1-2b-q08",
+    "section": "Exercise 2B \u2014 Intermediate",
+    "title": "2B Q8",
+    "prompt": "A particle moves \\(38\\,\\mathrm{m}\\) in \\(4\\,\\mathrm{s}\\) along a straight line with constant acceleration \\(3\\,\\mathrm{m\\,s^{-2}}\\). Find (a) its initial speed and (b) its final speed.",
+    "options": [
+      "a) \\(9.5\\,\\mathrm{m\\,s^{-1}}\\); b) \\(21.5\\,\\mathrm{m\\,s^{-1}}\\)",
+      "a) \\(3.5\\,\\mathrm{m\\,s^{-1}}\\); b) \\(12\\,\\mathrm{m\\,s^{-1}}\\)",
+      "a) \\(3.5\\,\\mathrm{m\\,s^{-1}}\\); b) \\(15.5\\,\\mathrm{m\\,s^{-1}}\\)",
+      "a) \\(15.5\\,\\mathrm{m\\,s^{-1}}\\); b) \\(3.5\\,\\mathrm{m\\,s^{-1}}\\)"
+    ],
+    "answer": 2,
+    "solution": "a) \\(3.5\\,\\mathrm{m\\,s^{-1}}\\); b) \\(15.5\\,\\mathrm{m\\,s^{-1}}\\)",
+    "working": "\u003cp\u003e(a) \\(s=ut+\\frac12at^2\\) gives \\(38=4u+\\frac12(3)(4^2)=4u+24\\). Thus \\(u=3.5\\,\\mathrm{m\\,s^{-1}}\\).\u003c/p\u003e\u003cp\u003e(b) \\(v=u+at=3.5+3(4)=15.5\\,\\mathrm{m\\,s^{-1}}\\).\u003c/p\u003e",
+    "source_ref": "M1, Exercise 2B, Question 8; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 16; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 27 (Exercise B, Question 8)."
+  },
+  {
+    "id": "m1-2b-q10",
+    "section": "Exercise 2B \u2014 Intermediate",
+    "title": "2B Q10",
+    "prompt": "A stone slides in a straight line across a frozen lake, initially at \\(12\\,\\mathrm{m\\,s^{-1}}\\). Friction causes constant deceleration \\(0.8\\,\\mathrm{m\\,s^{-2}}\\). Find (a) the distance before it stops and (b) its speed after travelling half this distance. Give (b) to 3 significant figures.",
+    "options": [
+      "a) \\(90\\,\\mathrm{m}\\); b) \\(6\\,\\mathrm{m\\,s^{-1}}\\)",
+      "a) \\(45\\,\\mathrm{m}\\); b) \\(8.49\\,\\mathrm{m\\,s^{-1}}\\)",
+      "a) \\(180\\,\\mathrm{m}\\); b) \\(8.49\\,\\mathrm{m\\,s^{-1}}\\)",
+      "a) \\(90\\,\\mathrm{m}\\); b) \\(8.49\\,\\mathrm{m\\,s^{-1}}\\)"
+    ],
+    "answer": 3,
+    "solution": "a) \\(90\\,\\mathrm{m}\\); b) \\(8.49\\,\\mathrm{m\\,s^{-1}}\\)",
+    "working": "\u003cp\u003e(a) With \\(a=-0.8\\), \\(0=12^2-1.6s\\), so \\(s=90\\,\\mathrm{m}\\).\u003c/p\u003e\u003cp\u003e(b) Half the distance is \\(45\\,\\mathrm{m}\\).\u003c/p\u003e\u003cp\u003e\\[v^2=12^2+2(-0.8)(45)=72.\\]\u003c/p\u003e\u003cp\u003eHence the speed is \\(\\sqrt{72}=8.48528\\ldots\\approx8.49\\,\\mathrm{m\\,s^{-1}}\\) (3 s.f.). It is not half the initial speed.\u003c/p\u003e",
+    "source_ref": "M1, Exercise 2B, Question 10; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 16; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 29 (Exercise B, Question 10)."
+  },
+  {
+    "id": "m1-2b-q12",
+    "section": "Exercise 2B \u2014 Challenge",
+    "title": "2B Q12",
+    "prompt": "A particle moves horizontally with constant acceleration \\(-2\\,\\mathrm{m\\,s^{-2}}\\), taking AB as positive. At \\(t=0\\) it passes A at \\(12\\,\\mathrm{m\\,s^{-1}}\\); \\(AB=32\\) m. The acceleration remains constant after it reverses direction. Find (a) both times it is at B and (b) the corresponding signed velocities, in the same order.",
+    "options": [
+      "a) \\(4\\,\\mathrm{s}\\) and \\(8\\,\\mathrm{s}\\); b) \\(+4\\,\\mathrm{m\\,s^{-1}}\\) and \\(-4\\,\\mathrm{m\\,s^{-1}}\\)",
+      "a) \\(4\\,\\mathrm{s}\\) and \\(8\\,\\mathrm{s}\\); b) \\(+4\\,\\mathrm{m\\,s^{-1}}\\) and \\(+4\\,\\mathrm{m\\,s^{-1}}\\)",
+      "a) \\(4\\,\\mathrm{s}\\) only; b) \\(+4\\,\\mathrm{m\\,s^{-1}}\\) only",
+      "a) \\(2\\,\\mathrm{s}\\) and \\(8\\,\\mathrm{s}\\); b) \\(+8\\,\\mathrm{m\\,s^{-1}}\\) and \\(-4\\,\\mathrm{m\\,s^{-1}}\\)"
+    ],
+    "answer": 0,
+    "solution": "a) \\(4\\,\\mathrm{s}\\) and \\(8\\,\\mathrm{s}\\); b) \\(+4\\,\\mathrm{m\\,s^{-1}}\\) and \\(-4\\,\\mathrm{m\\,s^{-1}}\\)",
+    "working": "\u003cp\u003e(a) Use \\(s=ut+\\frac12at^2\\): \\(32=12t-t^2\\).\u003c/p\u003e\u003cp\u003e\\[(t-4)(t-8)=0,\\qquad t=4\\,\\mathrm{s}\\text{ or }8\\,\\mathrm{s}.\\]\u003c/p\u003e\u003cp\u003e(b) \\(v=12-2t\\), so the velocities are \\(+4\\,\\mathrm{m\\,s^{-1}}\\) at \\(t=4\\) and \\(-4\\,\\mathrm{m\\,s^{-1}}\\) at \\(t=8\\). The second crossing is on the return journey.\u003c/p\u003e",
+    "source_ref": "M1, Exercise 2B, Question 12; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 16; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 31 (Exercise B, Question 12)."
+  },
+  {
+    "id": "m1-2b-q14",
+    "section": "Exercise 2B \u2014 Challenge",
+    "title": "2B Q14",
+    "prompt": "A particle P passes the origin at \\(t=0\\) with velocity \\(+14\\,\\mathrm{m\\,s^{-1}}\\) and constant acceleration \\(-4\\,\\mathrm{m\\,s^{-2}}\\). Point A has coordinate \\(x=22.5\\) m. Find (a) the difference between the two times P passes A and (b) the total distance travelled between these crossings.",
+    "options": [
+      "a) \\(2\\,\\mathrm{s}\\); b) \\(0\\,\\mathrm{m}\\)",
+      "a) \\(2\\,\\mathrm{s}\\); b) \\(4\\,\\mathrm{m}\\)",
+      "a) \\(4.5\\,\\mathrm{s}\\); b) \\(4\\,\\mathrm{m}\\)",
+      "a) \\(2\\,\\mathrm{s}\\); b) \\(2\\,\\mathrm{m}\\)"
+    ],
+    "answer": 1,
+    "solution": "a) \\(2\\,\\mathrm{s}\\); b) \\(4\\,\\mathrm{m}\\)",
+    "working": "\u003cp\u003e(a) \\(22.5=14t-2t^2\\), so\u003c/p\u003e\u003cp\u003e\\[(2t-5)(2t-9)=0.\\]\u003c/p\u003e\u003cp\u003eThe crossing times are \\(2.5\\) and \\(4.5\\,\\mathrm{s}\\), a difference of \\(2\\,\\mathrm{s}\\).\u003c/p\u003e\u003cp\u003e(b) The turning time is \\(14/4=3.5\\,\\mathrm{s}\\). Its coordinate then is \\(14(3.5)-2(3.5)^2=24.5\\,\\mathrm{m}\\).\u003c/p\u003e\u003cp\u003eThe distance out and back is \\(2(24.5-22.5)=4\\,\\mathrm{m}\\), although net displacement is zero.\u003c/p\u003e",
+    "source_ref": "M1, Exercise 2B, Question 14; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 17; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 33 (Exercise B, Question 14)."
+  },
+  {
+    "id": "m1-2b-q15",
+    "section": "Exercise 2B \u2014 Challenge",
+    "title": "2B Q15",
+    "prompt": "A car moves forwards along a straight horizontal road with constant acceleration, passing consecutive points A, B and C. \\(AB=100\\) m, \\(BC=300\\) m, and its speeds at B and C are \\(14\\,\\mathrm{m\\,s^{-1}}\\) and \\(20\\,\\mathrm{m\\,s^{-1}}\\). Find (a) its acceleration and (b) the time from A to C, giving (b) to 3 significant figures.",
+    "options": [
+      "a) \\(0.34\\,\\mathrm{m\\,s^{-2}}\\); b) \\(17.6\\,\\mathrm{s}\\)",
+      "a) \\(0.68\\,\\mathrm{m\\,s^{-2}}\\); b) \\(25.5\\,\\mathrm{s}\\)",
+      "a) \\(0.34\\,\\mathrm{m\\,s^{-2}}\\); b) \\(25.5\\,\\mathrm{s}\\)",
+      "a) \\(0.255\\,\\mathrm{m\\,s^{-2}}\\); b) \\(25.5\\,\\mathrm{s}\\)"
+    ],
+    "answer": 2,
+    "solution": "a) \\(0.34\\,\\mathrm{m\\,s^{-2}}\\); b) \\(25.5\\,\\mathrm{s}\\)",
+    "working": "\u003cp\u003e(a) On BC, \\(20^2=14^2+2a(300)\\), giving \\(a=0.34\\,\\mathrm{m\\,s^{-2}}\\).\u003c/p\u003e\u003cp\u003e(b) The distance AC is \\(400\\,\\mathrm{m}\\). Hence \\(20^2=u_A^2+2(0.34)(400)\\), so \\(u_A^2=128\\).\u003c/p\u003e\u003cp\u003eThe car is moving forwards, so \\(u_A=\\sqrt{128}=8\\sqrt2\\), not the negative square root.\u003c/p\u003e\u003cp\u003e\\[t=\\frac{20-8\\sqrt2}{0.34}.\\]\u003c/p\u003e\u003cp\u003eThis is \\(25.5479\\ldots\\,\\mathrm{s}\\), so \\(t=25.5\\,\\mathrm{s}\\) (3 s.f.). Keep unrounded values until the final step.\u003c/p\u003e",
+    "source_ref": "M1, Exercise 2B, Question 15; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 17; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF page 34 (Exercise B, Question 15)."
+  },
+  {
+    "id": "m1-2b-q16",
+    "section": "Exercise 2B \u2014 Challenge",
+    "title": "2B Q16",
+    "prompt": "P and Q move along the same straight horizontal line with constant accelerations \\(2\\,\\mathrm{m\\,s^{-2}}\\) and \\(3.6\\,\\mathrm{m\\,s^{-2}}\\). P passes A at \\(t=0\\) at \\(4\\,\\mathrm{m\\,s^{-1}}\\). One second later Q passes A at \\(3\\,\\mathrm{m\\,s^{-1}}\\), in the same direction. For \\(t\\geq1\\), find (a) their displacements from A as functions of t, (b) when they meet, measured from P passing A, and (c) the distance of the meeting point from A.",
+    "options": [
+      "a) \\(s_P=4t+t^2\\) and \\(s_Q=3t+1.8t^2\\) (in metres); b) \\(6\\,\\mathrm{s}\\); c) \\(60\\,\\mathrm{m}\\)",
+      "a) \\(s_P=4t+t^2\\) and \\(s_Q=3(t-1)+1.8(t-1)^2\\) (in metres); b) \\(5\\,\\mathrm{s}\\); c) \\(60\\,\\mathrm{m}\\)",
+      "a) \\(s_P=4t+t^2\\) and \\(s_Q=3(t-1)+1.8(t-1)^2\\) (in metres); b) \\(6\\,\\mathrm{s}\\); c) \\(36\\,\\mathrm{m}\\)",
+      "a) \\(s_P=4t+t^2\\) and \\(s_Q=3(t-1)+1.8(t-1)^2\\) (in metres); b) \\(6\\,\\mathrm{s}\\); c) \\(60\\,\\mathrm{m}\\)"
+    ],
+    "answer": 3,
+    "solution": "a) \\(s_P=4t+t^2\\) and \\(s_Q=3(t-1)+1.8(t-1)^2\\) (in metres); b) \\(6\\,\\mathrm{s}\\); c) \\(60\\,\\mathrm{m}\\)",
+    "working": "\u003cp\u003e(a) Measure displacement in the common forward direction. P has travelled for \\(t\\) seconds; Q has travelled for \\(t-1\\) seconds since passing A.\u003c/p\u003e\u003cp\u003e\\[s_P=4t+t^2.\\]\u003c/p\u003e\u003cp\u003e\\[s_Q=3(t-1)+1.8(t-1)^2.\\]\u003c/p\u003e\u003cp\u003e(b) Set \\(s_P=s_Q\\) and simplify: \\(0.8t^2-4.6t-1.2=0\\).\u003c/p\u003e\u003cp\u003e\\[4t^2-23t-6=(t-6)(4t+1)=0.\\]\u003c/p\u003e\u003cp\u003eReject \\(t=-\\frac14\\); the applicable meeting time is \\(6\\,\\mathrm{s}\\), measured from P passing A (5 s after Q passes A).\u003c/p\u003e\u003cp\u003e(c) \\(s_P=4(6)+6^2=60\\,\\mathrm{m}\\).\u003c/p\u003e",
+    "source_ref": "M1, Exercise 2B, Question 16; Source Files/2iec/Mechanics Chapt 01 SUVAT/M1 chapter 1 exercises.pdf, PDF page 17; Source Files/2iec/Mechanics Chapt 01 SUVAT/Solutions chapter 01.pdf, PDF pages 35\u201336 (Exercise B, Question 16)."
+  }
+];
+
+    const quizContainer = document.getElementById("quizContainer");
+    const scoreBox = document.getElementById("scoreBox");
+    let checked = new Array(questions.length).fill(false);
+    let correct = new Array(questions.length).fill(false);
+
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, character => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[character]);
+    }
+
+    function typesetMath(elements) {
+      if (typeof window.MathJax?.typesetPromise === "function") {
+        MathJax.typesetPromise(elements).catch(error => console.error("Maths rendering failed", error));
+      }
+    }
+
+    function renderQuiz() {
+      if (typeof window.MathJax?.typesetClear === "function") MathJax.typesetClear([quizContainer]);
+      quizContainer.innerHTML = "";
+      let currentSection = "";
+
+      questions.forEach((question, index) => {
+        if (question.section !== currentSection) {
+          currentSection = question.section;
+          const sectionTitle = document.createElement("h2");
+          sectionTitle.className = "section-title";
+          sectionTitle.textContent = currentSection;
+          quizContainer.appendChild(sectionTitle);
+        }
+
+        const card = document.createElement("section");
+        card.className = "question-card";
+        card.id = `card-${index}`;
+        card.dataset.questionId = question.id;
+        card.setAttribute("aria-labelledby", `question-heading-${index}`);
+
+        const optionHTML = question.options.map((option, optionIndex) => `
+          <label class="option" id="option-${index}-${optionIndex}">
+            <input type="radio" name="question-${index}" value="${optionIndex}">
+            <span><strong>${String.fromCharCode(65 + optionIndex)}.</strong> ${escapeHTML(option)}</span>
+          </label>
+        `).join("");
+
+        card.innerHTML = `
+          <div class="question-header" id="question-heading-${index}">
+            <span class="question-number">${escapeHTML(question.title)}</span>
+            <span class="question-title">Choose the correct answer</span>
+          </div>
+          <div class="prompt">${escapeHTML(question.prompt)}</div>
+          <div class="options">${optionHTML}</div>
+          <button class="check-button" id="check-${index}" type="button" onclick="checkQuestion(${index})" disabled>Check this question</button>
+          <div class="feedback" id="feedback-${index}" aria-live="polite"></div>
+          <div class="locked-working" id="locked-working-${index}">Worked solution locked - check this question first.</div>
+          <details class="working-details" id="working-${index}" style="display: none;">
+            <summary>Show worked solution</summary>
+            <div class="working-content" id="working-content-${index}"></div>
+          </details>
+        `;
+
+        card.querySelectorAll('input[type="radio"]').forEach(input => {
+          input.addEventListener("change", () => {
+            document.getElementById(`check-${index}`).disabled = checked[index];
+          });
+        });
+        quizContainer.appendChild(card);
+      });
+
+      updateScore();
+      typesetMath();
+    }
+
+    function checkQuestion(index) {
+      if (checked[index]) return;
+      const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+      const feedback = document.getElementById(`feedback-${index}`);
+      const card = document.getElementById(`card-${index}`);
+      const checkButton = document.getElementById(`check-${index}`);
+
+      if (!selected) {
+        feedback.className = "feedback incorrect-feedback";
+        feedback.textContent = "Please choose an answer first.";
+        return;
+      }
+
+      const selectedIndex = Number(selected.value);
+      const correctIndex = questions[index].answer;
+      checked[index] = true;
+      correct[index] = selectedIndex === correctIndex;
+
+      card.classList.add(correct[index] ? "correct" : "incorrect");
+      document.getElementById(`option-${index}-${correctIndex}`).classList.add("correct-choice");
+
+      if (!correct[index]) {
+        document.getElementById(`option-${index}-${selectedIndex}`).classList.add("wrong-choice");
+      }
+
+      document.querySelectorAll(`input[name="question-${index}"]`).forEach(input => input.disabled = true);
+      checkButton.disabled = true;
+      feedback.className = correct[index] ? "feedback correct-feedback" : "feedback incorrect-feedback";
+      feedback.innerHTML = correct[index]
+        ? `Correct. ${escapeHTML(questions[index].solution)}`
+        : `Not quite. The correct answer is ${escapeHTML(questions[index].solution)}`;
+
+      document.getElementById(`locked-working-${index}`).style.display = "none";
+      const workingDetails = document.getElementById(`working-${index}`);
+      workingDetails.style.display = "block";
+      document.getElementById(`working-content-${index}`).innerHTML = questions[index].working;
+
+      updateScore();
+      typesetMath([feedback, workingDetails]);
+    }
+
+    function updateScore() {
+      const checkedCount = checked.filter(Boolean).length;
+      const correctCount = correct.filter(Boolean).length;
+      scoreBox.textContent = `Score: ${correctCount} / ${checkedCount} checked`;
+    }
+
+    function resetQuiz() {
+      checked = new Array(questions.length).fill(false);
+      correct = new Array(questions.length).fill(false);
+      renderQuiz();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    renderQuiz();
+  </script>
+</body>
+</html>
