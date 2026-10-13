@@ -1,0 +1,171 @@
+{
+  "quiz": {
+    "title": "Equivalent Simplifying and Comparing Fractions Quiz",
+    "course": "6iec Maths — Unit 01 Numbers",
+    "topic": "Unit 01 Numbers",
+    "source_reference": "Original",
+    "instructions": "Choose one answer for each question. For simplification questions, use the simplest form. For ordering questions, work from smallest to largest."
+  },
+  "questions": [
+    {
+      "id": "fractions-q01",
+      "section": "Equivalent fractions",
+      "title": "1",
+      "prompt": "Find the missing numerator: \\(\\frac{2}{3}=\\frac{\\square}{12}\\).",
+      "options": [
+        "\\(6\\)",
+        "\\(8\\)",
+        "\\(9\\)",
+        "\\(10\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(8\\)",
+      "working": "<p>The denominator is multiplied by 4, so multiply the numerator by 4 as well.</p><p>\\(2\\times4=8\\), so \\(\\frac{2}{3}=\\frac{8}{12}\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "fractions-q02",
+      "section": "Equivalent fractions",
+      "title": "2",
+      "prompt": "Which fraction is equivalent to \\(\\frac{3}{5}\\)?",
+      "options": [
+        "\\(\\frac{6}{15}\\)",
+        "\\(\\frac{9}{10}\\)",
+        "\\(\\frac{12}{25}\\)",
+        "\\(\\frac{9}{15}\\)"
+      ],
+      "answer": 3,
+      "solution": "\\(\\frac{9}{15}\\)",
+      "working": "<p>Multiply both numerator and denominator by 3.</p><p>\\(\\frac{3\\times3}{5\\times3}=\\frac{9}{15}\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "fractions-q03",
+      "section": "Simplifying fractions",
+      "title": "3",
+      "prompt": "Write \\(\\frac{12}{18}\\) in its simplest form.",
+      "options": [
+        "\\(\\frac{3}{4}\\)",
+        "\\(\\frac{1}{3}\\)",
+        "\\(\\frac{2}{3}\\)",
+        "\\(\\frac{4}{9}\\)"
+      ],
+      "answer": 2,
+      "solution": "\\(\\frac{2}{3}\\)",
+      "working": "<p>Divide the numerator and denominator by their highest common factor, 6.</p><p>\\(\\frac{12}{18}=\\frac{12\\div 6}{18\\div 6}=\\frac{2}{3}\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "fractions-q04",
+      "section": "Simplifying fractions",
+      "title": "4",
+      "prompt": "Write \\(\\frac{15}{35}\\) in its simplest form.",
+      "options": [
+        "\\(\\frac{3}{7}\\)",
+        "\\(\\frac{5}{7}\\)",
+        "\\(\\frac{1}{2}\\)",
+        "\\(\\frac{3}{5}\\)"
+      ],
+      "answer": 0,
+      "solution": "\\(\\frac{3}{7}\\)",
+      "working": "<p>Divide the numerator and denominator by their highest common factor, 5.</p><p>\\(\\frac{15}{35}=\\frac{15\\div 5}{35\\div 5}=\\frac{3}{7}\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "fractions-q05",
+      "section": "Simplifying fractions",
+      "title": "5",
+      "prompt": "Write \\(\\frac{24}{40}\\) in its simplest form.",
+      "options": [
+        "\\(\\frac{2}{5}\\)",
+        "\\(\\frac{3}{5}\\)",
+        "\\(\\frac{4}{5}\\)",
+        "\\(\\frac{3}{4}\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(\\frac{3}{5}\\)",
+      "working": "<p>Divide the numerator and denominator by their highest common factor, 8.</p><p>\\(\\frac{24}{40}=\\frac{24\\div 8}{40\\div 8}=\\frac{3}{5}\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "fractions-q06",
+      "section": "Simplifying fractions",
+      "title": "6",
+      "prompt": "Write \\(\\frac{42}{56}\\) in its simplest form.",
+      "options": [
+        "\\(\\frac{2}{3}\\)",
+        "\\(\\frac{3}{8}\\)",
+        "\\(\\frac{4}{7}\\)",
+        "\\(\\frac{3}{4}\\)"
+      ],
+      "answer": 3,
+      "solution": "\\(\\frac{3}{4}\\)",
+      "working": "<p>Divide the numerator and denominator by their highest common factor, 14.</p><p>\\(\\frac{42}{56}=\\frac{42\\div 14}{56\\div 14}=\\frac{3}{4}\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "fractions-q07",
+      "section": "Ordering and comparing fractions",
+      "title": "7",
+      "prompt": "Choose the symbol that makes this statement true: \\(\\frac{3}{4}\\;\\square\\;\\frac{5}{8}\\).",
+      "options": [
+        "\\(\\lt\\)",
+        "\\(=\\)",
+        "\\(\\gt\\)",
+        "They cannot be compared."
+      ],
+      "answer": 2,
+      "solution": "\\(\\gt\\)",
+      "working": "<p>Write both fractions with denominator 8.</p><p>\\(\\frac{3}{4}=\\frac{6}{8},\\qquad \\frac{5}{8}=\\frac{5}{8}\\).</p><p>Compare the numerators: \\(\\frac{3}{4}\\gt\\frac{5}{8}\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "fractions-q08",
+      "section": "Ordering and comparing fractions",
+      "title": "8",
+      "prompt": "Choose the symbol that makes this statement true: \\(\\frac{5}{6}\\;\\square\\;\\frac{7}{8}\\).",
+      "options": [
+        "\\(\\lt\\)",
+        "\\(=\\)",
+        "\\(\\gt\\)",
+        "They cannot be compared."
+      ],
+      "answer": 0,
+      "solution": "\\(\\lt\\)",
+      "working": "<p>Write both fractions with denominator 24.</p><p>\\(\\frac{5}{6}=\\frac{20}{24},\\qquad \\frac{7}{8}=\\frac{21}{24}\\).</p><p>Compare the numerators: \\(\\frac{5}{6}\\lt\\frac{7}{8}\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "fractions-q09",
+      "section": "Ordering and comparing fractions",
+      "title": "9",
+      "prompt": "Put these fractions in order from smallest to largest: \\(\\frac{3}{4},\\;\\frac{1}{2},\\;\\frac{2}{3}\\).",
+      "options": [
+        "\\(\\frac{3}{4},\\;\\frac{2}{3},\\;\\frac{1}{2}\\)",
+        "\\(\\frac{1}{2},\\;\\frac{2}{3},\\;\\frac{3}{4}\\)",
+        "\\(\\frac{2}{3},\\;\\frac{1}{2},\\;\\frac{3}{4}\\)",
+        "\\(\\frac{1}{2},\\;\\frac{3}{4},\\;\\frac{2}{3}\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(\\frac{1}{2},\\;\\frac{2}{3},\\;\\frac{3}{4}\\)",
+      "working": "<p>Use a common denominator of 12:</p><p>\\(\\frac{3}{4}=\\frac{9}{12},\\quad \\frac{1}{2}=\\frac{6}{12},\\quad \\frac{2}{3}=\\frac{8}{12}\\).</p><p>From smallest to largest: \\(\\frac{1}{2},\\;\\frac{2}{3},\\;\\frac{3}{4}\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "fractions-q10",
+      "section": "Ordering and comparing fractions",
+      "title": "10",
+      "prompt": "Put these fractions in order from smallest to largest: \\(\\frac{7}{10},\\;\\frac{3}{5},\\;\\frac{2}{3}\\).",
+      "options": [
+        "\\(\\frac{3}{5},\\;\\frac{7}{10},\\;\\frac{2}{3}\\)",
+        "\\(\\frac{2}{3},\\;\\frac{3}{5},\\;\\frac{7}{10}\\)",
+        "\\(\\frac{3}{5},\\;\\frac{2}{3},\\;\\frac{7}{10}\\)",
+        "\\(\\frac{7}{10},\\;\\frac{2}{3},\\;\\frac{3}{5}\\)"
+      ],
+      "answer": 2,
+      "solution": "\\(\\frac{3}{5},\\;\\frac{2}{3},\\;\\frac{7}{10}\\)",
+      "working": "<p>Use a common denominator of 30:</p><p>\\(\\frac{7}{10}=\\frac{21}{30},\\quad \\frac{3}{5}=\\frac{18}{30},\\quad \\frac{2}{3}=\\frac{20}{30}\\).</p><p>From smallest to largest: \\(\\frac{3}{5},\\;\\frac{2}{3},\\;\\frac{7}{10}\\).</p>",
+      "source_ref": "Original"
+    }
+  ]
+}

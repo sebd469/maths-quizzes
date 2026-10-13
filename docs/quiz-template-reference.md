@@ -60,11 +60,13 @@ unreviewed markup.
 
 ## Source-to-release workflow
 
-1. Extract the required worksheet and answer-key pages locally with
+1. For supplied sources, extract the required worksheet and answer-key pages locally with
    `scripts/extract-pdf-text.sh`. Keep extracted text and source PDFs out of
    public quiz output and Git unless explicitly approved.
-2. Draft structured question data from only the requested worksheet parts.
-   Record the exact source reference for every item.
+2. Draft structured question data from only the requested worksheet parts, or
+   create original questions when requested without sources. Record the exact
+   source reference for every item, or `Original`. For original content, follow
+   `docs/original-quiz-build-method.md` and provide a teacher review copy.
 3. Solve each question independently, compare with the answer key, and review
    boundaries, signs, units, and strict versus inclusive inequalities.
 4. Run `scripts/validate-quiz-data.sh path/to/quiz-data.json`.
@@ -78,7 +80,13 @@ unreviewed markup.
 ## Current automation boundary
 
 The existing quiz pages are standalone HTML and remain the live implementation.
-The extraction helper, data example, validator, and prompts establish a
-repeatable preparation and review workflow. They do not yet generate HTML; a
-later change can add a renderer after this data contract has been used and
-reviewed.
+New quizzes can use `templates/quiz-page.template.html` and
+`scripts/render-quiz.py` to render validated `quiz-data.json` into a standalone
+page. Question content stays in JSON; shared presentation and behaviour stay
+in the template. Re-render each affected quiz after editing its data or the
+template. Older hand-authored quizzes are not automatically migrated.
+
+For this renderer, quiz metadata additionally requires `topic` (used by the
+back link label) and `instructions` (plain text). Optional `review_status` text
+appears below the course name. Its presence does not control deployment;
+teacher review and publishing authorisation remain separate workflow steps.
