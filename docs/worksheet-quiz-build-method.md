@@ -1,13 +1,19 @@
-# Building a quiz from a supplied worksheet
+# Building a quiz from supplied textbook or worksheet sources
 
 Use this method with `AGENTS.md`, `prompts/01-create-quiz.md`,
 `prompts/02-review-quiz.md` and `docs/quiz-template-reference.md`. Reuse the
 existing extraction helper, data validator, page template and renderer rather
 than creating another copy of the quiz behaviour.
 
+For 2iec, read `docs/2iec-source-reference.md`: Mechanics uses the Edexcel M1
+book with its Solutionbank, and Pure uses Solomon Press worksheets with their
+worked answers. The workflow filename is retained for compatibility; this
+method applies to both textbooks and worksheets.
+
 ## 1. Establish the exact scope and sources
 
-Record the class, chapter or topic, quiz title, worksheet, exercise and part
+Record the class, subject, source family, chapter or topic, quiz title,
+textbook chapter or worksheet, exercise and part
 range. Inspect the existing menus and reuse their folder names. Do not include
 neighbouring exercises merely because they share the same page.
 
@@ -113,6 +119,7 @@ Title and folder: `Solving Equations`, under
 | Item | Exact reference |
 |---|---|
 | Scope | C1 Algebra, Worksheet E, Exercise 6(a)–(l), exactly 12 questions |
+| Source family | Solomon Press worksheets for 2iec Pure; not the M1 mechanics book |
 | Questions | `Source Files/2iec/Pure Chapt 01 Quadratics/C1 Algebra - Questions.pdf`, PDF page 8 |
 | Worked answers | `Source Files/2iec/Pure Chapt 01 Quadratics/C1 Algebra - Answers.pdf`, PDF page 13, headed `Answers - Worksheet E`, page 3 |
 | Teacher review | `Source Files/2iec/Pure Chapt 01 Quadratics/Solving Equations/teacher-review.md` |
@@ -135,3 +142,8 @@ committed and published, and explicitly confirmed permission to publish the
 source questions and worked solutions publicly. The draft notice was removed
 following this authorisation. Browser checks and classroom testing must not be
 represented as completed.
+
+Published on 13 October 2026 in commit `08624c1`; the live quiz and chapter menu
+were checked against the approved release. This confirms deployment, not
+browser interaction or classroom testing. See `docs/2iec-source-reference.md`
+for the source register and consolidated 2iec publication history.

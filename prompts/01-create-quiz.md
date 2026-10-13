@@ -4,6 +4,12 @@ Read `AGENTS.md` and `docs/quiz-template-reference.md` first. Create only the
 requested quiz and question parts from the supplied worksheet, or original
 questions when the user requests them without supplying sources.
 
+For 2iec, read `docs/2iec-source-reference.md` first: Mechanics uses the Edexcel
+M1 textbook and matching Solutionbank; Pure uses Solomon Press worksheets and
+matching worked answers. Confirm the subject before selecting sources, and
+record the source family as well as the exact exercise and PDF pages. Do not
+infer the textbook chapter number from a local filename or folder name.
+
 Before creating files, identify the class, chapter/unit/topic name and quiz
 name from the request and existing folders. Ask only for names that are missing
 or ambiguous. Follow the folder and navigation rules in `AGENTS.md`:

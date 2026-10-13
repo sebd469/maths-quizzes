@@ -1,8 +1,12 @@
 # Solving Equations
 
-Status: publication authorised by the user on 13 October 2026. The user confirmed permission to publish the source questions and worked solutions publicly. Browser checks remain pending.
+Status: publication authorised by the user and completed on 13 October 2026 in commit `08624c1`. The user confirmed permission to publish the source questions and worked solutions publicly. Browser checks remain pending.
 
 ## Sources and scope
+
+Source family: Solomon Press worksheets and their matching worked answers for
+2iec Pure, not the Edexcel M1 mechanics book. See
+`docs/2iec-source-reference.md` for the shared source policy and release history.
 
 - Exactly 12 questions: C1 Algebra, Worksheet E, Exercise 6(a)–(l).
 - Questions: `Source Files/2iec/Pure Chapt 01 Quadratics/C1 Algebra - Questions.pdf`, PDF page 8.

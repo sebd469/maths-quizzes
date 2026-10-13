@@ -3,6 +3,12 @@
 Read `AGENTS.md` and `docs/quiz-template-reference.md`. Review the named quiz
 against its source worksheet and answer key.
 
+For 2iec, check `docs/2iec-source-reference.md`: Mechanics must match the
+Edexcel M1 book and its Solutionbank, while Pure must match the Solomon Press
+worksheets and their worked answers, unless the user specified another source.
+Verify both the source family and the exact chapter/worksheet, exercise,
+question parts and PDF page references; similar filenames are not sufficient.
+
 For supplied worksheets, follow `docs/worksheet-quiz-build-method.md`. Check
 the exact worksheet/exercise/part range and both PDF page references. Visually
 verify fraction grouping, powers and signs against the source pages; extracted

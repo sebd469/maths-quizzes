@@ -5,6 +5,15 @@ this repository. The 1iec Partial Fractions A and 2iec Quadratics Worksheet J
 pages are the current examples. Use this reference when creating or reviewing a
 quiz, whether it is hand-authored or generated.
 
+## 2iec source reference
+
+Use `docs/2iec-source-reference.md` as the central source register for 2iec.
+Mechanics is based on the Edexcel M1 textbook and matching Solutionbank worked
+solutions; Pure is based on Solomon Press worksheets and worked answers.
+Keep these source families distinct and record exact chapter/worksheet,
+exercise, question-part and PDF page references. This applies to source-derived
+content; explicitly requested original questions still use `Original`.
+
 ## Student experience
 
 1. Show the quiz title, course/topic, concise instructions, and a link back to
@@ -51,7 +60,7 @@ metadata and a non-empty `questions` array. Every question must provide:
 | `answer` | Zero-based index of the correct option |
 | `solution` | Short answer shown in feedback |
 | `working` | Worked solution shown after checking |
-| `source_ref` | Worksheet and question-part provenance, or `Original` |
+| `source_ref` | Source family, textbook chapter or worksheet, question-part and question/solution PDF page provenance, or `Original` |
 
 Keep each question's prompt, options, answer index, solution and working
 together. Do not put answer-key material in student-facing instructions.
@@ -60,10 +69,10 @@ unreviewed markup.
 
 ## Source-to-release workflow
 
-1. For supplied sources, extract the required worksheet and answer-key pages locally with
+1. For supplied sources, extract the required textbook/worksheet and answer-key pages locally with
    `scripts/extract-pdf-text.sh`. Keep extracted text and source PDFs out of
    public quiz output and Git unless explicitly approved.
-2. Draft structured question data from only the requested worksheet parts, or
+2. Draft structured question data from only the requested textbook/worksheet parts, or
    create original questions when requested without sources. Record the exact
    source reference for every item, or `Original`. For supplied worksheets,
    follow `docs/worksheet-quiz-build-method.md`; for original content, follow

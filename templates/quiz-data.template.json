@@ -5,7 +5,7 @@
     "topic": "Replace with the parent chapter, unit or topic label",
     "instructions": "Replace with concise student instructions",
     "review_status": "Draft — awaiting teacher review",
-    "source_reference": "Replace with worksheet or mark Original"
+    "source_reference": "Replace with source family, textbook or worksheet, exercise and PDF pages; or mark Original"
   },
   "questions": [
     {
@@ -22,7 +22,7 @@
       "answer": 0,
       "solution": "The discriminant must be zero.",
       "working": "<p>Equal roots occur when <span>\\(b^2-4ac=0\\)</span>.</p>",
-      "source_ref": "Original example; replace with worksheet and part"
+      "source_ref": "Original example; replace with exact textbook or worksheet, question parts and question/solution PDF pages"
     }
   ]
 }

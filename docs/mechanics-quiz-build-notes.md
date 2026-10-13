@@ -27,6 +27,11 @@ Every quiz includes source Question 16 and several questions numbered 11–15.
 
 ## Sources and exact locations
 
+Source family: the Edexcel M1 book, Pearson/Heinemann, with its corresponding
+Heinemann Solutionbank worked solutions. These are textbook exercises, not
+Solomon worksheets. The user confirmed this Mechanics/Pure source distinction
+on 13 October 2026; see `docs/2iec-source-reference.md` for the central register.
+
 Keep shared PDFs unchanged under
 `Source Files/2iec/Mechanics Chapt 01 SUVAT/`:
 
@@ -112,3 +117,7 @@ their scripts parse successfully, and forward/back navigation resolves.
 Browser rendering, keyboard and interaction checks remain pending because no
 browser connection is available. Classroom testing has not occurred. These
 outstanding checks must not be represented as completed.
+
+Published on 13 October 2026 in commit `b30bef0`. The live 2iec menu, mechanics
+chapter menu and all three quizzes were verified against that release. This
+confirms deployment only; the outstanding checks listed above remain pending.

@@ -1,8 +1,12 @@
 # Quiz 3 - Exercise 2C
 
-Status: teacher-approved on 13 October 2026; publication authorised. The user confirmed permission to publish these mechanics questions and worked solutions publicly. Browser checks remain pending.
+Status: teacher-approved and published on 13 October 2026 in commit `b30bef0`. The user confirmed permission to publish these mechanics questions and worked solutions publicly. Browser checks remain pending.
 
 ## Selection and source mapping
+
+Source family: the Edexcel M1 book (Pearson/Heinemann) and its matching
+Solutionbank, not the Solomon Pure worksheets. See
+`docs/2iec-source-reference.md` for the shared source policy and release history.
 
 Exactly 10 question cards, selected across the full 16-question Exercise 2C: **1, 2, 4, 6, 8, 10, 11, 12, 15, 16**. Multipart source questions remain single cards, with all requested parts included in the correct option.
 

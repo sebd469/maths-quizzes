@@ -4,6 +4,12 @@ Use this method when the user requests new questions without supplying a
 worksheet. Read `AGENTS.md`, `prompts/01-create-quiz.md` and
 `docs/quiz-template-reference.md` first. Use `prompts/02-review-quiz.md` for review.
 
+Do not use this original-question method merely because no new source was
+attached to a follow-up request. For source-derived 2iec work, the established
+sources are the Edexcel M1 book for Mechanics and Solomon Press worksheets
+for Pure; see `docs/2iec-source-reference.md`. Use `Original` only when original
+questions were actually requested and authored.
+
 ## Files and navigation
 
 Create `<class>/<chapter, unit or topic>/<quiz name>/quiz-data.json` and render
@@ -87,3 +93,7 @@ arithmetic confirms all 20 answers and distinct options; topic counts and local
 links are checked. Browser rendering and interaction checks remain pending
 because no browser connection is available in the current session. These checks
 must not be represented as completed; update this status when they occur.
+
+Published on 13 October 2026 in commit `458a853`. The two live quiz pages and
+unit menu were verified against the release. This is deployment verification,
+not browser interaction or classroom testing.

@@ -14,6 +14,21 @@ for the common quiz behavior and data contract.
 4. Keep source PDFs unchanged. Use `scripts/extract-pdf-text.sh` for local text
    extraction and retain the worksheet reference with every question.
 
+## 2iec source policy
+
+- Mechanics uses the Edexcel M1 book (Pearson/Heinemann) and its matching
+  Solutionbank worked solutions. It does not use the Solomon worksheets.
+- Pure uses the Solomon Press worksheets and their matching worked answers.
+  It does not use the M1 mechanics book.
+- Read `docs/2iec-source-reference.md` before creating or reviewing a 2iec
+  quiz. It records the supplied files, source naming differences, current quiz
+  coverage, publication history and outstanding checks.
+- Record the source family, textbook chapter or worksheet, exercise/question
+  parts, and exact question/solution PDF pages. Preserve existing local folder
+  and file names even when they differ from the source's printed chapter name.
+- Apply this policy to source-derived 2iec quizzes unless the user explicitly
+  supplies another source or requests original questions.
+
 ## Folder structure and navigation
 
 - Create new quizzes at `<class>/<chapter, unit or topic>/<quiz name>/index.html`.
