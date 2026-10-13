@@ -1,0 +1,25 @@
+{
+  "quiz": {
+    "title": "Replace with quiz title",
+    "course": "Replace with course or class",
+    "source_reference": "Replace with worksheet or mark Original"
+  },
+  "questions": [
+    {
+      "id": "example-q01",
+      "section": "Example section",
+      "title": "1(a)",
+      "prompt": "For a quadratic to have equal roots, what must its discriminant be?",
+      "options": [
+        "Zero",
+        "Positive",
+        "Negative",
+        "Any real value"
+      ],
+      "answer": 0,
+      "solution": "The discriminant must be zero.",
+      "working": "<p>Equal roots occur when <span>\\(b^2-4ac=0\\)</span>.</p>",
+      "source_ref": "Original example; replace with worksheet and part"
+    }
+  ]
+}
