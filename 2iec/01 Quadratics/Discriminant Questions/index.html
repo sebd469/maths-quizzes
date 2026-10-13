@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discriminant Questions - 01 Quadratics - 2iec Maths</title>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+    }
+
+    header p {
+      margin: 4px 0;
+      color: #d1d5db;
+    }
+
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: white;
+      border-bottom: 1px solid #d1d5db;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .score-box {
+      font-weight: bold;
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+
+    .reset-button,
+    .home-link {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .reset-button { background: #ef4444; color: white; }
+    .home-link { background: #e5e7eb; color: #111827; }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 18px 60px;
+    }
+
+    .instructions {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      line-height: 1.5;
+    }
+
+    .section-title {
+      margin: 32px 0 12px;
+      padding: 12px 16px;
+      background: #1f2937;
+      color: white;
+      border-radius: 12px;
+      font-size: 22px;
+    }
+
+    .question-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      border: 2px solid transparent;
+    }
+
+    .question-card.correct { border-color: #22c55e; }
+    .question-card.incorrect { border-color: #ef4444; }
+
+    .question-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .question-number {
+      background: #4f46e5;
+      color: white;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .question-title { font-weight: bold; color: #374151; }
+
+    .prompt {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 14px 0 18px;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      padding: 12px;
+      cursor: pointer;
+      background: #f9fafb;
+      line-height: 1.5;
+    }
+
+    .option:hover { background: #eef2ff; }
+    .option input { margin-top: 4px; transform: scale(1.1); }
+
+    .option.correct-choice {
+      border-color: #22c55e;
+      background: #dcfce7;
+    }
+
+    .option.wrong-choice {
+      border-color: #ef4444;
+      background: #fee2e2;
+    }
+
+    .check-button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 11px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .check-button:hover { background: #1d4ed8; }
+    .check-button:disabled { background: #9ca3af; cursor: not-allowed; }
+
+    .feedback {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 12px;
+      display: none;
+      line-height: 1.5;
+    }
+
+    .feedback.correct-feedback {
+      display: block;
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #22c55e;
+    }
+
+    .feedback.incorrect-feedback {
+      display: block;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #ef4444;
+    }
+
+    .locked-working {
+      margin-top: 12px;
+      border: 1px dashed #9ca3af;
+      background: #f9fafb;
+      color: #4b5563;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-weight: bold;
+    }
+
+    .working-details {
+      margin-top: 12px;
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .working-details summary {
+      cursor: pointer;
+      padding: 12px 14px;
+      font-weight: bold;
+      color: #1e40af;
+      list-style-position: inside;
+    }
+
+    .working-details summary:hover { background: #dbeafe; }
+
+    .working-content {
+      padding: 0 16px 14px;
+      line-height: 1.55;
+      color: #1f2937;
+      border-top: 1px solid #bfdbfe;
+      background: white;
+    }
+
+    .working-content p { margin: 11px 0; }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      padding: 24px;
+    }
+
+    @media (min-width: 760px) {
+      .options { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Discriminant Questions</h1>
+    <p>Worksheet J, Question 6: the discriminant</p>
+    <p>Choose an answer, then check it to unlock the worked solution.</p>
+  </header>
+
+  <div class="top-bar">
+    <div class="score-box" id="scoreBox" aria-live="polite">Score: 0 / 0 checked</div>
+    <button class="reset-button" type="button" onclick="resetQuiz()">Reset quiz</button>
+    <a class="home-link" href="../index.html">Back to 01 Quadratics</a>
+  </div>
+
+  <main>
+    <section class="instructions">
+      <strong>Instructions:</strong>
+      Use the discriminant \(b^2-4ac\) to determine the required value or range of \(k\).
+      Select one answer for each part. Your score updates as you go, and the worked solution appears after checking.
+    </section>
+
+    <div id="quizContainer"></div>
+  </main>
+
+  <footer>2iec Maths - 01 Quadratics - Discriminant Questions, Worksheet J Question 6</footer>
+
+  <script>
+    const questions = [
+      {
+        section: "Worksheet J - Question 6: The discriminant",
+        title: "6(a)",
+        prompt: "Find the value of \\(k\\) such that \\(x^2-6x+k=0\\) has equal roots.",
+        options: ["\\(k=9\\)", "\\(k=-9\\)", "\\(k=6\\)", "\\(k\\geq 9\\)"],
+        answer: 0,
+        solution: "\\(k=9\\)",
+        working: "<p>Equal roots require \\(b^2-4ac=0\\).</p><p>Here, \\(a=1\\), \\(b=-6\\), and \\(c=k\\):</p><p>\\[(-6)^2-4(1)(k)=0\\]</p><p>\\[36-4k=0 \\quad\\Rightarrow\\quad k=9.\\]</p>"
+      },
+      {
+        section: "Worksheet J - Question 6: The discriminant",
+        title: "6(b)",
+        prompt: "Find the set of values of \\(k\\) such that \\(x^2+2x+k=0\\) has real and distinct roots.",
+        options: ["\\(k>1\\)", "\\(k\\leq 1\\)", "\\(k<1\\)", "All real values of \\(k\\)"],
+        answer: 2,
+        solution: "\\(k<1\\)",
+        working: "<p>Real and distinct roots require \\(b^2-4ac>0\\).</p><p>\\[2^2-4(1)(k)>0\\]</p><p>\\[4-4k>0 \\quad\\Rightarrow\\quad k<1.\\]</p>"
+      },
+      {
+        section: "Worksheet J - Question 6: The discriminant",
+        title: "6(c)",
+        prompt: "Find the set of values of \\(k\\) such that \\(x^2-3x+k=0\\) has no real roots.",
+        options: ["\\(k<\\frac94\\)", "\\(k\\geq\\frac94\\)", "\\(k>\\frac94\\)", "\\(k\\leq\\frac94\\)"],
+        answer: 2,
+        solution: "\\(k>\\frac94\\)",
+        working: "<p>No real roots require \\(b^2-4ac<0\\).</p><p>\\[(-3)^2-4(1)(k)<0\\]</p><p>\\[9-4k<0 \\quad\\Rightarrow\\quad k>\\frac94.\\]</p>"
+      },
+      {
+        section: "Worksheet J - Question 6: The discriminant",
+        title: "6(d)",
+        prompt: "Find the set of values of \\(k\\) such that \\(x^2+kx+4=0\\) has real roots.",
+        options: ["\\(-4<k<4\\)", "\\(k\\leq-4\\) or \\(k\\geq4\\)", "\\(k<-4\\) or \\(k>4\\)", "\\(k\\geq0\\)"],
+        answer: 1,
+        solution: "\\(k\\leq-4\\) or \\(k\\geq4\\)",
+        working: "<p>Real roots include equal roots, so \\(b^2-4ac\\geq0\\).</p><p>\\[k^2-4(1)(4)\\geq0 \\quad\\Rightarrow\\quad k^2-16\\geq0\\]</p><p>\\[(k-4)(k+4)\\geq0\\]</p><p>Therefore \\(k\\leq-4\\) or \\(k\\geq4\\).</p>"
+      },
+      {
+        section: "Worksheet J - Question 6: The discriminant",
+        title: "6(e)",
+        prompt: "Find the value of \\(k\\) such that \\(kx^2+x-1=0\\) has equal roots.",
+        options: ["\\(k=\\frac14\\)", "\\(k=-\\frac14\\)", "\\(k=0\\)", "\\(k=1\\)"],
+        answer: 1,
+        solution: "\\(k=-\\frac14\\)",
+        working: "<p>Equal roots require \\(b^2-4ac=0\\).</p><p>Here, \\(a=k\\), \\(b=1\\), and \\(c=-1\\):</p><p>\\[1^2-4(k)(-1)=0\\]</p><p>\\[1+4k=0 \\quad\\Rightarrow\\quad k=-\\frac14.\\]</p>"
+      },
+      {
+        section: "Worksheet J - Question 6: The discriminant",
+        title: "6(f)",
+        prompt: "Find the set of values of \\(k\\) such that \\(x^2+kx-3k=0\\) has no real roots.",
+        options: ["\\(-12<k<0\\)", "\\(k<-12\\) or \\(k>0\\)", "\\(k<0\\)", "\\(-12\\leq k\\leq0\\)"],
+        answer: 0,
+        solution: "\\(-12<k<0\\)",
+        working: "<p>No real roots require \\(b^2-4ac<0\\).</p><p>\\[k^2-4(1)(-3k)<0 \\quad\\Rightarrow\\quad k^2+12k<0\\]</p><p>\\[k(k+12)<0\\]</p><p>The product is negative between its roots, so \\(-12<k<0\\).</p>"
+      },
+      {
+        section: "Worksheet J - Question 6: The discriminant",
+        title: "6(g)",
+        prompt: "Find the set of values of \\(k\\) such that \\(x^2+2x+k-2=0\\) has real and distinct roots.",
+        options: ["\\(k>3\\)", "\\(k\\leq3\\)", "\\(k\\geq3\\)", "\\(k<3\\)"],
+        answer: 3,
+        solution: "\\(k<3\\)",
+        working: "<p>Real and distinct roots require \\(b^2-4ac>0\\).</p><p>\\[2^2-4(1)(k-2)>0\\]</p><p>\\[4-4k+8>0 \\quad\\Rightarrow\\quad 12>4k\\]</p><p>Therefore \\(k<3\\).</p>"
+      },
+      {
+        section: "Worksheet J - Question 6: The discriminant",
+        title: "6(h)",
+        prompt: "Find the values of \\(k\\) such that \\(2x^2-kx+k=0\\) has equal roots.",
+        options: ["\\(k=8\\) only", "\\(k=0\\) or \\(k=8\\)", "\\(k=0\\) only", "\\(k=-8\\) or \\(k=0\\)"],
+        answer: 1,
+        solution: "\\(k=0\\) or \\(k=8\\)",
+        working: "<p>Equal roots require \\(b^2-4ac=0\\).</p><p>\\[(-k)^2-4(2)(k)=0 \\quad\\Rightarrow\\quad k^2-8k=0\\]</p><p>\\[k(k-8)=0\\]</p><p>Therefore \\(k=0\\) or \\(k=8\\).</p>"
+      },
+      {
+        section: "Worksheet J - Question 6: The discriminant",
+        title: "6(i)",
+        prompt: "Find the set of values of \\(k\\) such that \\(x^2+kx+2k-3=0\\) has no real roots.",
+        options: ["\\(2\\lt k\\lt 6\\)", "\\(k<2\\) or \\(k>6\\)", "\\(2\\leq k\\leq6\\)", "\\(k>6\\)"],
+        answer: 0,
+        solution: "\\(2\\lt k\\lt 6\\)",
+        working: "<p>No real roots require \\(b^2-4ac<0\\).</p><p>\\[k^2-4(1)(2k-3)<0\\]</p><p>\\[k^2-8k+12<0 \\quad\\Rightarrow\\quad (k-2)(k-6)<0\\]</p><p>Therefore \\(2\\lt k\\lt 6\\).</p>"
+      },
+      {
+        section: "Worksheet J - Question 6: The discriminant",
+        title: "6(j)",
+        prompt: "Find the set of values of \\(k\\) such that \\(3x^2+kx-x+3=0\\) has real roots.",
+        options: ["\\(-5\\lt k\\lt 7\\)", "\\(k\\leq5\\) or \\(k\\geq7\\)", "\\(k\\leq-5\\) or \\(k\\geq7\\)", "\\(k<-5\\) or \\(k>7\\)"],
+        answer: 2,
+        solution: "\\(k\\leq-5\\) or \\(k\\geq7\\)",
+        working: "<p>First collect the \\(x\\)-terms: \\(3x^2+(k-1)x+3=0\\).</p><p>Real roots require \\(b^2-4ac\\geq0\\).</p><p>\\[(k-1)^2-4(3)(3)\\geq0 \\quad\\Rightarrow\\quad (k-1)^2-36\\geq0\\]</p><p>\\[(k-7)(k+5)\\geq0\\]</p><p>Therefore \\(k\\leq-5\\) or \\(k\\geq7\\).</p>"
+      }
+    ];
+
+    const quizContainer = document.getElementById("quizContainer");
+    const scoreBox = document.getElementById("scoreBox");
+    let checked = new Array(questions.length).fill(false);
+    let correct = new Array(questions.length).fill(false);
+
+    function renderQuiz() {
+      quizContainer.innerHTML = "";
+      let currentSection = "";
+
+      questions.forEach((question, index) => {
+        if (question.section !== currentSection) {
+          currentSection = question.section;
+          const sectionTitle = document.createElement("h2");
+          sectionTitle.className = "section-title";
+          sectionTitle.textContent = currentSection;
+          quizContainer.appendChild(sectionTitle);
+        }
+
+        const card = document.createElement("section");
+        card.className = "question-card";
+        card.id = `card-${index}`;
+
+        const optionHTML = question.options.map((option, optionIndex) => `
+          <label class="option" id="option-${index}-${optionIndex}">
+            <input type="radio" name="question-${index}" value="${optionIndex}">
+            <span><strong>${String.fromCharCode(65 + optionIndex)}.</strong> ${option}</span>
+          </label>
+        `).join("");
+
+        card.innerHTML = `
+          <div class="question-header">
+            <span class="question-number">${question.title}</span>
+            <span class="question-title">Choose the correct answer</span>
+          </div>
+          <div class="prompt">${question.prompt}</div>
+          <div class="options">${optionHTML}</div>
+          <button class="check-button" id="check-${index}" type="button" onclick="checkQuestion(${index})">Check this question</button>
+          <div class="feedback" id="feedback-${index}" aria-live="polite"></div>
+          <div class="locked-working" id="locked-working-${index}">Worked solution locked - check this question first.</div>
+          <details class="working-details" id="working-${index}" style="display: none;">
+            <summary>Show worked solution</summary>
+            <div class="working-content" id="working-content-${index}"></div>
+          </details>
+        `;
+
+        quizContainer.appendChild(card);
+      });
+
+      updateScore();
+      if (window.MathJax) MathJax.typesetPromise();
+    }
+
+    function checkQuestion(index) {
+      const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+      const feedback = document.getElementById(`feedback-${index}`);
+      const card = document.getElementById(`card-${index}`);
+      const checkButton = document.getElementById(`check-${index}`);
+
+      if (!selected) {
+        feedback.className = "feedback incorrect-feedback";
+        feedback.textContent = "Please choose an answer first.";
+        return;
+      }
+
+      const selectedIndex = Number(selected.value);
+      const correctIndex = questions[index].answer;
+      checked[index] = true;
+      correct[index] = selectedIndex === correctIndex;
+
+      card.classList.add(correct[index] ? "correct" : "incorrect");
+      document.getElementById(`option-${index}-${correctIndex}`).classList.add("correct-choice");
+
+      if (!correct[index]) {
+        document.getElementById(`option-${index}-${selectedIndex}`).classList.add("wrong-choice");
+      }
+
+      document.querySelectorAll(`input[name="question-${index}"]`).forEach(input => input.disabled = true);
+      checkButton.disabled = true;
+      feedback.className = correct[index] ? "feedback correct-feedback" : "feedback incorrect-feedback";
+      feedback.innerHTML = correct[index]
+        ? `Correct. ${questions[index].solution}`
+        : `Not quite. The correct answer is ${questions[index].solution}`;
+
+      document.getElementById(`locked-working-${index}`).style.display = "none";
+      const workingDetails = document.getElementById(`working-${index}`);
+      workingDetails.style.display = "block";
+      document.getElementById(`working-content-${index}`).innerHTML = questions[index].working;
+
+      updateScore();
+      if (window.MathJax) MathJax.typesetPromise([feedback, workingDetails]);
+    }
+
+    function updateScore() {
+      const checkedCount = checked.filter(Boolean).length;
+      const correctCount = correct.filter(Boolean).length;
+      scoreBox.textContent = `Score: ${correctCount} / ${checkedCount} checked`;
+    }
+
+    function resetQuiz() {
+      checked = new Array(questions.length).fill(false);
+      correct = new Array(questions.length).fill(false);
+      renderQuiz();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    renderQuiz();
+  </script>
+</body>
+</html>
