@@ -1,0 +1,171 @@
+{
+  "quiz": {
+    "title": "Laws of indices 1",
+    "course": "6iec Maths — Unit 01 Numbers",
+    "topic": "Unit 01 Numbers",
+    "source_reference": "Original",
+    "instructions": "Write each answer as a single power with the same base. Do not evaluate numerical powers. Assume all variables are non-zero. Choose one answer for each question."
+  },
+  "questions": [
+    {
+      "id": "indices-q01",
+      "section": "Multiplying powers — add the indices",
+      "title": "1",
+      "prompt": "Simplify \\(2^3\\times2^4\\). Write your answer as a single power.",
+      "options": [
+        "\\(2^{12}\\)",
+        "\\(2^{7}\\)",
+        "\\(2^{1}\\)",
+        "\\(2^{6}\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(2^{7}\\)",
+      "working": "<p>When multiplying powers with the same base, keep the base and add the indices.</p><p>\\(2^3\\times2^4=2^{3+4}=2^7\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-q02",
+      "section": "Multiplying powers — add the indices",
+      "title": "2",
+      "prompt": "Simplify \\(5^2\\times5^3\\). Write your answer as a single power.",
+      "options": [
+        "\\(5^{6}\\)",
+        "\\(5^{1}\\)",
+        "\\(5^{5}\\)",
+        "\\(5^{8}\\)"
+      ],
+      "answer": 2,
+      "solution": "\\(5^{5}\\)",
+      "working": "<p>Keep the base 5 and add the indices; do not multiply them.</p><p>\\(5^2\\times5^3=5^{2+3}=5^5\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-q03",
+      "section": "Multiplying powers — add the indices",
+      "title": "3",
+      "prompt": "Simplify \\(a^4\\times a^3\\). Write your answer as a single power.",
+      "options": [
+        "\\(a^{7}\\)",
+        "\\(a^{12}\\)",
+        "\\(a^{1}\\)",
+        "\\(a^{8}\\)"
+      ],
+      "answer": 0,
+      "solution": "\\(a^{7}\\)",
+      "working": "<p>The base is a in both factors, so add the indices.</p><p>\\(a^4\\times a^3=a^{4+3}=a^7\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-q04",
+      "section": "Multiplying powers — add the indices",
+      "title": "4",
+      "prompt": "Simplify \\(x^2\\times x^6\\). Write your answer as a single power.",
+      "options": [
+        "\\(x^{12}\\)",
+        "\\(x^{4}\\)",
+        "\\(x^{6}\\)",
+        "\\(x^{8}\\)"
+      ],
+      "answer": 3,
+      "solution": "\\(x^{8}\\)",
+      "working": "<p>Multiplication of powers with the same base means adding the indices.</p><p>\\(x^2\\times x^6=x^{2+6}=x^8\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-q05",
+      "section": "Dividing powers — subtract the indices",
+      "title": "5",
+      "prompt": "Simplify \\(3^8\\div3^3\\). Write your answer as a single power.",
+      "options": [
+        "\\(3^{11}\\)",
+        "\\(3^{5}\\)",
+        "\\(3^{24}\\)",
+        "\\(3^{4}\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(3^{5}\\)",
+      "working": "<p>When dividing powers with the same non-zero base, subtract the denominator's index from the numerator's index.</p><p>\\(3^8\\div3^3=3^{8-3}=3^5\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-q06",
+      "section": "Dividing powers — subtract the indices",
+      "title": "6",
+      "prompt": "Simplify \\(7^6\\div7^2\\). Write your answer as a single power.",
+      "options": [
+        "\\(7^{3}\\)",
+        "\\(7^{8}\\)",
+        "\\(7^{12}\\)",
+        "\\(7^{4}\\)"
+      ],
+      "answer": 3,
+      "solution": "\\(7^{4}\\)",
+      "working": "<p>Keep the base 7 and subtract the indices; do not divide them.</p><p>\\(7^6\\div7^2=7^{6-2}=7^4\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-q07",
+      "section": "Dividing powers — subtract the indices",
+      "title": "7",
+      "prompt": "Simplify \\(a^9\\div a^5\\). Write your answer as a single power.",
+      "options": [
+        "\\(a^{4}\\)",
+        "\\(a^{14}\\)",
+        "\\(a^{45}\\)",
+        "\\(a^{5}\\)"
+      ],
+      "answer": 0,
+      "solution": "\\(a^{4}\\)",
+      "working": "<p>Since a is non-zero, division by its powers is defined. Subtract the second index from the first.</p><p>\\(a^9\\div a^5=a^{9-5}=a^4\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-q08",
+      "section": "Power of a power — multiply the indices",
+      "title": "8",
+      "prompt": "Simplify \\((4^2)^3\\). Write your answer as a single power.",
+      "options": [
+        "\\(4^{5}\\)",
+        "\\(4^{8}\\)",
+        "\\(4^{6}\\)",
+        "\\(4^{9}\\)"
+      ],
+      "answer": 2,
+      "solution": "\\(4^{6}\\)",
+      "working": "<p>When raising a power to another power, keep the base and multiply the indices.</p><p>\\((4^2)^3=4^{2\\times3}=4^6\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-q09",
+      "section": "Power of a power — multiply the indices",
+      "title": "9",
+      "prompt": "Simplify \\((x^3)^4\\). Write your answer as a single power.",
+      "options": [
+        "\\(x^{12}\\)",
+        "\\(x^{7}\\)",
+        "\\(x^{9}\\)",
+        "\\(x^{64}\\)"
+      ],
+      "answer": 0,
+      "solution": "\\(x^{12}\\)",
+      "working": "<p>This is a power raised to a power, so multiply the indices instead of adding them.</p><p>\\((x^3)^4=x^{3\\times4}=x^{12}\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-q10",
+      "section": "Power of a power — multiply the indices",
+      "title": "10",
+      "prompt": "Simplify \\((a^5)^2\\). Write your answer as a single power.",
+      "options": [
+        "\\(a^{7}\\)",
+        "\\(a^{25}\\)",
+        "\\(a^{10}\\)",
+        "\\(a^{3}\\)"
+      ],
+      "answer": 2,
+      "solution": "\\(a^{10}\\)",
+      "working": "<p>The brackets show a power of a power. Multiply the inner and outer indices.</p><p>\\((a^5)^2=a^{5\\times2}=a^{10}\\).</p>",
+      "source_ref": "Original"
+    }
+  ]
+}

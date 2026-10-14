@@ -97,3 +97,40 @@ must not be represented as completed; update this status when they occur.
 Published on 13 October 2026 in commit `458a853`. The two live quiz pages and
 unit menu were verified against the release. This is deployment verification,
 not browser interaction or classroom testing.
+
+## 6iec Laws of indices 1
+
+Prepared on 14 October 2026 under
+`6iec/Unit 01 Numbers/Laws of indices 1/`, with a matching teacher review
+under `Source Files/6iec/Unit 01 Numbers/Laws of indices 1/`. The teacher
+approved the quiz, requested commit and publication, and specified the exact
+title and clickable menu label `Laws of indices 1` on that date. The earlier
+local draft name was replaced before publication.
+
+The requested 10-question split is five numerical bases and five variable
+bases (a or x). The laws are same-base multiplication (add indices), same-base
+division (subtract indices), and power of a power (multiply indices).
+
+| Law | Numerical-base questions | Variable-base questions | Total |
+|---|---|---|---|
+| Multiplication | 1, 2 | 3, 4 | 4 |
+| Division | 5, 6 | 7 | 3 |
+| Power of a power | 8 | 9, 10 | 3 |
+
+Use positive integer indices and single-power answers with the same base.
+Assume variables are non-zero so division is defined. Do not ask students to
+evaluate numerical powers; the focus is applying the index laws. Distractors
+target confusing addition, subtraction and multiplication of indices.
+
+These are original questions, not copied from a worksheet, M1 or Solomon
+sources. Data and every `source_ref` are marked `Original`. The shared renderer
+and template supply the established interaction and analytics beacon; no
+unrelated quiz or analytics changes are needed.
+
+Checks cover all 10 indices, exact numerical powers, distinct options, both
+requested topic/base splits, generated-page consistency and navigation.
+Teacher approval and publication authorisation were given on 14 October 2026,
+and the draft notice was removed. The Unit 01 Numbers menu links directly to
+`Laws%20of%20indices%201/index.html`; the quiz links back to the unit menu.
+Browser rendering/interaction and classroom testing remain pending and must
+not be represented as completed.

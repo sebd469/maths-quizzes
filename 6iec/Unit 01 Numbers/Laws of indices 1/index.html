@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laws of indices 1 - 6iec Maths — Unit 01 Numbers</title>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+    }
+
+    header p {
+      margin: 4px 0;
+      color: #d1d5db;
+    }
+
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: white;
+      border-bottom: 1px solid #d1d5db;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .score-box {
+      font-weight: bold;
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+
+    .reset-button,
+    .home-link {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .reset-button { background: #ef4444; color: white; }
+    .home-link { background: #e5e7eb; color: #111827; }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 18px 60px;
+    }
+
+    .instructions {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      line-height: 1.5;
+    }
+
+    .section-title {
+      margin: 32px 0 12px;
+      padding: 12px 16px;
+      background: #1f2937;
+      color: white;
+      border-radius: 12px;
+      font-size: 22px;
+    }
+
+    .question-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      border: 2px solid transparent;
+    }
+
+    .question-card.correct { border-color: #22c55e; }
+    .question-card.incorrect { border-color: #ef4444; }
+
+    .question-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .question-number {
+      background: #4f46e5;
+      color: white;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .question-title { font-weight: bold; color: #374151; }
+
+    .prompt {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 14px 0 18px;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      padding: 12px;
+      cursor: pointer;
+      background: #f9fafb;
+      line-height: 1.5;
+    }
+
+    :focus-visible { outline: 3px solid #4f46e5; outline-offset: 3px; }
+    .option:focus-within { outline: 3px solid #4f46e5; outline-offset: 2px; }
+
+    .option:hover { background: #eef2ff; }
+    .option input { margin-top: 4px; transform: scale(1.1); }
+
+    .option.correct-choice {
+      border-color: #22c55e;
+      background: #dcfce7;
+    }
+
+    .option.wrong-choice {
+      border-color: #ef4444;
+      background: #fee2e2;
+    }
+
+    .check-button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 11px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .check-button:hover { background: #1d4ed8; }
+    .check-button:disabled { background: #9ca3af; cursor: not-allowed; }
+
+    .feedback {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 12px;
+      display: none;
+      line-height: 1.5;
+    }
+
+    .feedback.correct-feedback {
+      display: block;
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #22c55e;
+    }
+
+    .feedback.incorrect-feedback {
+      display: block;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #ef4444;
+    }
+
+    .locked-working {
+      margin-top: 12px;
+      border: 1px dashed #9ca3af;
+      background: #f9fafb;
+      color: #4b5563;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-weight: bold;
+    }
+
+    .working-details {
+      margin-top: 12px;
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .working-details summary {
+      cursor: pointer;
+      padding: 12px 14px;
+      font-weight: bold;
+      color: #1e40af;
+      list-style-position: inside;
+    }
+
+    .working-details summary:hover { background: #dbeafe; }
+
+    .working-content {
+      padding: 0 16px 14px;
+      line-height: 1.55;
+      color: #1f2937;
+      border-top: 1px solid #bfdbfe;
+      background: white;
+    }
+
+    .working-content p { margin: 11px 0; }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      padding: 24px;
+    }
+
+    @media (min-width: 760px) {
+      .options { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Laws of indices 1</h1>
+    <p>6iec Maths — Unit 01 Numbers</p>
+
+    <p>Choose an answer, then check it to unlock the worked solution.</p>
+  </header>
+
+  <div class="top-bar">
+    <div class="score-box" id="scoreBox" aria-live="polite">Score: 0 / 0 checked</div>
+    <button class="reset-button" type="button" onclick="resetQuiz()">Reset quiz</button>
+    <a class="home-link" href="../index.html">Back to Unit 01 Numbers</a>
+  </div>
+
+  <main>
+    <section class="instructions">
+      <strong>Instructions:</strong>
+      Write each answer as a single power with the same base. Do not evaluate numerical powers. Assume all variables are non-zero. Choose one answer for each question.
+      Select one answer for each part. Your score updates as you go, and the worked solution appears after checking.
+    </section>
+
+    <div id="quizContainer"></div>
+  </main>
+
+  <footer>6iec Maths — Unit 01 Numbers - Laws of indices 1</footer>
+
+  <script>
+    const questions = [
+  {
+    "id": "indices-q01",
+    "section": "Multiplying powers \u2014 add the indices",
+    "title": "1",
+    "prompt": "Simplify \\(2^3\\times2^4\\). Write your answer as a single power.",
+    "options": [
+      "\\(2^{12}\\)",
+      "\\(2^{7}\\)",
+      "\\(2^{1}\\)",
+      "\\(2^{6}\\)"
+    ],
+    "answer": 1,
+    "solution": "\\(2^{7}\\)",
+    "working": "\u003cp\u003eWhen multiplying powers with the same base, keep the base and add the indices.\u003c/p\u003e\u003cp\u003e\\(2^3\\times2^4=2^{3+4}=2^7\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "indices-q02",
+    "section": "Multiplying powers \u2014 add the indices",
+    "title": "2",
+    "prompt": "Simplify \\(5^2\\times5^3\\). Write your answer as a single power.",
+    "options": [
+      "\\(5^{6}\\)",
+      "\\(5^{1}\\)",
+      "\\(5^{5}\\)",
+      "\\(5^{8}\\)"
+    ],
+    "answer": 2,
+    "solution": "\\(5^{5}\\)",
+    "working": "\u003cp\u003eKeep the base 5 and add the indices; do not multiply them.\u003c/p\u003e\u003cp\u003e\\(5^2\\times5^3=5^{2+3}=5^5\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "indices-q03",
+    "section": "Multiplying powers \u2014 add the indices",
+    "title": "3",
+    "prompt": "Simplify \\(a^4\\times a^3\\). Write your answer as a single power.",
+    "options": [
+      "\\(a^{7}\\)",
+      "\\(a^{12}\\)",
+      "\\(a^{1}\\)",
+      "\\(a^{8}\\)"
+    ],
+    "answer": 0,
+    "solution": "\\(a^{7}\\)",
+    "working": "\u003cp\u003eThe base is a in both factors, so add the indices.\u003c/p\u003e\u003cp\u003e\\(a^4\\times a^3=a^{4+3}=a^7\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "indices-q04",
+    "section": "Multiplying powers \u2014 add the indices",
+    "title": "4",
+    "prompt": "Simplify \\(x^2\\times x^6\\). Write your answer as a single power.",
+    "options": [
+      "\\(x^{12}\\)",
+      "\\(x^{4}\\)",
+      "\\(x^{6}\\)",
+      "\\(x^{8}\\)"
+    ],
+    "answer": 3,
+    "solution": "\\(x^{8}\\)",
+    "working": "\u003cp\u003eMultiplication of powers with the same base means adding the indices.\u003c/p\u003e\u003cp\u003e\\(x^2\\times x^6=x^{2+6}=x^8\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "indices-q05",
+    "section": "Dividing powers \u2014 subtract the indices",
+    "title": "5",
+    "prompt": "Simplify \\(3^8\\div3^3\\). Write your answer as a single power.",
+    "options": [
+      "\\(3^{11}\\)",
+      "\\(3^{5}\\)",
+      "\\(3^{24}\\)",
+      "\\(3^{4}\\)"
+    ],
+    "answer": 1,
+    "solution": "\\(3^{5}\\)",
+    "working": "\u003cp\u003eWhen dividing powers with the same non-zero base, subtract the denominator's index from the numerator's index.\u003c/p\u003e\u003cp\u003e\\(3^8\\div3^3=3^{8-3}=3^5\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "indices-q06",
+    "section": "Dividing powers \u2014 subtract the indices",
+    "title": "6",
+    "prompt": "Simplify \\(7^6\\div7^2\\). Write your answer as a single power.",
+    "options": [
+      "\\(7^{3}\\)",
+      "\\(7^{8}\\)",
+      "\\(7^{12}\\)",
+      "\\(7^{4}\\)"
+    ],
+    "answer": 3,
+    "solution": "\\(7^{4}\\)",
+    "working": "\u003cp\u003eKeep the base 7 and subtract the indices; do not divide them.\u003c/p\u003e\u003cp\u003e\\(7^6\\div7^2=7^{6-2}=7^4\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "indices-q07",
+    "section": "Dividing powers \u2014 subtract the indices",
+    "title": "7",
+    "prompt": "Simplify \\(a^9\\div a^5\\). Write your answer as a single power.",
+    "options": [
+      "\\(a^{4}\\)",
+      "\\(a^{14}\\)",
+      "\\(a^{45}\\)",
+      "\\(a^{5}\\)"
+    ],
+    "answer": 0,
+    "solution": "\\(a^{4}\\)",
+    "working": "\u003cp\u003eSince a is non-zero, division by its powers is defined. Subtract the second index from the first.\u003c/p\u003e\u003cp\u003e\\(a^9\\div a^5=a^{9-5}=a^4\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "indices-q08",
+    "section": "Power of a power \u2014 multiply the indices",
+    "title": "8",
+    "prompt": "Simplify \\((4^2)^3\\). Write your answer as a single power.",
+    "options": [
+      "\\(4^{5}\\)",
+      "\\(4^{8}\\)",
+      "\\(4^{6}\\)",
+      "\\(4^{9}\\)"
+    ],
+    "answer": 2,
+    "solution": "\\(4^{6}\\)",
+    "working": "\u003cp\u003eWhen raising a power to another power, keep the base and multiply the indices.\u003c/p\u003e\u003cp\u003e\\((4^2)^3=4^{2\\times3}=4^6\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "indices-q09",
+    "section": "Power of a power \u2014 multiply the indices",
+    "title": "9",
+    "prompt": "Simplify \\((x^3)^4\\). Write your answer as a single power.",
+    "options": [
+      "\\(x^{12}\\)",
+      "\\(x^{7}\\)",
+      "\\(x^{9}\\)",
+      "\\(x^{64}\\)"
+    ],
+    "answer": 0,
+    "solution": "\\(x^{12}\\)",
+    "working": "\u003cp\u003eThis is a power raised to a power, so multiply the indices instead of adding them.\u003c/p\u003e\u003cp\u003e\\((x^3)^4=x^{3\\times4}=x^{12}\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "indices-q10",
+    "section": "Power of a power \u2014 multiply the indices",
+    "title": "10",
+    "prompt": "Simplify \\((a^5)^2\\). Write your answer as a single power.",
+    "options": [
+      "\\(a^{7}\\)",
+      "\\(a^{25}\\)",
+      "\\(a^{10}\\)",
+      "\\(a^{3}\\)"
+    ],
+    "answer": 2,
+    "solution": "\\(a^{10}\\)",
+    "working": "\u003cp\u003eThe brackets show a power of a power. Multiply the inner and outer indices.\u003c/p\u003e\u003cp\u003e\\((a^5)^2=a^{5\\times2}=a^{10}\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  }
+];
+
+    const quizContainer = document.getElementById("quizContainer");
+    const scoreBox = document.getElementById("scoreBox");
+    let checked = new Array(questions.length).fill(false);
+    let correct = new Array(questions.length).fill(false);
+
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, character => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[character]);
+    }
+
+    function typesetMath(elements) {
+      if (typeof window.MathJax?.typesetPromise === "function") {
+        MathJax.typesetPromise(elements).catch(error => console.error("Maths rendering failed", error));
+      }
+    }
+
+    function renderQuiz() {
+      if (typeof window.MathJax?.typesetClear === "function") MathJax.typesetClear([quizContainer]);
+      quizContainer.innerHTML = "";
+      let currentSection = "";
+
+      questions.forEach((question, index) => {
+        if (question.section !== currentSection) {
+          currentSection = question.section;
+          const sectionTitle = document.createElement("h2");
+          sectionTitle.className = "section-title";
+          sectionTitle.textContent = currentSection;
+          quizContainer.appendChild(sectionTitle);
+        }
+
+        const card = document.createElement("section");
+        card.className = "question-card";
+        card.id = `card-${index}`;
+        card.dataset.questionId = question.id;
+        card.setAttribute("aria-labelledby", `question-heading-${index}`);
+
+        const optionHTML = question.options.map((option, optionIndex) => `
+          <label class="option" id="option-${index}-${optionIndex}">
+            <input type="radio" name="question-${index}" value="${optionIndex}">
+            <span><strong>${String.fromCharCode(65 + optionIndex)}.</strong> ${escapeHTML(option)}</span>
+          </label>
+        `).join("");
+
+        card.innerHTML = `
+          <div class="question-header" id="question-heading-${index}">
+            <span class="question-number">${escapeHTML(question.title)}</span>
+            <span class="question-title">Choose the correct answer</span>
+          </div>
+          <div class="prompt">${escapeHTML(question.prompt)}</div>
+          <div class="options">${optionHTML}</div>
+          <button class="check-button" id="check-${index}" type="button" onclick="checkQuestion(${index})" disabled>Check this question</button>
+          <div class="feedback" id="feedback-${index}" aria-live="polite"></div>
+          <div class="locked-working" id="locked-working-${index}">Worked solution locked - check this question first.</div>
+          <details class="working-details" id="working-${index}" style="display: none;">
+            <summary>Show worked solution</summary>
+            <div class="working-content" id="working-content-${index}"></div>
+          </details>
+        `;
+
+        card.querySelectorAll('input[type="radio"]').forEach(input => {
+          input.addEventListener("change", () => {
+            document.getElementById(`check-${index}`).disabled = checked[index];
+          });
+        });
+        quizContainer.appendChild(card);
+      });
+
+      updateScore();
+      typesetMath();
+    }
+
+    function checkQuestion(index) {
+      if (checked[index]) return;
+      const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+      const feedback = document.getElementById(`feedback-${index}`);
+      const card = document.getElementById(`card-${index}`);
+      const checkButton = document.getElementById(`check-${index}`);
+
+      if (!selected) {
+        feedback.className = "feedback incorrect-feedback";
+        feedback.textContent = "Please choose an answer first.";
+        return;
+      }
+
+      const selectedIndex = Number(selected.value);
+      const correctIndex = questions[index].answer;
+      checked[index] = true;
+      correct[index] = selectedIndex === correctIndex;
+
+      card.classList.add(correct[index] ? "correct" : "incorrect");
+      document.getElementById(`option-${index}-${correctIndex}`).classList.add("correct-choice");
+
+      if (!correct[index]) {
+        document.getElementById(`option-${index}-${selectedIndex}`).classList.add("wrong-choice");
+      }
+
+      document.querySelectorAll(`input[name="question-${index}"]`).forEach(input => input.disabled = true);
+      checkButton.disabled = true;
+      feedback.className = correct[index] ? "feedback correct-feedback" : "feedback incorrect-feedback";
+      feedback.innerHTML = correct[index]
+        ? `Correct. ${escapeHTML(questions[index].solution)}`
+        : `Not quite. The correct answer is ${escapeHTML(questions[index].solution)}`;
+
+      document.getElementById(`locked-working-${index}`).style.display = "none";
+      const workingDetails = document.getElementById(`working-${index}`);
+      workingDetails.style.display = "block";
+      document.getElementById(`working-content-${index}`).innerHTML = questions[index].working;
+
+      updateScore();
+      typesetMath([feedback, workingDetails]);
+    }
+
+    function updateScore() {
+      const checkedCount = checked.filter(Boolean).length;
+      const correctCount = correct.filter(Boolean).length;
+      scoreBox.textContent = `Score: ${correctCount} / ${checkedCount} checked`;
+    }
+
+    function resetQuiz() {
+      checked = new Array(questions.length).fill(false);
+      correct = new Array(questions.length).fill(false);
+      renderQuiz();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    renderQuiz();
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f4422aa63f9d4e04b91ab57a5551ffa5"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
