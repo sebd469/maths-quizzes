@@ -134,3 +134,37 @@ and the draft notice was removed. The Unit 01 Numbers menu links directly to
 `Laws%20of%20indices%201/index.html`; the quiz links back to the unit menu.
 Browser rendering/interaction and classroom testing remain pending and must
 not be represented as completed.
+
+## 6iec Laws of Indices 2
+
+Prepared on 15 October 2026 at
+`6iec/Unit 01 Numbers/Laws of Indices 2/`, with its matching teacher review at
+`Source Files/6iec/Unit 01 Numbers/Laws of Indices 2/teacher-review.md`.
+
+This original 10-question follow-up uses the existing renderer and template.
+It includes the requested examples `(3x)^3`, `(2x^2)^4` and
+`2x^3 × 3x^2 = 6x^5`, then progresses to coefficients and fractional monomial
+expressions combining two or more index laws. Questions 9–10 combine all
+three laws. All question sources and quiz provenance are `Original`.
+
+Unlike Laws of indices 1, numerical coefficients are evaluated. The five/five
+base split from the first quiz is not assumed for this follow-up: the examples
+are algebraic terms with coefficients and variables a or x. Assume variables
+are non-zero, preserve positive final indices, and remember that a lone
+variable has index 1. Zero, negative and fractional-index questions are not
+introduced here.
+
+Verify exact coefficients as well as indices: a power applies to every factor
+inside brackets, including the coefficient. In fractions, combine numerator
+and denominator products separately, then divide coefficients and subtract
+indices. Reject algebraically equivalent distractors, not merely duplicate
+strings. Use formal monomial checks plus independent numerical substitutions
+to confirm all answers. Keep the teacher review synchronised with the JSON.
+
+The unit menu links to `Laws%20of%20Indices%202/index.html`. The generated page
+retains the existing interaction and analytics beacon. Dataset, generated
+page, mathematics and navigation checks pass for this build.
+The teacher separately approved Laws of Indices 2 on 15 October 2026 and
+requested commit, push and publication. The draft notice was removed following
+this authorisation. Browser visual/interaction checks and classroom testing
+remain pending and must not be represented as completed.

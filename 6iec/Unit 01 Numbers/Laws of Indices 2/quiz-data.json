@@ -1,0 +1,171 @@
+{
+  "quiz": {
+    "title": "Laws of Indices 2",
+    "course": "6iec Maths — Unit 01 Numbers",
+    "topic": "Unit 01 Numbers",
+    "source_reference": "Original",
+    "instructions": "Simplify each expression fully, evaluating numerical coefficients and combining powers of the same variable. Assume all variables are non-zero. Choose one answer for each question."
+  },
+  "questions": [
+    {
+      "id": "indices-2-q01",
+      "section": "Powers of products and coefficients",
+      "title": "1",
+      "prompt": "Simplify \\((3x)^3\\) fully.",
+      "options": [
+        "\\(9x^3\\)",
+        "\\(27x^3\\)",
+        "\\(3x^3\\)",
+        "\\(27x^1\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(27x^3\\)",
+      "working": "<p>The power applies to every factor inside the brackets, including the coefficient.</p><p>\\((3x)^3=3^3x^3=27x^3\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-2-q02",
+      "section": "Powers of products and coefficients",
+      "title": "2",
+      "prompt": "Simplify \\((2x^2)^4\\) fully.",
+      "options": [
+        "\\(8x^8\\)",
+        "\\(16x^6\\)",
+        "\\(16x^8\\)",
+        "\\(2x^8\\)"
+      ],
+      "answer": 2,
+      "solution": "\\(16x^8\\)",
+      "working": "<p>Raise 2 to the fourth power, then multiply the inner and outer indices on x.</p><p>\\((2x^2)^4=2^4(x^2)^4=16x^{2\\times4}=16x^8\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-2-q03",
+      "section": "Multiplying terms and combining laws",
+      "title": "3",
+      "prompt": "Simplify \\(2x^3\\times3x^2\\) fully.",
+      "options": [
+        "\\(6x^5\\)",
+        "\\(5x^5\\)",
+        "\\(6x^6\\)",
+        "\\(6x^1\\)"
+      ],
+      "answer": 0,
+      "solution": "\\(6x^5\\)",
+      "working": "<p>Multiply the coefficients and add the indices of the common base. Do not add the coefficients.</p><p>\\(2x^3\\times3x^2=(2\\times3)x^{3+2}=6x^5\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-2-q04",
+      "section": "Multiplying terms and combining laws",
+      "title": "4",
+      "prompt": "Simplify \\((3a^2)^2\\times2a^3\\) fully.",
+      "options": [
+        "\\(6a^7\\)",
+        "\\(18a^{12}\\)",
+        "\\(9a^7\\)",
+        "\\(18a^7\\)"
+      ],
+      "answer": 3,
+      "solution": "\\(18a^7\\)",
+      "working": "<p>First simplify the bracket: \\((3a^2)^2=9a^4\\).</p><p>Then multiply coefficients and add the remaining indices.</p><p>\\(9a^4\\times2a^3=18a^{4+3}=18a^7\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-2-q05",
+      "section": "Fractions and combined index laws",
+      "title": "5",
+      "prompt": "Simplify \\(\\frac{(2x^3)^2}{4x^2}\\) fully.",
+      "options": [
+        "\\(x^8\\)",
+        "\\(x^4\\)",
+        "\\(4x^4\\)",
+        "\\(x^9\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(x^4\\)",
+      "working": "<p>The numerator is \\((2x^3)^2=4x^6\\).</p><p>Divide the coefficients and subtract the denominator's index.</p><p>\\(\\frac{4x^6}{4x^2}=\\frac44x^{6-2}=x^4\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-2-q06",
+      "section": "Fractions and combined index laws",
+      "title": "6",
+      "prompt": "Simplify \\(\\frac{6a^5\\times2a^2}{3a^3}\\) fully.",
+      "options": [
+        "\\(4a^4\\)",
+        "\\(4a^{10}\\)",
+        "\\(12a^4\\)",
+        "\\(4a^1\\)"
+      ],
+      "answer": 0,
+      "solution": "\\(4a^4\\)",
+      "working": "<p>Multiply the numerator's coefficients and add its indices: \\(6a^5\\times2a^2=12a^7\\).</p><p>Now divide by the denominator and subtract its index.</p><p>\\(\\frac{12a^7}{3a^3}=4a^{7-3}=4a^4\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-2-q07",
+      "section": "Fractions and combined index laws",
+      "title": "7",
+      "prompt": "Simplify \\(\\frac{(3x^2)^3}{9x^4}\\) fully.",
+      "options": [
+        "\\(3x^6\\)",
+        "\\(27x^2\\)",
+        "\\(3x^{10}\\)",
+        "\\(3x^2\\)"
+      ],
+      "answer": 3,
+      "solution": "\\(3x^2\\)",
+      "working": "<p>Raise both factors in the numerator to the third power: \\((3x^2)^3=27x^6\\).</p><p>\\(\\frac{27x^6}{9x^4}=3x^{6-4}=3x^2\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-2-q08",
+      "section": "Fractions and combined index laws",
+      "title": "8",
+      "prompt": "Simplify \\(\\frac{4a^2\\times3a^5}{6a^3\\times2a}\\) fully.",
+      "options": [
+        "\\(2a^3\\)",
+        "\\(a^4\\)",
+        "\\(a^3\\)",
+        "\\(a^7\\)"
+      ],
+      "answer": 2,
+      "solution": "\\(a^3\\)",
+      "working": "<p>Combine the numerator: \\(4a^2\\times3a^5=12a^7\\).</p><p>Combine the denominator, remembering that \\(a=a^1\\): \\(6a^3\\times2a=12a^4\\).</p><p>\\(\\frac{12a^7}{12a^4}=a^{7-4}=a^3\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-2-q09",
+      "section": "Challenge — all three index laws",
+      "title": "9",
+      "prompt": "Simplify \\(\\frac{(2x^2)^3\\times3x}{6x^4}\\) fully.",
+      "options": [
+        "\\(4x^3\\)",
+        "\\(4x^7\\)",
+        "\\(x^3\\)",
+        "\\(4x^1\\)"
+      ],
+      "answer": 0,
+      "solution": "\\(4x^3\\)",
+      "working": "<p>Apply the power-of-a-product and power-of-a-power rules: \\((2x^2)^3=8x^6\\).</p><p>Multiply the numerator: \\(8x^6\\times3x=24x^7\\).</p><p>Finally divide the coefficients and subtract the indices.</p><p>\\(\\frac{24x^7}{6x^4}=4x^{7-4}=4x^3\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "indices-2-q10",
+      "section": "Challenge — all three index laws",
+      "title": "10",
+      "prompt": "Simplify \\(\\frac{(3a^2)^2\\times(2a)^3}{6a^5}\\) fully.",
+      "options": [
+        "\\(6a^2\\)",
+        "\\(12a^{12}\\)",
+        "\\(12a^2\\)",
+        "\\(72a^2\\)"
+      ],
+      "answer": 2,
+      "solution": "\\(12a^2\\)",
+      "working": "<p>Simplify both bracketed powers: \\((3a^2)^2=9a^4\\) and \\((2a)^3=8a^3\\).</p><p>Multiply the numerator: \\(9a^4\\times8a^3=72a^7\\).</p><p>Divide coefficients and subtract the denominator's index.</p><p>\\(\\frac{72a^7}{6a^5}=12a^{7-5}=12a^2\\).</p>",
+      "source_ref": "Original"
+    }
+  ]
+}
