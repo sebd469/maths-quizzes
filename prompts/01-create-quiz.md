@@ -94,6 +94,13 @@ When creating original questions without source files:
   present the questions for review, and wait for approval before publishing.
   Never treat an earlier quiz's publishing approval as approval for new content.
 
+Release rule: follow the standing instruction in `AGENTS.md`. Wait for teacher
+approval of the current quiz before committing or publishing. That approval
+also authorises commit, push and publication of its related release files,
+unless the user expressly limits the approval. Do not ask again for separate
+release authorisation. Record approval, recheck, remove the draft notice and
+verify deployment; resolve genuine blockers and report pending tests honestly.
+
 1. When source PDFs are supplied, use `scripts/extract-pdf-text.sh` to inspect
    the relevant question and answer-key text. Do not modify source PDFs. Skip
    extraction for original questions.
@@ -116,7 +123,8 @@ When creating original questions without source files:
    Test selection, checking, feedback, locking, scoring, solution reveal and
    reset in a browser; report any testing that could not be completed.
 7. Do not claim teacher approval, classroom testing, or deployment unless those
-   steps actually occurred. Do not commit or push unless asked.
+   steps actually occurred. Do not commit or push before the user requests
+   release or gives teacher approval under the standing instruction.
 
 Report the source parts used, verified answers, unresolved issues, validation
 result, website and source-folder paths, navigation checks, and files changed.

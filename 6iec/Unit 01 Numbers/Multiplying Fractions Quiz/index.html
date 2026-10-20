@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplying Fractions Quiz - 6iec Maths — Unit 01 Numbers</title>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+    }
+
+    header p {
+      margin: 4px 0;
+      color: #d1d5db;
+    }
+
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: white;
+      border-bottom: 1px solid #d1d5db;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .score-box {
+      font-weight: bold;
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+
+    .reset-button,
+    .home-link {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .reset-button { background: #ef4444; color: white; }
+    .home-link { background: #e5e7eb; color: #111827; }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 18px 60px;
+    }
+
+    .instructions {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      line-height: 1.5;
+    }
+
+    .section-title {
+      margin: 32px 0 12px;
+      padding: 12px 16px;
+      background: #1f2937;
+      color: white;
+      border-radius: 12px;
+      font-size: 22px;
+    }
+
+    .question-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      border: 2px solid transparent;
+    }
+
+    .question-card.correct { border-color: #22c55e; }
+    .question-card.incorrect { border-color: #ef4444; }
+
+    .question-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .question-number {
+      background: #4f46e5;
+      color: white;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .question-title { font-weight: bold; color: #374151; }
+
+    .prompt {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 14px 0 18px;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      padding: 12px;
+      cursor: pointer;
+      background: #f9fafb;
+      line-height: 1.5;
+    }
+
+    :focus-visible { outline: 3px solid #4f46e5; outline-offset: 3px; }
+    .option:focus-within { outline: 3px solid #4f46e5; outline-offset: 2px; }
+
+    .option:hover { background: #eef2ff; }
+    .option input { margin-top: 4px; transform: scale(1.1); }
+
+    .option.correct-choice {
+      border-color: #22c55e;
+      background: #dcfce7;
+    }
+
+    .option.wrong-choice {
+      border-color: #ef4444;
+      background: #fee2e2;
+    }
+
+    .check-button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 11px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .check-button:hover { background: #1d4ed8; }
+    .check-button:disabled { background: #9ca3af; cursor: not-allowed; }
+
+    .feedback {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 12px;
+      display: none;
+      line-height: 1.5;
+    }
+
+    .feedback.correct-feedback {
+      display: block;
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #22c55e;
+    }
+
+    .feedback.incorrect-feedback {
+      display: block;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #ef4444;
+    }
+
+    .locked-working {
+      margin-top: 12px;
+      border: 1px dashed #9ca3af;
+      background: #f9fafb;
+      color: #4b5563;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-weight: bold;
+    }
+
+    .working-details {
+      margin-top: 12px;
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .working-details summary {
+      cursor: pointer;
+      padding: 12px 14px;
+      font-weight: bold;
+      color: #1e40af;
+      list-style-position: inside;
+    }
+
+    .working-details summary:hover { background: #dbeafe; }
+
+    .working-content {
+      padding: 0 16px 14px;
+      line-height: 1.55;
+      color: #1f2937;
+      border-top: 1px solid #bfdbfe;
+      background: white;
+    }
+
+    .working-content p { margin: 11px 0; }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      padding: 24px;
+    }
+
+    @media (min-width: 760px) {
+      .options { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Multiplying Fractions Quiz</h1>
+    <p>6iec Maths — Unit 01 Numbers</p>
+
+    <p>Choose an answer, then check it to unlock the worked solution.</p>
+  </header>
+
+  <div class="top-bar">
+    <div class="score-box" id="scoreBox" aria-live="polite">Score: 0 / 0 checked</div>
+    <button class="reset-button" type="button" onclick="resetQuiz()">Reset quiz</button>
+    <a class="home-link" href="../index.html">Back to Unit 01 Numbers</a>
+  </div>
+
+  <main>
+    <section class="instructions">
+      <strong>Instructions:</strong>
+      Multiply each pair of fractions and give your answer in its simplest form. Simplify the given fractions or cancel common factors before multiplying where helpful. No mixed numbers are used.
+      Select one answer for each part. Your score updates as you go, and the worked solution appears after checking.
+    </section>
+
+    <div id="quizContainer"></div>
+  </main>
+
+  <footer>6iec Maths — Unit 01 Numbers - Multiplying Fractions Quiz</footer>
+
+  <script>
+    const questions = [
+  {
+    "id": "multiplying-fractions-q01",
+    "section": "Multiplying and simplifying",
+    "title": "1",
+    "prompt": "Calculate \\(\\frac{2}{5}\\times\\frac{3}{7}\\). Give your answer in its simplest form.",
+    "options": [
+      "\\(\\frac{5}{12}\\)",
+      "\\(\\frac{6}{35}\\)",
+      "\\(\\frac{6}{12}\\)",
+      "\\(\\frac{1}{7}\\)"
+    ],
+    "answer": 1,
+    "solution": "\\(\\frac{6}{35}\\)",
+    "working": "\u003cp\u003eMultiply the numerators together and the denominators together.\u003c/p\u003e\u003cp\u003e\\(\\frac25\\times\\frac37=\\frac{2\\times3}{5\\times7}=\\frac6{35}\\).\u003c/p\u003e\u003cp\u003e6 and 35 have no common factor greater than 1, so the answer is already in its simplest form.\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "multiplying-fractions-q02",
+    "section": "Multiplying and simplifying",
+    "title": "2",
+    "prompt": "Calculate \\(\\frac{3}{4}\\times\\frac{2}{5}\\). Give your answer in its simplest form.",
+    "options": [
+      "\\(\\frac{5}{9}\\)",
+      "\\(\\frac{3}{20}\\)",
+      "\\(\\frac{3}{10}\\)",
+      "\\(\\frac{6}{9}\\)"
+    ],
+    "answer": 2,
+    "solution": "\\(\\frac{3}{10}\\)",
+    "working": "\u003cp\u003eMultiply, then simplify by dividing numerator and denominator by 2.\u003c/p\u003e\u003cp\u003e\\(\\frac34\\times\\frac25=\\frac6{20}=\\frac3{10}\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "multiplying-fractions-q03",
+    "section": "Multiplying and simplifying",
+    "title": "3",
+    "prompt": "Calculate \\(\\frac{4}{9}\\times\\frac{3}{8}\\). Give your answer in its simplest form.",
+    "options": [
+      "\\(\\frac{1}{6}\\)",
+      "\\(\\frac{7}{17}\\)",
+      "\\(\\frac{1}{18}\\)",
+      "\\(\\frac{1}{3}\\)"
+    ],
+    "answer": 0,
+    "solution": "\\(\\frac{1}{6}\\)",
+    "working": "\u003cp\u003eCancel 4 with 8 (divide both by 4), and 3 with 9 (divide both by 3).\u003c/p\u003e\u003cp\u003e\\(\\frac49\\times\\frac38=\\frac13\\times\\frac12=\\frac16\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "multiplying-fractions-q04",
+    "section": "Simplify first and cancel common factors",
+    "title": "4",
+    "prompt": "Calculate \\(\\frac{6}{15}\\times\\frac{5}{8}\\). Give your answer in its simplest form.",
+    "options": [
+      "\\(\\frac{1}{8}\\)",
+      "\\(\\frac{11}{23}\\)",
+      "\\(\\frac{1}{2}\\)",
+      "\\(\\frac{1}{4}\\)"
+    ],
+    "answer": 3,
+    "solution": "\\(\\frac{1}{4}\\)",
+    "working": "\u003cp\u003eFirst simplify \\(\\frac6{15}=\\frac25\\).\u003c/p\u003e\u003cp\u003eThen cancel the common factor 5 across the product.\u003c/p\u003e\u003cp\u003e\\(\\frac25\\times\\frac58=\\frac28=\\frac14\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "multiplying-fractions-q05",
+    "section": "Simplify first and cancel common factors",
+    "title": "5",
+    "prompt": "Calculate \\(\\frac{7}{12}\\times\\frac{18}{35}\\). Give your answer in its simplest form.",
+    "options": [
+      "\\(\\frac{3}{5}\\)",
+      "\\(\\frac{3}{10}\\)",
+      "\\(\\frac{1}{10}\\)",
+      "\\(\\frac{5}{14}\\)"
+    ],
+    "answer": 1,
+    "solution": "\\(\\frac{3}{10}\\)",
+    "working": "\u003cp\u003eCancel 7 with 35 (divide both by 7), and 18 with 12 (divide both by 6).\u003c/p\u003e\u003cp\u003e\\(\\frac7{12}\\times\\frac{18}{35}=\\frac12\\times\\frac35=\\frac3{10}\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "multiplying-fractions-q06",
+    "section": "Simplify first and cancel common factors",
+    "title": "6",
+    "prompt": "Calculate \\(\\frac{13}{80}\\times\\frac{20}{39}\\). Give your answer in its simplest form.",
+    "options": [
+      "\\(\\frac{1}{12}\\)",
+      "\\(\\frac{1}{6}\\)",
+      "\\(\\frac{1}{4}\\)",
+      "\\(\\frac{1}{39}\\)"
+    ],
+    "answer": 0,
+    "solution": "\\(\\frac{1}{12}\\)",
+    "working": "\u003cp\u003eCancel 13 with 39 (divide both by 13), and 20 with 80 (divide both by 20).\u003c/p\u003e\u003cp\u003e\\(\\frac{13}{80}\\times\\frac{20}{39}=\\frac14\\times\\frac13=\\frac1{12}\\).\u003c/p\u003e\u003cp\u003eThis avoids multiplying 13 by 20 and 80 by 39 before reducing.\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "multiplying-fractions-q07",
+    "section": "Simplify first and cancel common factors",
+    "title": "7",
+    "prompt": "Calculate \\(\\frac{9}{14}\\times\\frac{21}{27}\\). Give your answer in its simplest form.",
+    "options": [
+      "\\(\\frac{1}{3}\\)",
+      "\\(\\frac{3}{4}\\)",
+      "\\(\\frac{1}{6}\\)",
+      "\\(\\frac{1}{2}\\)"
+    ],
+    "answer": 3,
+    "solution": "\\(\\frac{1}{2}\\)",
+    "working": "\u003cp\u003eFirst simplify \\(\\frac{21}{27}=\\frac79\\). Then cancel the common factor 9.\u003c/p\u003e\u003cp\u003e\\(\\frac9{14}\\times\\frac79=\\frac7{14}=\\frac12\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "multiplying-fractions-q08",
+    "section": "Cancellation challenge",
+    "title": "8",
+    "prompt": "Calculate \\(\\frac{14}{45}\\times\\frac{15}{28}\\). Give your answer in its simplest form.",
+    "options": [
+      "\\(\\frac{1}{3}\\)",
+      "\\(\\frac{1}{12}\\)",
+      "\\(\\frac{1}{6}\\)",
+      "\\(\\frac{2}{9}\\)"
+    ],
+    "answer": 2,
+    "solution": "\\(\\frac{1}{6}\\)",
+    "working": "\u003cp\u003eCancel 14 with 28 (divide both by 14), and 15 with 45 (divide both by 15).\u003c/p\u003e\u003cp\u003e\\(\\frac{14}{45}\\times\\frac{15}{28}=\\frac13\\times\\frac12=\\frac16\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "multiplying-fractions-q09",
+    "section": "Cancellation challenge",
+    "title": "9",
+    "prompt": "Calculate \\(\\frac{25}{42}\\times\\frac{14}{75}\\). Give your answer in its simplest form.",
+    "options": [
+      "\\(\\frac{1}{9}\\)",
+      "\\(\\frac{1}{3}\\)",
+      "\\(\\frac{2}{9}\\)",
+      "\\(\\frac{1}{15}\\)"
+    ],
+    "answer": 0,
+    "solution": "\\(\\frac{1}{9}\\)",
+    "working": "\u003cp\u003eCancel 25 with 75 (divide both by 25), and 14 with 42 (divide both by 14).\u003c/p\u003e\u003cp\u003e\\(\\frac{25}{42}\\times\\frac{14}{75}=\\frac13\\times\\frac13=\\frac19\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "multiplying-fractions-q10",
+    "section": "Cancellation challenge",
+    "title": "10",
+    "prompt": "Calculate \\(\\frac{16}{33}\\times\\frac{22}{40}\\). Give your answer in its simplest form.",
+    "options": [
+      "\\(\\frac{2}{15}\\)",
+      "\\(\\frac{4}{5}\\)",
+      "\\(\\frac{4}{15}\\)",
+      "\\(\\frac{2}{3}\\)"
+    ],
+    "answer": 2,
+    "solution": "\\(\\frac{4}{15}\\)",
+    "working": "\u003cp\u003eFirst simplify \\(\\frac{22}{40}=\\frac{11}{20}\\).\u003c/p\u003e\u003cp\u003eCancel 11 with 33 (divide both by 11), and 16 with 20 (divide both by 4).\u003c/p\u003e\u003cp\u003e\\(\\frac{16}{33}\\times\\frac{11}{20}=\\frac43\\times\\frac15=\\frac4{15}\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  }
+];
+
+    const quizContainer = document.getElementById("quizContainer");
+    const scoreBox = document.getElementById("scoreBox");
+    let checked = new Array(questions.length).fill(false);
+    let correct = new Array(questions.length).fill(false);
+
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, character => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[character]);
+    }
+
+    function typesetMath(elements) {
+      if (typeof window.MathJax?.typesetPromise === "function") {
+        MathJax.typesetPromise(elements).catch(error => console.error("Maths rendering failed", error));
+      }
+    }
+
+    function renderQuiz() {
+      if (typeof window.MathJax?.typesetClear === "function") MathJax.typesetClear([quizContainer]);
+      quizContainer.innerHTML = "";
+      let currentSection = "";
+
+      questions.forEach((question, index) => {
+        if (question.section !== currentSection) {
+          currentSection = question.section;
+          const sectionTitle = document.createElement("h2");
+          sectionTitle.className = "section-title";
+          sectionTitle.textContent = currentSection;
+          quizContainer.appendChild(sectionTitle);
+        }
+
+        const card = document.createElement("section");
+        card.className = "question-card";
+        card.id = `card-${index}`;
+        card.dataset.questionId = question.id;
+        card.setAttribute("aria-labelledby", `question-heading-${index}`);
+
+        const optionHTML = question.options.map((option, optionIndex) => `
+          <label class="option" id="option-${index}-${optionIndex}">
+            <input type="radio" name="question-${index}" value="${optionIndex}">
+            <span><strong>${String.fromCharCode(65 + optionIndex)}.</strong> ${escapeHTML(option)}</span>
+          </label>
+        `).join("");
+
+        card.innerHTML = `
+          <div class="question-header" id="question-heading-${index}">
+            <span class="question-number">${escapeHTML(question.title)}</span>
+            <span class="question-title">Choose the correct answer</span>
+          </div>
+          <div class="prompt">${escapeHTML(question.prompt)}</div>
+          <div class="options">${optionHTML}</div>
+          <button class="check-button" id="check-${index}" type="button" onclick="checkQuestion(${index})" disabled>Check this question</button>
+          <div class="feedback" id="feedback-${index}" aria-live="polite"></div>
+          <div class="locked-working" id="locked-working-${index}">Worked solution locked - check this question first.</div>
+          <details class="working-details" id="working-${index}" style="display: none;">
+            <summary>Show worked solution</summary>
+            <div class="working-content" id="working-content-${index}"></div>
+          </details>
+        `;
+
+        card.querySelectorAll('input[type="radio"]').forEach(input => {
+          input.addEventListener("change", () => {
+            document.getElementById(`check-${index}`).disabled = checked[index];
+          });
+        });
+        quizContainer.appendChild(card);
+      });
+
+      updateScore();
+      typesetMath();
+    }
+
+    function checkQuestion(index) {
+      if (checked[index]) return;
+      const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+      const feedback = document.getElementById(`feedback-${index}`);
+      const card = document.getElementById(`card-${index}`);
+      const checkButton = document.getElementById(`check-${index}`);
+
+      if (!selected) {
+        feedback.className = "feedback incorrect-feedback";
+        feedback.textContent = "Please choose an answer first.";
+        return;
+      }
+
+      const selectedIndex = Number(selected.value);
+      const correctIndex = questions[index].answer;
+      checked[index] = true;
+      correct[index] = selectedIndex === correctIndex;
+
+      card.classList.add(correct[index] ? "correct" : "incorrect");
+      document.getElementById(`option-${index}-${correctIndex}`).classList.add("correct-choice");
+
+      if (!correct[index]) {
+        document.getElementById(`option-${index}-${selectedIndex}`).classList.add("wrong-choice");
+      }
+
+      document.querySelectorAll(`input[name="question-${index}"]`).forEach(input => input.disabled = true);
+      checkButton.disabled = true;
+      feedback.className = correct[index] ? "feedback correct-feedback" : "feedback incorrect-feedback";
+      feedback.innerHTML = correct[index]
+        ? `Correct. ${escapeHTML(questions[index].solution)}`
+        : `Not quite. The correct answer is ${escapeHTML(questions[index].solution)}`;
+
+      document.getElementById(`locked-working-${index}`).style.display = "none";
+      const workingDetails = document.getElementById(`working-${index}`);
+      workingDetails.style.display = "block";
+      document.getElementById(`working-content-${index}`).innerHTML = questions[index].working;
+
+      updateScore();
+      typesetMath([feedback, workingDetails]);
+    }
+
+    function updateScore() {
+      const checkedCount = checked.filter(Boolean).length;
+      const correctCount = correct.filter(Boolean).length;
+      scoreBox.textContent = `Score: ${correctCount} / ${checkedCount} checked`;
+    }
+
+    function resetQuiz() {
+      checked = new Array(questions.length).fill(false);
+      correct = new Array(questions.length).fill(false);
+      renderQuiz();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    renderQuiz();
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f4422aa63f9d4e04b91ab57a5551ffa5"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

@@ -107,8 +107,13 @@ unavailable checks as pending; do not claim classroom testing without evidence.
 Record copyright notices and ask for publication-rights confirmation when
 permission is unclear. Local possession of a worksheet does not establish
 permission to reproduce it on a public website. Keep new content in draft
-until teacher review and rights are resolved; commit or publish only when the
-user explicitly asks. Earlier approval of another quiz does not carry over.
+until teacher review and rights are resolved. Under the standing instruction
+confirmed on 16 October 2026 in `AGENTS.md`, teacher approval of the current
+quiz also authorises its commit, push and publication unless the user limits
+that approval. Do not ask for a second release instruction. Resolve actual
+blockers and verify deployment; prior approval of another quiz does not carry
+over, and approval does not establish new source rights or complete pending
+browser/classroom checks.
 
 ## Worked example: 2iec Solving Equations
 

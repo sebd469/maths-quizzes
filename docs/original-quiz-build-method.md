@@ -63,7 +63,10 @@ class; the class links back to the main menu.
 9. Present the questions to the teacher. If review before publishing was
    requested, keep everything local until approval. After approval, incorporate
    requested changes, repeat affected checks, remove the draft notice only
-   when justified, and publish only with authorisation. Do not include source
+   when justified, then commit, push and publish: under the standing instruction
+   in `AGENTS.md`, approval of this quiz supplies that release authorisation
+   unless the user expressly restricts it. Resolve actual blockers and verify
+   deployment, without asking for another release instruction. Do not include source
    PDFs, extracted text or unrelated changes in the commit.
 
 ## 6iec Unit 01 Numbers quizzes
@@ -168,3 +171,32 @@ The teacher separately approved Laws of Indices 2 on 15 October 2026 and
 requested commit, push and publication. The draft notice was removed following
 this authorisation. Browser visual/interaction checks and classroom testing
 remain pending and must not be represented as completed.
+
+## 6iec Multiplying Fractions Quiz
+
+Prepared as a local draft on 16 October 2026 at
+`6iec/Unit 01 Numbers/Multiplying Fractions Quiz/`, with the matching review at
+`Source Files/6iec/Unit 01 Numbers/Multiplying Fractions Quiz/teacher-review.md`.
+The Unit 01 Numbers menu places it immediately below Adding and Subtracting
+Fractions Quiz. Existing quiz order, back links and analytics are preserved.
+
+Use 10 original questions, following the existing quiz length. All given
+fractions and correct final answers are proper fractions; no mixed numbers
+or conversions are included. Questions progress from simple products to
+reducing input fractions and cancelling common factors before multiplication.
+Question 6 is the requested `13/80 × 20/39 = 1/12`. Questions 4, 7 and 10 also
+contain reducible input fractions. Worked solutions demonstrate cancellation
+between a numerator and a denominator, never between two numerators or two
+denominators. Multiplying first and then reducing remains a valid alternative;
+multiple choice cannot enforce the student's calculation order.
+
+Verify products and intermediate equalities with exact rational arithmetic;
+check that each correct option is in lowest terms and that no distractor is an
+equivalent form of the correct answer. Keep the teacher review synchronised
+with the JSON and use the existing validator, renderer and template.
+
+Teacher approval was received on 20 October 2026. Under the standing instruction
+in `AGENTS.md`, this authorises commit, push and publication without another
+release request. The draft notice was removed and the release checks repeated.
+Publish only related files and verify deployment/live content. Browser and
+classroom checks remain pending and must not be represented as completed.

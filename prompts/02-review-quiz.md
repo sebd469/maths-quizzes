@@ -25,6 +25,13 @@ Review the teacher copy in the matching source folder. Keep the quiz in draft
 when teacher approval or browser testing is outstanding; do not publish before
 the user's requested review is complete.
 
+Under the standing instruction in `AGENTS.md`, explicit teacher approval of
+the current quiz also authorises its commit, push and publication, unless the
+user states otherwise. Do not request separate release approval after that
+confirmation. Check and record the approval date, limit the release to the
+approved quiz's related changes, resolve genuine blockers, verify deployment,
+and keep unperformed browser/classroom checks marked as pending.
+
 - Check that a new quiz follows
   `<class>/<chapter, unit or topic>/<quiz name>/index.html`, with matching
   agreed names in folders, menu labels and page headings.

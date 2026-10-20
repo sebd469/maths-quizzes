@@ -71,7 +71,19 @@ for the common quiz behavior and data contract.
 
 ## Git and releases
 
+- Standing instruction confirmed on 16 October 2026: build new quizzes as
+  local drafts and wait for teacher approval. Explicit teacher approval of the
+  current quiz also authorises its commit, push and publication; do not ask
+  for a separate release instruction after that approval unless the user
+  restricts approval to content only or asks to keep the quiz unpublished.
+- Approval applies only to the identified quiz and its related menu, review
+  and documentation changes, not to other drafts or unrelated local files.
+  Record approval, remove the draft notice, repeat relevant checks, commit,
+  push to the existing publication branch, and verify deployment/live pages.
+  Source-rights concerns, genuine failures and access/tool blockers still need
+  resolution. Report unperformed checks honestly; approval does not make
+  pending browser or classroom tests complete.
 - Do not commit or push unless the user explicitly asks to publish or requests
-  a commit/push.
+  a commit/push, or gives teacher approval under the standing instruction above.
 - Never include source PDFs, extracted source text, or unrelated local changes
   in a quiz commit.

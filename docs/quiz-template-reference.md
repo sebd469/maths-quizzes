@@ -88,6 +88,15 @@ unreviewed markup.
 7. Publish only after content and rights review. Record any remaining decisions
    rather than presenting them as resolved.
 
+As confirmed on 16 October 2026, teacher approval of a specific quiz also
+authorises commit, push and publication under the standing instruction in
+`AGENTS.md`, unless the user explicitly limits that approval. Before approval,
+keep the new quiz and menu changes local. Afterwards, record approval, remove
+the draft notice, repeat relevant checks and publish the related release files
+without asking again for a separate release instruction. Source-rights issues,
+actual failures and access blockers still need resolution; incomplete browser
+or classroom tests remain incomplete. Verify deployment and live content.
+
 ## Current automation boundary
 
 The existing quiz pages are standalone HTML and remain the live implementation.
