@@ -1,0 +1,251 @@
+{
+  "quiz": {
+    "title": "Quiz 2 - Standard Form and Indices",
+    "course": "3iec Maths — Assessment Revision",
+    "topic": "Assessment Revision",
+    "instructions": "Choose one answer for each question. Give standard-form answers with a coefficient at least 1 and less than 10. Use exact values unless told otherwise. Check your answer to unlock the worked solution.",
+    "source_reference": "Original"
+  },
+  "questions": [
+    {
+      "id": "3iec-standard-indices-q01",
+      "section": "Standard form — Foundation",
+      "title": "1",
+      "prompt": "Write \\(0.000592\\) in standard form.",
+      "options": [
+        "\\(5.92\\times10^{-3}\\)",
+        "\\(5.92\\times10^{-4}\\)",
+        "\\(5.92\\times10^{4}\\)",
+        "\\(5.92\\times10^{-5}\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(5.92\\times10^{-4}\\)",
+      "working": "<p>The first factor must be at least 1 and less than 10. Move the decimal point four places to the right to get 5.92, so the power is negative.</p>\\[0.000592=5.92\\times10^{-4}.\\]",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-standard-indices-q02",
+      "section": "Standard form — Foundation",
+      "title": "2",
+      "prompt": "Write \\(73\\,100\\,000\\) in standard form.",
+      "options": [
+        "\\(7.31\\times10^6\\)",
+        "\\(7.31\\times10^8\\)",
+        "\\(7.31\\times10^{-7}\\)",
+        "\\(7.31\\times10^7\\)"
+      ],
+      "answer": 3,
+      "solution": "\\(7.31\\times10^7\\)",
+      "working": "<p>Move the decimal point seven places to the left to get 7.31.</p>\\[73\\,100\\,000=7.31\\times10^7.\\]",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-standard-indices-q03",
+      "section": "Standard form — Foundation",
+      "title": "3",
+      "prompt": "Write \\(6.04\\times10^{-3}\\) as an ordinary decimal.",
+      "options": [
+        "\\(0.00604\\)",
+        "\\(0.0604\\)",
+        "\\(0.000604\\)",
+        "\\(6040\\)"
+      ],
+      "answer": 0,
+      "solution": "\\(0.00604\\)",
+      "working": "<p>A power of \\(10^{-3}\\) means divide by 1000, moving the decimal point three places left.</p>\\[6.04\\times10^{-3}=0.00604.\\]",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-standard-indices-q04",
+      "section": "Standard form — Calculations",
+      "title": "4",
+      "prompt": "Calculate \\((4.6\\times10^5)+(7\\times10^4)\\). Give your answer in standard form.",
+      "options": [
+        "\\(1.16\\times10^6\\)",
+        "\\(4.67\\times10^5\\)",
+        "\\(5.3\\times10^5\\)",
+        "\\(1.16\\times10^9\\)"
+      ],
+      "answer": 2,
+      "solution": "\\(5.3\\times10^5\\)",
+      "working": "<p>Rewrite both terms with the same power of 10 before adding the coefficients.</p>\\[(4.6+0.7)\\times10^5=5.3\\times10^5.\\]",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-standard-indices-q05",
+      "section": "Standard form — Calculations",
+      "title": "5",
+      "prompt": "Calculate \\((9\\times10^8)-(2.4\\times10^7)\\). Give your answer in standard form.",
+      "options": [
+        "\\(6.6\\times10^8\\)",
+        "\\(8.76\\times10^8\\)",
+        "\\(8.76\\times10^7\\)",
+        "\\(6.6\\times10^1\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(8.76\\times10^8\\)",
+      "working": "<p>Since \\(2.4\\times10^7=0.24\\times10^8\\),</p>\\[(9-0.24)\\times10^8=8.76\\times10^8.\\]",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-standard-indices-q06",
+      "section": "Standard form — Calculations",
+      "title": "6",
+      "prompt": "Calculate \\((3.2\\times10^{-4})(5\\times10^7)\\). Give your answer in standard form.",
+      "options": [
+        "\\(1.6\\times10^3\\)",
+        "\\(8.2\\times10^3\\)",
+        "\\(1.6\\times10^{12}\\)",
+        "\\(1.6\\times10^4\\)"
+      ],
+      "answer": 3,
+      "solution": "\\(1.6\\times10^4\\)",
+      "working": "<p>Multiply the coefficients and add the powers.</p>\\[(3.2\\times5)\\times10^{-4+7}=16\\times10^3=1.6\\times10^4.\\]",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-standard-indices-q07",
+      "section": "Standard form — Calculations",
+      "title": "7",
+      "prompt": "Calculate \\(\\frac{8.4\\times10^6}{2.1\\times10^{-3}}\\). Give your answer in standard form.",
+      "options": [
+        "\\(4\\times10^9\\)",
+        "\\(4\\times10^3\\)",
+        "\\(6.3\\times10^9\\)",
+        "\\(4\\times10^{-2}\\)"
+      ],
+      "answer": 0,
+      "solution": "\\(4\\times10^9\\)",
+      "working": "<p>Divide the coefficients and subtract the denominator exponent, including its minus sign.</p>\\[\\frac{8.4}{2.1}\\times10^{6-(-3)}=4\\times10^9.\\]",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-standard-indices-q08",
+      "section": "Standard form — Challenge",
+      "title": "8",
+      "prompt": "Simplify \\(2.4\\times10^n+6\\times10^{n-1}\\) for any integer \\(n\\). Give your answer in standard form.",
+      "options": [
+        "\\(8.4\\times10^n\\)",
+        "\\(3\\times10^{n-1}\\)",
+        "\\(3\\times10^n\\)",
+        "\\(1.44\\times10^n\\)"
+      ],
+      "answer": 2,
+      "solution": "\\(3\\times10^n\\)",
+      "working": "<p>Rewrite \\(6\\times10^{n-1}=0.6\\times10^n\\).</p>\\[(2.4+0.6)\\times10^n=3\\times10^n.\\]<p>The coefficient 3 is between 1 and 10, so this is standard form.</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-standard-indices-q09",
+      "section": "Indices — Foundation",
+      "title": "9",
+      "prompt": "Simplify \\(a^4\\times a^5\\).",
+      "options": [
+        "\\(a^{20}\\)",
+        "\\(a^9\\)",
+        "\\(2a^9\\)",
+        "\\(a\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(a^9\\)",
+      "working": "<p>When multiplying powers with the same base, add the indices.</p>\\[a^4\\times a^5=a^{4+5}=a^9.\\]",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-standard-indices-q10",
+      "section": "Indices — Foundation",
+      "title": "10",
+      "prompt": "For \\(x\\ne0\\), simplify \\(\\frac{x^3}{x^8}\\) using a positive index.",
+      "options": [
+        "\\(x^5\\)",
+        "\\(\\frac{1}{x^{11}}\\)",
+        "\\(\\frac{1}{x^5}\\)",
+        "\\(\\frac{1}{5x}\\)"
+      ],
+      "answer": 2,
+      "solution": "\\(\\frac{1}{x^5}\\)",
+      "working": "<p>Subtract the indices, then use the reciprocal for a negative index.</p>\\[\\frac{x^3}{x^8}=x^{3-8}=x^{-5}=\\frac{1}{x^5}.\\]",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-standard-indices-q11",
+      "section": "Indices — Applying the laws",
+      "title": "11",
+      "prompt": "Expand and simplify \\((3ab^3)^3\\).",
+      "options": [
+        "\\(9a^3b^9\\)",
+        "\\(27ab^9\\)",
+        "\\(27a^3b^6\\)",
+        "\\(27a^3b^9\\)"
+      ],
+      "answer": 3,
+      "solution": "\\(27a^3b^9\\)",
+      "working": "<p>Apply the power to every factor; multiply the indices when raising a power to a power.</p>\\[(3ab^3)^3=3^3a^3b^{3\\times3}=27a^3b^9.\\]",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-standard-indices-q12",
+      "section": "Indices — Applying the laws",
+      "title": "12",
+      "prompt": "For \\(z\\ne0\\), evaluate \\(8z^0+2^{-3}\\). Give an exact fraction.",
+      "options": [
+        "\\(\\frac{65}{8}\\)",
+        "\\(\\frac{9}{8}\\)",
+        "\\(\\frac{63}{8}\\)",
+        "\\(\\frac{1}{8}\\)"
+      ],
+      "answer": 0,
+      "solution": "\\(\\frac{65}{8}\\)",
+      "working": "<p>A non-zero base to the power zero equals 1, and a negative exponent means a reciprocal.</p>\\[z^0=1,\\qquad2^{-3}=\\frac{1}{2^3}=\\frac{1}{8}.\\]\\[8z^0+2^{-3}=8+\\frac{1}{8}=\\frac{65}{8}.\\]",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-standard-indices-q13",
+      "section": "Indices — Applying the laws",
+      "title": "13",
+      "prompt": "Evaluate \\(64^{\\frac23}\\) exactly.",
+      "options": [
+        "\\(8\\)",
+        "\\(16\\)",
+        "\\(32\\)",
+        "\\(128\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(16\\)",
+      "working": "<p>The denominator of the index gives the root, and the numerator gives the power.</p>\\[64^{\\frac{2}{3}}=(\\sqrt[3]{64})^2=4^2=16.\\]",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-standard-indices-q14",
+      "section": "Indices — Challenge",
+      "title": "14",
+      "prompt": "Solve \\(4^{x+1}=32\\) for \\(x\\).",
+      "options": [
+        "\\(\\frac52\\)",
+        "\\(4\\)",
+        "\\(\\frac32\\)",
+        "\\(2\\)"
+      ],
+      "answer": 2,
+      "solution": "\\(\\frac32\\)",
+      "working": "<p>Write both sides as powers of 2.</p>\\[(2^2)^{x+1}=2^5\\quad\\Rightarrow\\quad2(x+1)=5.\\]<p>Thus \\(2x=3\\), giving \\(x=\\frac{3}{2}\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-standard-indices-q15",
+      "section": "Indices — Challenge",
+      "title": "15",
+      "prompt": "Solve \\(5^x=125^{x-4}\\) for \\(x\\).",
+      "options": [
+        "\\(-6\\)",
+        "\\(2\\)",
+        "\\(12\\)",
+        "\\(6\\)"
+      ],
+      "answer": 3,
+      "solution": "\\(6\\)",
+      "working": "<p>Since \\(125=5^3\\),</p>\\[5^x=5^{3(x-4)}.\\]<p>Equate the indices:</p>\\[x=3x-12\\quad\\Rightarrow\\quad2x=12\\quad\\Rightarrow\\quad x=6.\\]",
+      "source_ref": "Original"
+    }
+  ]
+}
