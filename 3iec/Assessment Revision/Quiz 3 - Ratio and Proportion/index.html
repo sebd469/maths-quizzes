@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz 3 - Ratio and Proportion - 3iec Maths — Assessment Revision</title>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+    }
+
+    header p {
+      margin: 4px 0;
+      color: #d1d5db;
+    }
+
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: white;
+      border-bottom: 1px solid #d1d5db;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .score-box {
+      font-weight: bold;
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+
+    .reset-button,
+    .home-link {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .reset-button { background: #ef4444; color: white; }
+    .home-link { background: #e5e7eb; color: #111827; }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 18px 60px;
+    }
+
+    .instructions {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      line-height: 1.5;
+    }
+
+    .section-title {
+      margin: 32px 0 12px;
+      padding: 12px 16px;
+      background: #1f2937;
+      color: white;
+      border-radius: 12px;
+      font-size: 22px;
+    }
+
+    .question-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      border: 2px solid transparent;
+    }
+
+    .question-card.correct { border-color: #22c55e; }
+    .question-card.incorrect { border-color: #ef4444; }
+
+    .question-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .question-number {
+      background: #4f46e5;
+      color: white;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .question-title { font-weight: bold; color: #374151; }
+
+    .prompt {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 14px 0 18px;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      padding: 12px;
+      cursor: pointer;
+      background: #f9fafb;
+      line-height: 1.5;
+    }
+
+    :focus-visible { outline: 3px solid #4f46e5; outline-offset: 3px; }
+    .option:focus-within { outline: 3px solid #4f46e5; outline-offset: 2px; }
+
+    .option:hover { background: #eef2ff; }
+    .option input { margin-top: 4px; transform: scale(1.1); }
+
+    .option.correct-choice {
+      border-color: #22c55e;
+      background: #dcfce7;
+    }
+
+    .option.wrong-choice {
+      border-color: #ef4444;
+      background: #fee2e2;
+    }
+
+    .check-button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 11px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .check-button:hover { background: #1d4ed8; }
+    .check-button:disabled { background: #9ca3af; cursor: not-allowed; }
+
+    .feedback {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 12px;
+      display: none;
+      line-height: 1.5;
+    }
+
+    .feedback.correct-feedback {
+      display: block;
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #22c55e;
+    }
+
+    .feedback.incorrect-feedback {
+      display: block;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #ef4444;
+    }
+
+    .locked-working {
+      margin-top: 12px;
+      border: 1px dashed #9ca3af;
+      background: #f9fafb;
+      color: #4b5563;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-weight: bold;
+    }
+
+    .working-details {
+      margin-top: 12px;
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .working-details summary {
+      cursor: pointer;
+      padding: 12px 14px;
+      font-weight: bold;
+      color: #1e40af;
+      list-style-position: inside;
+    }
+
+    .working-details summary:hover { background: #dbeafe; }
+
+    .working-content {
+      padding: 0 16px 14px;
+      line-height: 1.55;
+      color: #1f2937;
+      border-top: 1px solid #bfdbfe;
+      background: white;
+    }
+
+    .working-content p { margin: 11px 0; }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      padding: 24px;
+    }
+
+    @media (min-width: 760px) {
+      .options { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Quiz 3 - Ratio and Proportion</h1>
+    <p>3iec Maths — Assessment Revision</p>
+
+    <p>Choose an answer, then check it to unlock the worked solution.</p>
+  </header>
+
+  <div class="top-bar">
+    <div class="score-box" id="scoreBox" aria-live="polite">Score: 0 / 0 checked</div>
+    <button class="reset-button" type="button" onclick="resetQuiz()">Reset quiz</button>
+    <a class="home-link" href="../index.html">Back to Assessment Revision</a>
+  </div>
+
+  <main>
+    <section class="instructions">
+      <strong>Instructions:</strong>
+      Choose one answer for each question. Work out your answer before checking, then use the worked solution to review your method. Give exact answers unless stated otherwise. A calculator may be used.
+      Select one answer for each part. Your score updates as you go, and the worked solution appears after checking.
+    </section>
+
+    <div id="quizContainer"></div>
+  </main>
+
+  <footer>3iec Maths — Assessment Revision - Quiz 3 - Ratio and Proportion</footer>
+
+  <script>
+    const questions = [
+  {
+    "id": "3iec-rp-q01",
+    "section": "Foundation - Ratios and direct proportion",
+    "title": "Question 1",
+    "prompt": "Simplify the ratio \\(42:70\\) fully.",
+    "options": [
+      "\\(6:7\\)",
+      "\\(3:5\\)",
+      "\\(5:3\\)",
+      "\\(2:5\\)"
+    ],
+    "answer": 1,
+    "solution": "\\(3:5\\)",
+    "working": "\u003cp\u003eThe highest common factor of 42 and 70 is 14. Divide both parts by 14:\u003c/p\u003e\\(42:70=3:5\\).",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-rp-q02",
+    "section": "Foundation - Ratios and direct proportion",
+    "title": "Question 2",
+    "prompt": "Amira and Ben share \u20ac156 in the ratio \\(5:7\\). How much does Ben receive?",
+    "options": [
+      "\u20ac65",
+      "\u20ac78",
+      "\u20ac109.20",
+      "\u20ac91"
+    ],
+    "answer": 3,
+    "solution": "\u20ac91",
+    "working": "\u003cp\u003eThere are \\(5+7=12\\) parts. One part is \\(156\\div12=13\\) euros. Ben receives 7 parts:\u003c/p\u003e\\(7\\times13=91\\) euros.",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-rp-q03",
+    "section": "Foundation - Ratios and direct proportion",
+    "title": "Question 3",
+    "prompt": "Simplify the ratio \\(1.5\\,\\mathrm{m}:60\\,\\mathrm{cm}\\).",
+    "options": [
+      "\\(5:2\\)",
+      "\\(1:40\\)",
+      "\\(2:5\\)",
+      "\\(3:2\\)"
+    ],
+    "answer": 0,
+    "solution": "\\(5:2\\)",
+    "working": "\u003cp\u003eUse the same units first: \\(1.5\\,\\mathrm{m}=150\\,\\mathrm{cm}\\).\u003c/p\u003e\u003cp\u003e\\(150:60=5:2\\) after dividing by 30.\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-rp-q04",
+    "section": "Foundation - Ratios and direct proportion",
+    "title": "Question 4",
+    "prompt": "Seven identical notebooks cost \u20ac12.60. The cost is directly proportional to the number bought. How much do 11 notebooks cost?",
+    "options": [
+      "\u20ac8.02",
+      "\u20ac18.60",
+      "\u20ac19.80",
+      "\u20ac138.60"
+    ],
+    "answer": 2,
+    "solution": "\u20ac19.80",
+    "working": "\u003cp\u003eOne notebook costs \\(12.60\\div7=1.80\\) euros. Eleven cost \\(11\\times1.80=19.80\\) euros.\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-rp-q05",
+    "section": "Foundation - Ratios and direct proportion",
+    "title": "Question 5",
+    "prompt": "\\(y\\) is directly proportional to \\(x\\). When \\(x=5\\), \\(y=35\\). Find \\(y\\) when \\(x=8\\).",
+    "options": [
+      "\\(56\\)",
+      "\\(38\\)",
+      "\\(21.875\\)",
+      "\\(280\\)"
+    ],
+    "answer": 0,
+    "solution": "\\(56\\)",
+    "working": "\u003cp\u003eWrite \\(y=kx\\). Since \\(35=5k\\), \\(k=7\\). Therefore \\(y=7(8)=56\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-rp-q06",
+    "section": "Developing - Proportion models",
+    "title": "Question 6",
+    "prompt": "\\(y\\) is directly proportional to \\(x^2\\). When \\(x=4\\), \\(y=48\\). Find \\(y\\) when \\(x=6\\).",
+    "options": [
+      "\\(72\\)",
+      "\\(108\\)",
+      "\\(192\\)",
+      "\\(27\\)"
+    ],
+    "answer": 1,
+    "solution": "\\(108\\)",
+    "working": "\u003cp\u003eUse \\(y=kx^2\\). Then \\(48=16k\\), so \\(k=3\\). At \\(x=6\\), \\(y=3\\times6^2=108\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-rp-q07",
+    "section": "Developing - Proportion models",
+    "title": "Question 7",
+    "prompt": "\\(y\\) is inversely proportional to \\(x\\), with \\(x\u003e0\\). When \\(x=6\\), \\(y=8\\). Find \\(y\\) when \\(x=4\\).",
+    "options": [
+      "\\(\\frac{16}{3}\\)",
+      "\\(2\\)",
+      "\\(12\\)",
+      "\\(48\\)"
+    ],
+    "answer": 2,
+    "solution": "\\(12\\)",
+    "working": "\u003cp\u003eUse \\(y=\\frac{k}{x}\\). Then \\(k=xy=6\\times8=48\\). Hence \\(y=\\frac{48}{4}=12\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-rp-q08",
+    "section": "Developing - Proportion models",
+    "title": "Question 8",
+    "prompt": "Six workers take 15 days to complete a job. Assume all workers have the same constant rate and the time is inversely proportional to the number of workers. How long would ten workers take?",
+    "options": [
+      "25 days",
+      "10 days",
+      "6 days",
+      "9 days"
+    ],
+    "answer": 3,
+    "solution": "9 days",
+    "working": "\u003cp\u003eThe job needs \\(6\\times15=90\\) worker-days. With ten workers the time is \\(\\frac{90}{10}=9\\) days.\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-rp-q09",
+    "section": "Developing - Inverse squares and square roots",
+    "title": "Question 9",
+    "prompt": "\\(y\\) is inversely proportional to \\(x^2\\), where \\(x\u003e0\\). When \\(x=2\\), \\(y=45\\). Find \\(y\\) when \\(x=6\\).",
+    "options": [
+      "\\(15\\)",
+      "\\(5\\)",
+      "\\(135\\)",
+      "\\(405\\)"
+    ],
+    "answer": 1,
+    "solution": "\\(5\\)",
+    "working": "\u003cp\u003eWrite \\(y=\\frac{k}{x^2}\\). Then \\(k=45\\times2^2=180\\). So \\(y=\\frac{180}{6^2}=5\\). Tripling \\(x\\) divides \\(y\\) by 9.\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-rp-q10",
+    "section": "Developing - Inverse squares and square roots",
+    "title": "Question 10",
+    "prompt": "\\(y\\) is inversely proportional to \\(\\sqrt{x}\\), where \\(x\u003e0\\). When \\(x=25\\), \\(y=10\\). Find \\(y\\) when \\(x=100\\).",
+    "options": [
+      "\\(5\\)",
+      "\\(2.5\\)",
+      "\\(20\\)",
+      "\\(40\\)"
+    ],
+    "answer": 0,
+    "solution": "\\(5\\)",
+    "working": "\u003cp\u003eUse \\(y=\\frac{k}{\\sqrt{x}}\\). From \\(10=\\frac{k}{5}\\), \\(k=50\\). Hence \\(y=\\frac{50}{10}=5\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-rp-q11",
+    "section": "Developing - Inverse squares and square roots",
+    "title": "Question 11",
+    "prompt": "\\(z\\) is inversely proportional to \\(\\sqrt{w}\\), where \\(w\u003e0\\). When \\(w=36\\), \\(z=4\\). Express \\(z\\) in terms of \\(w\\).",
+    "options": [
+      "\\(z=\\frac{144}{w}\\)",
+      "\\(z=\\frac{4\\sqrt{w}}{6}\\)",
+      "\\(z=\\frac{\\sqrt{w}}{24}\\)",
+      "\\(z=\\frac{24}{\\sqrt{w}}\\)"
+    ],
+    "answer": 3,
+    "solution": "\\(z=\\frac{24}{\\sqrt{w}}\\)",
+    "working": "\u003cp\u003eLet \\(z=\\frac{k}{\\sqrt{w}}\\). Substituting gives \\(4=\\frac{k}{6}\\), so \\(k=24\\). Therefore \\(z=\\frac{24}{\\sqrt{w}}\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-rp-q12",
+    "section": "Challenge - Changing quantities",
+    "title": "Question 12",
+    "prompt": "\\(y\\) is inversely proportional to \\(x^2\\), with \\(x\u003e0\\) and \\(y\u003e0\\). If \\(x\\) is multiplied by 3, what happens to \\(y\\)?",
+    "options": [
+      "It is multiplied by 9.",
+      "It is divided by 3.",
+      "It is divided by 9.",
+      "It is multiplied by 3."
+    ],
+    "answer": 2,
+    "solution": "It is divided by 9.",
+    "working": "\u003cp\u003eThe model is \\(y=\\frac{k}{x^2}\\). Replacing \\(x\\) by \\(3x\\) gives \\(\\frac{k}{(3x)^2}=\\frac{k}{9x^2}=\\frac{y}{9}\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-rp-q13",
+    "section": "Challenge - Changing quantities",
+    "title": "Question 13",
+    "prompt": "\\(y\\) is inversely proportional to \\(\\sqrt{x}\\), with \\(x\u003e0\\) and \\(y\u003e0\\). If \\(x\\) is divided by 9, what happens to \\(y\\)?",
+    "options": [
+      "It is multiplied by 3.",
+      "It is divided by 3.",
+      "It is multiplied by 9.",
+      "It is divided by 9."
+    ],
+    "answer": 0,
+    "solution": "It is multiplied by 3.",
+    "working": "\u003cp\u003eSince \\(\\sqrt{\\frac{x}{9}}=\\frac{\\sqrt{x}}{3}\\), the denominator becomes one third as large. Thus \\(\\frac{k}{\\sqrt{x}/3}=3\\frac{k}{\\sqrt{x}}=3y\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-rp-q14",
+    "section": "Challenge - Changing quantities",
+    "title": "Question 14",
+    "prompt": "\\(y\\) is inversely proportional to \\(x^2\\), where \\(x\u003e0\\). When \\(x=3\\), \\(y=32\\). Find \\(x\\) when \\(y=18\\).",
+    "options": [
+      "\\(\\frac{9}{4}\\)",
+      "\\(4\\)",
+      "\\(16\\)",
+      "\\(\\frac{16}{3}\\)"
+    ],
+    "answer": 1,
+    "solution": "\\(4\\)",
+    "working": "\u003cp\u003eFirst find \\(k=32\\times3^2=288\\). Then \\(18=\\frac{288}{x^2}\\), so \\(x^2=16\\). Because \\(x\u003e0\\), \\(x=4\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-rp-q15",
+    "section": "Challenge - Changing quantities",
+    "title": "Question 15",
+    "prompt": "\\(y\\) is inversely proportional to \\(\\sqrt{x}\\), with \\(x\u003e0\\) and \\(y\u003e0\\). The value of \\(y\\) decreases by 20%. By what factor is \\(x\\) multiplied?",
+    "options": [
+      "\\(\\frac{4}{5}\\)",
+      "\\(\\frac{5}{4}\\)",
+      "\\(\\frac{25}{16}\\)",
+      "\\(\\frac{16}{25}\\)"
+    ],
+    "answer": 2,
+    "solution": "\\(\\frac{25}{16}\\)",
+    "working": "\u003cp\u003eA 20% decrease gives \\(y_{\\mathrm{new}}=\\frac{4}{5}y_{\\mathrm{old}}\\). Since \\(y=\\frac{k}{\\sqrt{x}}\\), the square root of \\(x\\) must be multiplied by \\(\\frac{5}{4}\\). Squaring this factor gives\u003c/p\u003e\\(\\frac{x_{\\mathrm{new}}}{x_{\\mathrm{old}}}=\\left(\\frac{5}{4}\\right)^2=\\frac{25}{16}\\).",
+    "source_ref": "Original"
+  }
+];
+
+    const quizContainer = document.getElementById("quizContainer");
+    const scoreBox = document.getElementById("scoreBox");
+    let checked = new Array(questions.length).fill(false);
+    let correct = new Array(questions.length).fill(false);
+
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, character => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[character]);
+    }
+
+    function typesetMath(elements) {
+      if (typeof window.MathJax?.typesetPromise === "function") {
+        MathJax.typesetPromise(elements).catch(error => console.error("Maths rendering failed", error));
+      }
+    }
+
+    function renderQuiz() {
+      if (typeof window.MathJax?.typesetClear === "function") MathJax.typesetClear([quizContainer]);
+      quizContainer.innerHTML = "";
+      let currentSection = "";
+
+      questions.forEach((question, index) => {
+        if (question.section !== currentSection) {
+          currentSection = question.section;
+          const sectionTitle = document.createElement("h2");
+          sectionTitle.className = "section-title";
+          sectionTitle.textContent = currentSection;
+          quizContainer.appendChild(sectionTitle);
+        }
+
+        const card = document.createElement("section");
+        card.className = "question-card";
+        card.id = `card-${index}`;
+        card.dataset.questionId = question.id;
+        card.setAttribute("aria-labelledby", `question-heading-${index}`);
+
+        const optionHTML = question.options.map((option, optionIndex) => `
+          <label class="option" id="option-${index}-${optionIndex}">
+            <input type="radio" name="question-${index}" value="${optionIndex}">
+            <span><strong>${String.fromCharCode(65 + optionIndex)}.</strong> ${escapeHTML(option)}</span>
+          </label>
+        `).join("");
+
+        card.innerHTML = `
+          <div class="question-header" id="question-heading-${index}">
+            <span class="question-number">${escapeHTML(question.title)}</span>
+            <span class="question-title">Choose the correct answer</span>
+          </div>
+          <div class="prompt">${escapeHTML(question.prompt)}</div>
+          <div class="options">${optionHTML}</div>
+          <button class="check-button" id="check-${index}" type="button" onclick="checkQuestion(${index})" disabled>Check this question</button>
+          <div class="feedback" id="feedback-${index}" aria-live="polite"></div>
+          <div class="locked-working" id="locked-working-${index}">Worked solution locked - check this question first.</div>
+          <details class="working-details" id="working-${index}" style="display: none;">
+            <summary>Show worked solution</summary>
+            <div class="working-content" id="working-content-${index}"></div>
+          </details>
+        `;
+
+        card.querySelectorAll('input[type="radio"]').forEach(input => {
+          input.addEventListener("change", () => {
+            document.getElementById(`check-${index}`).disabled = checked[index];
+          });
+        });
+        quizContainer.appendChild(card);
+      });
+
+      updateScore();
+      typesetMath();
+    }
+
+    function checkQuestion(index) {
+      if (checked[index]) return;
+      const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+      const feedback = document.getElementById(`feedback-${index}`);
+      const card = document.getElementById(`card-${index}`);
+      const checkButton = document.getElementById(`check-${index}`);
+
+      if (!selected) {
+        feedback.className = "feedback incorrect-feedback";
+        feedback.textContent = "Please choose an answer first.";
+        return;
+      }
+
+      const selectedIndex = Number(selected.value);
+      const correctIndex = questions[index].answer;
+      checked[index] = true;
+      correct[index] = selectedIndex === correctIndex;
+
+      card.classList.add(correct[index] ? "correct" : "incorrect");
+      document.getElementById(`option-${index}-${correctIndex}`).classList.add("correct-choice");
+
+      if (!correct[index]) {
+        document.getElementById(`option-${index}-${selectedIndex}`).classList.add("wrong-choice");
+      }
+
+      document.querySelectorAll(`input[name="question-${index}"]`).forEach(input => input.disabled = true);
+      checkButton.disabled = true;
+      feedback.className = correct[index] ? "feedback correct-feedback" : "feedback incorrect-feedback";
+      feedback.innerHTML = correct[index]
+        ? `Correct. ${escapeHTML(questions[index].solution)}`
+        : `Not quite. The correct answer is ${escapeHTML(questions[index].solution)}`;
+
+      document.getElementById(`locked-working-${index}`).style.display = "none";
+      const workingDetails = document.getElementById(`working-${index}`);
+      workingDetails.style.display = "block";
+      document.getElementById(`working-content-${index}`).innerHTML = questions[index].working;
+
+      updateScore();
+      typesetMath([feedback, workingDetails]);
+    }
+
+    function updateScore() {
+      const checkedCount = checked.filter(Boolean).length;
+      const correctCount = correct.filter(Boolean).length;
+      scoreBox.textContent = `Score: ${correctCount} / ${checkedCount} checked`;
+    }
+
+    function resetQuiz() {
+      checked = new Array(questions.length).fill(false);
+      correct = new Array(questions.length).fill(false);
+      renderQuiz();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    renderQuiz();
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f4422aa63f9d4e04b91ab57a5551ffa5"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

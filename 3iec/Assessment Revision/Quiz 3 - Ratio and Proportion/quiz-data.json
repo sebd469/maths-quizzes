@@ -1,0 +1,251 @@
+{
+  "quiz": {
+    "title": "Quiz 3 - Ratio and Proportion",
+    "course": "3iec Maths — Assessment Revision",
+    "topic": "Assessment Revision",
+    "instructions": "Choose one answer for each question. Work out your answer before checking, then use the worked solution to review your method. Give exact answers unless stated otherwise. A calculator may be used.",
+    "source_reference": "Original"
+  },
+  "questions": [
+    {
+      "id": "3iec-rp-q01",
+      "section": "Foundation - Ratios and direct proportion",
+      "title": "Question 1",
+      "prompt": "Simplify the ratio \\(42:70\\) fully.",
+      "options": [
+        "\\(6:7\\)",
+        "\\(3:5\\)",
+        "\\(5:3\\)",
+        "\\(2:5\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(3:5\\)",
+      "working": "<p>The highest common factor of 42 and 70 is 14. Divide both parts by 14:</p>\\(42:70=3:5\\).",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-rp-q02",
+      "section": "Foundation - Ratios and direct proportion",
+      "title": "Question 2",
+      "prompt": "Amira and Ben share €156 in the ratio \\(5:7\\). How much does Ben receive?",
+      "options": [
+        "€65",
+        "€78",
+        "€109.20",
+        "€91"
+      ],
+      "answer": 3,
+      "solution": "€91",
+      "working": "<p>There are \\(5+7=12\\) parts. One part is \\(156\\div12=13\\) euros. Ben receives 7 parts:</p>\\(7\\times13=91\\) euros.",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-rp-q03",
+      "section": "Foundation - Ratios and direct proportion",
+      "title": "Question 3",
+      "prompt": "Simplify the ratio \\(1.5\\,\\mathrm{m}:60\\,\\mathrm{cm}\\).",
+      "options": [
+        "\\(5:2\\)",
+        "\\(1:40\\)",
+        "\\(2:5\\)",
+        "\\(3:2\\)"
+      ],
+      "answer": 0,
+      "solution": "\\(5:2\\)",
+      "working": "<p>Use the same units first: \\(1.5\\,\\mathrm{m}=150\\,\\mathrm{cm}\\).</p><p>\\(150:60=5:2\\) after dividing by 30.</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-rp-q04",
+      "section": "Foundation - Ratios and direct proportion",
+      "title": "Question 4",
+      "prompt": "Seven identical notebooks cost €12.60. The cost is directly proportional to the number bought. How much do 11 notebooks cost?",
+      "options": [
+        "€8.02",
+        "€18.60",
+        "€19.80",
+        "€138.60"
+      ],
+      "answer": 2,
+      "solution": "€19.80",
+      "working": "<p>One notebook costs \\(12.60\\div7=1.80\\) euros. Eleven cost \\(11\\times1.80=19.80\\) euros.</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-rp-q05",
+      "section": "Foundation - Ratios and direct proportion",
+      "title": "Question 5",
+      "prompt": "\\(y\\) is directly proportional to \\(x\\). When \\(x=5\\), \\(y=35\\). Find \\(y\\) when \\(x=8\\).",
+      "options": [
+        "\\(56\\)",
+        "\\(38\\)",
+        "\\(21.875\\)",
+        "\\(280\\)"
+      ],
+      "answer": 0,
+      "solution": "\\(56\\)",
+      "working": "<p>Write \\(y=kx\\). Since \\(35=5k\\), \\(k=7\\). Therefore \\(y=7(8)=56\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-rp-q06",
+      "section": "Developing - Proportion models",
+      "title": "Question 6",
+      "prompt": "\\(y\\) is directly proportional to \\(x^2\\). When \\(x=4\\), \\(y=48\\). Find \\(y\\) when \\(x=6\\).",
+      "options": [
+        "\\(72\\)",
+        "\\(108\\)",
+        "\\(192\\)",
+        "\\(27\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(108\\)",
+      "working": "<p>Use \\(y=kx^2\\). Then \\(48=16k\\), so \\(k=3\\). At \\(x=6\\), \\(y=3\\times6^2=108\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-rp-q07",
+      "section": "Developing - Proportion models",
+      "title": "Question 7",
+      "prompt": "\\(y\\) is inversely proportional to \\(x\\), with \\(x>0\\). When \\(x=6\\), \\(y=8\\). Find \\(y\\) when \\(x=4\\).",
+      "options": [
+        "\\(\\frac{16}{3}\\)",
+        "\\(2\\)",
+        "\\(12\\)",
+        "\\(48\\)"
+      ],
+      "answer": 2,
+      "solution": "\\(12\\)",
+      "working": "<p>Use \\(y=\\frac{k}{x}\\). Then \\(k=xy=6\\times8=48\\). Hence \\(y=\\frac{48}{4}=12\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-rp-q08",
+      "section": "Developing - Proportion models",
+      "title": "Question 8",
+      "prompt": "Six workers take 15 days to complete a job. Assume all workers have the same constant rate and the time is inversely proportional to the number of workers. How long would ten workers take?",
+      "options": [
+        "25 days",
+        "10 days",
+        "6 days",
+        "9 days"
+      ],
+      "answer": 3,
+      "solution": "9 days",
+      "working": "<p>The job needs \\(6\\times15=90\\) worker-days. With ten workers the time is \\(\\frac{90}{10}=9\\) days.</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-rp-q09",
+      "section": "Developing - Inverse squares and square roots",
+      "title": "Question 9",
+      "prompt": "\\(y\\) is inversely proportional to \\(x^2\\), where \\(x>0\\). When \\(x=2\\), \\(y=45\\). Find \\(y\\) when \\(x=6\\).",
+      "options": [
+        "\\(15\\)",
+        "\\(5\\)",
+        "\\(135\\)",
+        "\\(405\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(5\\)",
+      "working": "<p>Write \\(y=\\frac{k}{x^2}\\). Then \\(k=45\\times2^2=180\\). So \\(y=\\frac{180}{6^2}=5\\). Tripling \\(x\\) divides \\(y\\) by 9.</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-rp-q10",
+      "section": "Developing - Inverse squares and square roots",
+      "title": "Question 10",
+      "prompt": "\\(y\\) is inversely proportional to \\(\\sqrt{x}\\), where \\(x>0\\). When \\(x=25\\), \\(y=10\\). Find \\(y\\) when \\(x=100\\).",
+      "options": [
+        "\\(5\\)",
+        "\\(2.5\\)",
+        "\\(20\\)",
+        "\\(40\\)"
+      ],
+      "answer": 0,
+      "solution": "\\(5\\)",
+      "working": "<p>Use \\(y=\\frac{k}{\\sqrt{x}}\\). From \\(10=\\frac{k}{5}\\), \\(k=50\\). Hence \\(y=\\frac{50}{10}=5\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-rp-q11",
+      "section": "Developing - Inverse squares and square roots",
+      "title": "Question 11",
+      "prompt": "\\(z\\) is inversely proportional to \\(\\sqrt{w}\\), where \\(w>0\\). When \\(w=36\\), \\(z=4\\). Express \\(z\\) in terms of \\(w\\).",
+      "options": [
+        "\\(z=\\frac{144}{w}\\)",
+        "\\(z=\\frac{4\\sqrt{w}}{6}\\)",
+        "\\(z=\\frac{\\sqrt{w}}{24}\\)",
+        "\\(z=\\frac{24}{\\sqrt{w}}\\)"
+      ],
+      "answer": 3,
+      "solution": "\\(z=\\frac{24}{\\sqrt{w}}\\)",
+      "working": "<p>Let \\(z=\\frac{k}{\\sqrt{w}}\\). Substituting gives \\(4=\\frac{k}{6}\\), so \\(k=24\\). Therefore \\(z=\\frac{24}{\\sqrt{w}}\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-rp-q12",
+      "section": "Challenge - Changing quantities",
+      "title": "Question 12",
+      "prompt": "\\(y\\) is inversely proportional to \\(x^2\\), with \\(x>0\\) and \\(y>0\\). If \\(x\\) is multiplied by 3, what happens to \\(y\\)?",
+      "options": [
+        "It is multiplied by 9.",
+        "It is divided by 3.",
+        "It is divided by 9.",
+        "It is multiplied by 3."
+      ],
+      "answer": 2,
+      "solution": "It is divided by 9.",
+      "working": "<p>The model is \\(y=\\frac{k}{x^2}\\). Replacing \\(x\\) by \\(3x\\) gives \\(\\frac{k}{(3x)^2}=\\frac{k}{9x^2}=\\frac{y}{9}\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-rp-q13",
+      "section": "Challenge - Changing quantities",
+      "title": "Question 13",
+      "prompt": "\\(y\\) is inversely proportional to \\(\\sqrt{x}\\), with \\(x>0\\) and \\(y>0\\). If \\(x\\) is divided by 9, what happens to \\(y\\)?",
+      "options": [
+        "It is multiplied by 3.",
+        "It is divided by 3.",
+        "It is multiplied by 9.",
+        "It is divided by 9."
+      ],
+      "answer": 0,
+      "solution": "It is multiplied by 3.",
+      "working": "<p>Since \\(\\sqrt{\\frac{x}{9}}=\\frac{\\sqrt{x}}{3}\\), the denominator becomes one third as large. Thus \\(\\frac{k}{\\sqrt{x}/3}=3\\frac{k}{\\sqrt{x}}=3y\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-rp-q14",
+      "section": "Challenge - Changing quantities",
+      "title": "Question 14",
+      "prompt": "\\(y\\) is inversely proportional to \\(x^2\\), where \\(x>0\\). When \\(x=3\\), \\(y=32\\). Find \\(x\\) when \\(y=18\\).",
+      "options": [
+        "\\(\\frac{9}{4}\\)",
+        "\\(4\\)",
+        "\\(16\\)",
+        "\\(\\frac{16}{3}\\)"
+      ],
+      "answer": 1,
+      "solution": "\\(4\\)",
+      "working": "<p>First find \\(k=32\\times3^2=288\\). Then \\(18=\\frac{288}{x^2}\\), so \\(x^2=16\\). Because \\(x>0\\), \\(x=4\\).</p>",
+      "source_ref": "Original"
+    },
+    {
+      "id": "3iec-rp-q15",
+      "section": "Challenge - Changing quantities",
+      "title": "Question 15",
+      "prompt": "\\(y\\) is inversely proportional to \\(\\sqrt{x}\\), with \\(x>0\\) and \\(y>0\\). The value of \\(y\\) decreases by 20%. By what factor is \\(x\\) multiplied?",
+      "options": [
+        "\\(\\frac{4}{5}\\)",
+        "\\(\\frac{5}{4}\\)",
+        "\\(\\frac{25}{16}\\)",
+        "\\(\\frac{16}{25}\\)"
+      ],
+      "answer": 2,
+      "solution": "\\(\\frac{25}{16}\\)",
+      "working": "<p>A 20% decrease gives \\(y_{\\mathrm{new}}=\\frac{4}{5}y_{\\mathrm{old}}\\). Since \\(y=\\frac{k}{\\sqrt{x}}\\), the square root of \\(x\\) must be multiplied by \\(\\frac{5}{4}\\). Squaring this factor gives</p>\\(\\frac{x_{\\mathrm{new}}}{x_{\\mathrm{old}}}=\\left(\\frac{5}{4}\\right)^2=\\frac{25}{16}\\).",
+      "source_ref": "Original"
+    }
+  ]
+}
