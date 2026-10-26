@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz 2 - Standard Form and Indices - 3iec Maths — Assessment Revision</title>
+  <title>Quiz 1 - Sequences - 3iec Maths — Assessment 1 Revision Quizzes</title>
   <script>
     window.MathJax = {
       tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
@@ -255,8 +255,8 @@
 </head>
 <body>
   <header>
-    <h1>Quiz 2 - Standard Form and Indices</h1>
-    <p>3iec Maths — Assessment Revision</p>
+    <h1>Quiz 1 - Sequences</h1>
+    <p>3iec Maths — Assessment 1 Revision Quizzes</p>
 
     <p>Choose an answer, then check it to unlock the worked solution.</p>
   </header>
@@ -264,261 +264,261 @@
   <div class="top-bar">
     <div class="score-box" id="scoreBox" aria-live="polite">Score: 0 / 0 checked</div>
     <button class="reset-button" type="button" onclick="resetQuiz()">Reset quiz</button>
-    <a class="home-link" href="../index.html">Back to Assessment Revision</a>
+    <a class="home-link" href="../index.html">Back to Assessment 1 Revision Quizzes</a>
   </div>
 
   <main>
     <section class="instructions">
       <strong>Instructions:</strong>
-      Choose one answer for each question. Give standard-form answers with a coefficient at least 1 and less than 10. Use exact values unless told otherwise. Check your answer to unlock the worked solution.
+      Work through the questions from foundation to challenge. The first term corresponds to n = 1. Choose one answer, check it, then read the worked solution. Use exact answers.
       Select one answer for each part. Your score updates as you go, and the worked solution appears after checking.
     </section>
 
     <div id="quizContainer"></div>
   </main>
 
-  <footer>3iec Maths — Assessment Revision - Quiz 2 - Standard Form and Indices</footer>
+  <footer>3iec Maths — Assessment 1 Revision Quizzes - Quiz 1 - Sequences</footer>
 
   <script>
     const questions = [
   {
-    "id": "3iec-standard-indices-q01",
-    "section": "Standard form \u2014 Foundation",
-    "title": "1",
-    "prompt": "Write \\(0.000592\\) in standard form.",
+    "id": "3iec-seq-q01",
+    "section": "Foundation",
+    "title": "Question 1",
+    "prompt": "The first four terms of an arithmetic sequence are \\(6,\\ 10,\\ 14,\\ 18\\). What are the next two terms?",
     "options": [
-      "\\(5.92\\times10^{-3}\\)",
-      "\\(5.92\\times10^{-4}\\)",
-      "\\(5.92\\times10^{4}\\)",
-      "\\(5.92\\times10^{-5}\\)"
+      "\\(22,\\ 24\\)",
+      "\\(22,\\ 26\\)",
+      "\\(20,\\ 24\\)",
+      "\\(24,\\ 28\\)"
     ],
     "answer": 1,
-    "solution": "\\(5.92\\times10^{-4}\\)",
-    "working": "\u003cp\u003eThe first factor must be at least 1 and less than 10. Move the decimal point four places to the right to get 5.92, so the power is negative.\u003c/p\u003e\\[0.000592=5.92\\times10^{-4}.\\]",
+    "solution": "\\(22,\\ 26\\)",
+    "working": "\u003cp\u003eThe difference is \\(4\\). Add \\(4\\) twice: \\(18+4=22\\) and \\(22+4=26\\).\u003c/p\u003e",
     "source_ref": "Original"
   },
   {
-    "id": "3iec-standard-indices-q02",
-    "section": "Standard form \u2014 Foundation",
-    "title": "2",
-    "prompt": "Write \\(73\\,100\\,000\\) in standard form.",
+    "id": "3iec-seq-q02",
+    "section": "Foundation",
+    "title": "Question 2",
+    "prompt": "An arithmetic sequence begins \\(34,\\ 28,\\ 22,\\ 16\\). What are the next two terms?",
     "options": [
-      "\\(7.31\\times10^6\\)",
-      "\\(7.31\\times10^8\\)",
-      "\\(7.31\\times10^{-7}\\)",
-      "\\(7.31\\times10^7\\)"
+      "\\(12,\\ 8\\)",
+      "\\(10,\\ -2\\)",
+      "\\(8,\\ 0\\)",
+      "\\(10,\\ 4\\)"
     ],
     "answer": 3,
-    "solution": "\\(7.31\\times10^7\\)",
-    "working": "\u003cp\u003eMove the decimal point seven places to the left to get 7.31.\u003c/p\u003e\\[73\\,100\\,000=7.31\\times10^7.\\]",
+    "solution": "\\(10,\\ 4\\)",
+    "working": "\u003cp\u003eEach term decreases by \\(6\\). The next terms are \\(16-6=10\\) and \\(10-6=4\\).\u003c/p\u003e",
     "source_ref": "Original"
   },
   {
-    "id": "3iec-standard-indices-q03",
-    "section": "Standard form \u2014 Foundation",
-    "title": "3",
-    "prompt": "Write \\(6.04\\times10^{-3}\\) as an ordinary decimal.",
+    "id": "3iec-seq-q03",
+    "section": "Foundation",
+    "title": "Question 3",
+    "prompt": "Find an expression for the \\(n\\)th term of the arithmetic sequence \\(7,\\ 11,\\ 15,\\ 19,\\ldots\\).",
     "options": [
-      "\\(0.00604\\)",
-      "\\(0.0604\\)",
-      "\\(0.000604\\)",
-      "\\(6040\\)"
+      "\\(4n+3\\)",
+      "\\(4n+7\\)",
+      "\\(3n+4\\)",
+      "\\(7n+4\\)"
     ],
     "answer": 0,
-    "solution": "\\(0.00604\\)",
-    "working": "\u003cp\u003eA power of \\(10^{-3}\\) means divide by 1000, moving the decimal point three places left.\u003c/p\u003e\\[6.04\\times10^{-3}=0.00604.\\]",
+    "solution": "\\(4n+3\\)",
+    "working": "\u003cp\u003eThe common difference is \\(4\\), so the rule is \\(4n+c\\). The first term gives \\(4+c=7\\), hence \\(c=3\\). Therefore the rule is \\(4n+3\\).\u003c/p\u003e",
     "source_ref": "Original"
   },
   {
-    "id": "3iec-standard-indices-q04",
-    "section": "Standard form \u2014 Calculations",
-    "title": "4",
-    "prompt": "Calculate \\((4.6\\times10^5)+(7\\times10^4)\\). Give your answer in standard form.",
+    "id": "3iec-seq-q04",
+    "section": "Foundation",
+    "title": "Question 4",
+    "prompt": "An arithmetic sequence starts \\(-5,\\ 2,\\ 9,\\ 16,\\ldots\\). Find its \\(n\\)th term.",
     "options": [
-      "\\(1.16\\times10^6\\)",
-      "\\(4.67\\times10^5\\)",
-      "\\(5.3\\times10^5\\)",
-      "\\(1.16\\times10^9\\)"
+      "\\(7n-5\\)",
+      "\\(7n+12\\)",
+      "\\(7n-12\\)",
+      "\\(-7n+2\\)"
     ],
     "answer": 2,
-    "solution": "\\(5.3\\times10^5\\)",
-    "working": "\u003cp\u003eRewrite both terms with the same power of 10 before adding the coefficients.\u003c/p\u003e\\[(4.6+0.7)\\times10^5=5.3\\times10^5.\\]",
+    "solution": "\\(7n-12\\)",
+    "working": "\u003cp\u003eThe common difference is \\(7\\). Write \\(7n+c\\). At \\(n=1\\), \\(7+c=-5\\), so \\(c=-12\\). The rule is \\(7n-12\\).\u003c/p\u003e",
     "source_ref": "Original"
   },
   {
-    "id": "3iec-standard-indices-q05",
-    "section": "Standard form \u2014 Calculations",
-    "title": "5",
-    "prompt": "Calculate \\((9\\times10^8)-(2.4\\times10^7)\\). Give your answer in standard form.",
+    "id": "3iec-seq-q05",
+    "section": "Foundation",
+    "title": "Question 5",
+    "prompt": "Find the \\(n\\)th term of the arithmetic sequence \\(11,\\ 6,\\ 1,\\ -4,\\ldots\\).",
     "options": [
-      "\\(6.6\\times10^8\\)",
-      "\\(8.76\\times10^8\\)",
-      "\\(8.76\\times10^7\\)",
-      "\\(6.6\\times10^1\\)"
+      "\\(11-5n\\)",
+      "\\(16-5n\\)",
+      "\\(5n+6\\)",
+      "\\(6-5n\\)"
     ],
     "answer": 1,
-    "solution": "\\(8.76\\times10^8\\)",
-    "working": "\u003cp\u003eSince \\(2.4\\times10^7=0.24\\times10^8\\),\u003c/p\u003e\\[(9-0.24)\\times10^8=8.76\\times10^8.\\]",
+    "solution": "\\(16-5n\\)",
+    "working": "\u003cp\u003eThe difference is \\(-5\\), so the rule is \\(-5n+c\\). As \\(-5+c=11\\), \\(c=16\\). Thus the rule is \\(16-5n\\).\u003c/p\u003e",
     "source_ref": "Original"
   },
   {
-    "id": "3iec-standard-indices-q06",
-    "section": "Standard form \u2014 Calculations",
-    "title": "6",
-    "prompt": "Calculate \\((3.2\\times10^{-4})(5\\times10^7)\\). Give your answer in standard form.",
+    "id": "3iec-seq-q06",
+    "section": "Developing",
+    "title": "Question 6",
+    "prompt": "The \\(n\\)th term of a sequence is \\(3n+8\\). Find its 15th term.",
     "options": [
-      "\\(1.6\\times10^3\\)",
-      "\\(8.2\\times10^3\\)",
-      "\\(1.6\\times10^{12}\\)",
-      "\\(1.6\\times10^4\\)"
-    ],
-    "answer": 3,
-    "solution": "\\(1.6\\times10^4\\)",
-    "working": "\u003cp\u003eMultiply the coefficients and add the powers.\u003c/p\u003e\\[(3.2\\times5)\\times10^{-4+7}=16\\times10^3=1.6\\times10^4.\\]",
-    "source_ref": "Original"
-  },
-  {
-    "id": "3iec-standard-indices-q07",
-    "section": "Standard form \u2014 Calculations",
-    "title": "7",
-    "prompt": "Calculate \\(\\frac{8.4\\times10^6}{2.1\\times10^{-3}}\\). Give your answer in standard form.",
-    "options": [
-      "\\(4\\times10^9\\)",
-      "\\(4\\times10^3\\)",
-      "\\(6.3\\times10^9\\)",
-      "\\(4\\times10^{-2}\\)"
+      "\\(53\\)",
+      "\\(45\\)",
+      "\\(56\\)",
+      "\\(48\\)"
     ],
     "answer": 0,
-    "solution": "\\(4\\times10^9\\)",
-    "working": "\u003cp\u003eDivide the coefficients and subtract the denominator exponent, including its minus sign.\u003c/p\u003e\\[\\frac{8.4}{2.1}\\times10^{6-(-3)}=4\\times10^9.\\]",
+    "solution": "\\(53\\)",
+    "working": "\u003cp\u003eSubstitute \\(n=15\\): \\(3(15)+8=45+8=53\\).\u003c/p\u003e",
     "source_ref": "Original"
   },
   {
-    "id": "3iec-standard-indices-q08",
-    "section": "Standard form \u2014 Challenge",
-    "title": "8",
-    "prompt": "Simplify \\(2.4\\times10^n+6\\times10^{n-1}\\) for any integer \\(n\\). Give your answer in standard form.",
+    "id": "3iec-seq-q07",
+    "section": "Developing",
+    "title": "Question 7",
+    "prompt": "The \\(n\\)th term of a sequence is \\(9n-4\\). Which term has value \\(131\\)?",
     "options": [
-      "\\(8.4\\times10^n\\)",
-      "\\(3\\times10^{n-1}\\)",
-      "\\(3\\times10^n\\)",
-      "\\(1.44\\times10^n\\)"
-    ],
-    "answer": 2,
-    "solution": "\\(3\\times10^n\\)",
-    "working": "\u003cp\u003eRewrite \\(6\\times10^{n-1}=0.6\\times10^n\\).\u003c/p\u003e\\[(2.4+0.6)\\times10^n=3\\times10^n.\\]\u003cp\u003eThe coefficient 3 is between 1 and 10, so this is standard form.\u003c/p\u003e",
-    "source_ref": "Original"
-  },
-  {
-    "id": "3iec-standard-indices-q09",
-    "section": "Indices \u2014 Foundation",
-    "title": "9",
-    "prompt": "Simplify \\(a^4\\times a^5\\).",
-    "options": [
-      "\\(a^{20}\\)",
-      "\\(a^9\\)",
-      "\\(2a^9\\)",
-      "\\(a\\)"
-    ],
-    "answer": 1,
-    "solution": "\\(a^9\\)",
-    "working": "\u003cp\u003eWhen multiplying powers with the same base, add the indices.\u003c/p\u003e\\[a^4\\times a^5=a^{4+5}=a^9.\\]",
-    "source_ref": "Original"
-  },
-  {
-    "id": "3iec-standard-indices-q10",
-    "section": "Indices \u2014 Foundation",
-    "title": "10",
-    "prompt": "For \\(x\\ne0\\), simplify \\(\\frac{x^3}{x^8}\\) using a positive index.",
-    "options": [
-      "\\(x^5\\)",
-      "\\(\\frac{1}{x^{11}}\\)",
-      "\\(\\frac{1}{x^5}\\)",
-      "\\(\\frac{1}{5x}\\)"
-    ],
-    "answer": 2,
-    "solution": "\\(\\frac{1}{x^5}\\)",
-    "working": "\u003cp\u003eSubtract the indices, then use the reciprocal for a negative index.\u003c/p\u003e\\[\\frac{x^3}{x^8}=x^{3-8}=x^{-5}=\\frac{1}{x^5}.\\]",
-    "source_ref": "Original"
-  },
-  {
-    "id": "3iec-standard-indices-q11",
-    "section": "Indices \u2014 Applying the laws",
-    "title": "11",
-    "prompt": "Expand and simplify \\((3ab^3)^3\\).",
-    "options": [
-      "\\(9a^3b^9\\)",
-      "\\(27ab^9\\)",
-      "\\(27a^3b^6\\)",
-      "\\(27a^3b^9\\)"
-    ],
-    "answer": 3,
-    "solution": "\\(27a^3b^9\\)",
-    "working": "\u003cp\u003eApply the power to every factor; multiply the indices when raising a power to a power.\u003c/p\u003e\\[(3ab^3)^3=3^3a^3b^{3\\times3}=27a^3b^9.\\]",
-    "source_ref": "Original"
-  },
-  {
-    "id": "3iec-standard-indices-q12",
-    "section": "Indices \u2014 Applying the laws",
-    "title": "12",
-    "prompt": "For \\(z\\ne0\\), evaluate \\(8z^0+2^{-3}\\). Give an exact fraction.",
-    "options": [
-      "\\(\\frac{65}{8}\\)",
-      "\\(\\frac{9}{8}\\)",
-      "\\(\\frac{63}{8}\\)",
-      "\\(\\frac{1}{8}\\)"
-    ],
-    "answer": 0,
-    "solution": "\\(\\frac{65}{8}\\)",
-    "working": "\u003cp\u003eA non-zero base to the power zero equals 1, and a negative exponent means a reciprocal.\u003c/p\u003e\\[z^0=1,\\qquad2^{-3}=\\frac{1}{2^3}=\\frac{1}{8}.\\]\\[8z^0+2^{-3}=8+\\frac{1}{8}=\\frac{65}{8}.\\]",
-    "source_ref": "Original"
-  },
-  {
-    "id": "3iec-standard-indices-q13",
-    "section": "Indices \u2014 Applying the laws",
-    "title": "13",
-    "prompt": "Evaluate \\(64^{\\frac23}\\) exactly.",
-    "options": [
-      "\\(8\\)",
+      "\\(14\\)",
       "\\(16\\)",
-      "\\(32\\)",
-      "\\(128\\)"
-    ],
-    "answer": 1,
-    "solution": "\\(16\\)",
-    "working": "\u003cp\u003eThe denominator of the index gives the root, and the numerator gives the power.\u003c/p\u003e\\[64^{\\frac{2}{3}}=(\\sqrt[3]{64})^2=4^2=16.\\]",
-    "source_ref": "Original"
-  },
-  {
-    "id": "3iec-standard-indices-q14",
-    "section": "Indices \u2014 Challenge",
-    "title": "14",
-    "prompt": "Solve \\(4^{x+1}=32\\) for \\(x\\).",
-    "options": [
-      "\\(\\frac52\\)",
-      "\\(4\\)",
-      "\\(\\frac32\\)",
-      "\\(2\\)"
-    ],
-    "answer": 2,
-    "solution": "\\(\\frac32\\)",
-    "working": "\u003cp\u003eWrite both sides as powers of 2.\u003c/p\u003e\\[(2^2)^{x+1}=2^5\\quad\\Rightarrow\\quad2(x+1)=5.\\]\u003cp\u003eThus \\(2x=3\\), giving \\(x=\\frac{3}{2}\\).\u003c/p\u003e",
-    "source_ref": "Original"
-  },
-  {
-    "id": "3iec-standard-indices-q15",
-    "section": "Indices \u2014 Challenge",
-    "title": "15",
-    "prompt": "Solve \\(5^x=125^{x-4}\\) for \\(x\\).",
-    "options": [
-      "\\(-6\\)",
-      "\\(2\\)",
-      "\\(12\\)",
-      "\\(6\\)"
+      "\\(13\\)",
+      "\\(15\\)"
     ],
     "answer": 3,
-    "solution": "\\(6\\)",
-    "working": "\u003cp\u003eSince \\(125=5^3\\),\u003c/p\u003e\\[5^x=5^{3(x-4)}.\\]\u003cp\u003eEquate the indices:\u003c/p\u003e\\[x=3x-12\\quad\\Rightarrow\\quad2x=12\\quad\\Rightarrow\\quad x=6.\\]",
+    "solution": "\\(15\\)",
+    "working": "\u003cp\u003eSolve \\(9n-4=131\\). Then \\(9n=135\\) and \\(n=15\\). It is the 15th term.\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-seq-q08",
+    "section": "Developing",
+    "title": "Question 8",
+    "prompt": "The \\(n\\)th term of a sequence is \\(4n+1\\), where \\(n\\) is a positive integer. Which number belongs to the sequence?",
+    "options": [
+      "\\(82\\)",
+      "\\(87\\)",
+      "\\(93\\)",
+      "\\(98\\)"
+    ],
+    "answer": 2,
+    "solution": "\\(93\\)",
+    "working": "\u003cp\u003eRearrange \\(4n+1=T\\) to \\(n=\\frac{T-1}{4}\\). For \\(T=93\\), \\(n=\\frac{92}{4}=23\\), a positive integer. The other choices give non-integer values of \\(n\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-seq-q09",
+    "section": "Developing",
+    "title": "Question 9",
+    "prompt": "The \\(n\\)th term is \\(2n^2-3\\). Find the first three terms.",
+    "options": [
+      "\\(-1,\\ 1,\\ 3\\)",
+      "\\(-1,\\ 5,\\ 15\\)",
+      "\\(1,\\ 5,\\ 9\\)",
+      "\\(-1,\\ 5,\\ 13\\)"
+    ],
+    "answer": 1,
+    "solution": "\\(-1,\\ 5,\\ 15\\)",
+    "working": "\u003cp\u003eUse \\(n=1,2,3\\): \\(2(1)^2-3=-1\\), \\(2(2)^2-3=5\\) and \\(2(3)^2-3=15\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-seq-q10",
+    "section": "Developing",
+    "title": "Question 10",
+    "prompt": "A quadratic sequence starts \\(5,\\ 12,\\ 23,\\ 38,\\ldots\\). What is the next term?",
+    "options": [
+      "\\(53\\)",
+      "\\(55\\)",
+      "\\(61\\)",
+      "\\(57\\)"
+    ],
+    "answer": 3,
+    "solution": "\\(57\\)",
+    "working": "\u003cp\u003eFirst differences are \\(7,11,15\\). The constant second difference is \\(4\\), so the next first difference is \\(19\\). The next term is \\(38+19=57\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-seq-q11",
+    "section": "Challenge",
+    "title": "Question 11",
+    "prompt": "Find the \\(n\\)th term of the quadratic sequence \\(2,\\ 5,\\ 10,\\ 17,\\ 26,\\ldots\\).",
+    "options": [
+      "\\(2n+1\\)",
+      "\\(n^2-1\\)",
+      "\\(n^2+1\\)",
+      "\\(2n^2\\)"
+    ],
+    "answer": 2,
+    "solution": "\\(n^2+1\\)",
+    "working": "\u003cp\u003eThe first differences are \\(3,5,7,9\\), so the second difference is \\(2\\). The coefficient of \\(n^2\\) is \\(1\\). Subtract \\(1,4,9,16,25\\) from the sequence: the remainder is always \\(1\\). Hence the rule is \\(n^2+1\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-seq-q12",
+    "section": "Challenge",
+    "title": "Question 12",
+    "prompt": "A quadratic sequence begins \\(4,\\ 13,\\ 28,\\ 49,\\ 76,\\ldots\\). Find its \\(n\\)th term.",
+    "options": [
+      "\\(3n^2+1\\)",
+      "\\(3n^2-1\\)",
+      "\\(n^2+3\\)",
+      "\\(3n+1\\)"
+    ],
+    "answer": 0,
+    "solution": "\\(3n^2+1\\)",
+    "working": "\u003cp\u003eThe first differences are \\(9,15,21,27\\); second differences are \\(6\\). Therefore the coefficient of \\(n^2\\) is \\(3\\). Subtract \\(3n^2\\) from the corresponding terms: \\(4-3=1\\), \\(13-12=1\\), \\(28-27=1\\). The rule is \\(3n^2+1\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-seq-q13",
+    "section": "Challenge",
+    "title": "Question 13",
+    "prompt": "Find the \\(n\\)th term of the quadratic sequence \\(-2,\\ 3,\\ 12,\\ 25,\\ldots\\).",
+    "options": [
+      "\\(2n^2+n-5\\)",
+      "\\(n^2+2n-5\\)",
+      "\\(2n^2-3\\)",
+      "\\(2n^2-n-3\\)"
+    ],
+    "answer": 3,
+    "solution": "\\(2n^2-n-3\\)",
+    "working": "\u003cp\u003eFirst differences are \\(5,9,13\\) and second differences are \\(4\\), so start with \\(2n^2\\). Subtract \\(2n^2\\) from the sequence to get \\(-4,-5,-6,-7\\), whose rule is \\(-n-3\\). Add this to obtain \\(2n^2-n-3\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-seq-q14",
+    "section": "Challenge",
+    "title": "Question 14",
+    "prompt": "The 4th term of an arithmetic sequence is \\(17\\) and its 10th term is \\(47\\). Find the \\(n\\)th term.",
+    "options": [
+      "\\(5n+2\\)",
+      "\\(5n-3\\)",
+      "\\(3n+5\\)",
+      "\\(6n-7\\)"
+    ],
+    "answer": 1,
+    "solution": "\\(5n-3\\)",
+    "working": "\u003cp\u003eThere are \\(10-4=6\\) equal steps between the terms. Thus the difference is \\(d=\\frac{47-17}{6}=5\\). The rule is \\(5n+c\\). Using the 4th term, \\(20+c=17\\), so \\(c=-3\\). Hence the rule is \\(5n-3\\).\u003c/p\u003e",
+    "source_ref": "Original"
+  },
+  {
+    "id": "3iec-seq-q15",
+    "section": "Challenge",
+    "title": "Question 15",
+    "prompt": "The \\(n\\)th term of a sequence is \\(n^2+3n-2\\), for positive integers \\(n\\). Which term has value \\(106\\)?",
+    "options": [
+      "\\(9\\)",
+      "\\(10\\)",
+      "\\(8\\)",
+      "\\(12\\)"
+    ],
+    "answer": 0,
+    "solution": "\\(9\\)",
+    "working": "\u003cp\u003eSet \\(n^2+3n-2=106\\), so \\(n^2+3n-108=0\\). Factorise: \\((n+12)(n-9)=0\\). The roots are \\(-12\\) and \\(9\\). Term positions must be positive integers, so it is the 9th term. Check: \\(9^2+3(9)-2=106\\).\u003c/p\u003e",
     "source_ref": "Original"
   }
 ];

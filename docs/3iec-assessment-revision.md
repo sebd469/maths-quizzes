@@ -5,7 +5,7 @@ visual style and behaviour. The user requested immediate publication on
 26 October 2026, with teacher content review to follow online that evening.
 This is publication authorisation, not completed teacher or classroom review.
 
-Location: `3iec/Assessment Revision/`, accessible from the 3iec menu.
+Location: `3iec/Assessment 1 Revision Quizzes/`, accessible from the 3iec menu.
 
 | Order | Quiz | Questions | Coverage |
 |---|---|---:|---|
