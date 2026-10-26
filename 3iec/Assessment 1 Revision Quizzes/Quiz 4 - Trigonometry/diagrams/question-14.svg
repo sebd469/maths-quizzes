@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300">
+<title>Question 14: Triangle ABC. AB is 8 cm, AC is 11 cm and their included angle A is 52 degrees. Find BC.</title>
+<style>text{font-family:Arial,Helvetica,sans-serif;font-size:20px;paint-order:stroke;stroke:white;stroke-width:5px;stroke-linejoin:round} .vertex{font-size:19px;font-weight:bold;fill:#111827} .value{fill:#075985} .angle{font-size:19px;fill:#4338ca;font-weight:bold}</style>
+<polygon points="81.683,235.000 214.502,65.000 378.317,235.000" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="62.158" y="242.729" text-anchor="middle" dominant-baseline="middle" class="vertex">A</text>
+<text x="212.596" y="44.087" text-anchor="middle" dominant-baseline="middle" class="vertex">B</text>
+<text x="398.017" y="242.273" text-anchor="middle" dominant-baseline="middle" class="vertex">C</text>
+<text x="124.452" y="131.530" text-anchor="middle" dominant-baseline="middle" class="value">8 cm</text>
+<text x="230.000" y="258.000" text-anchor="middle" dominant-baseline="middle" class="value">11 cm</text>
+<text x="318.012" y="129.183" text-anchor="middle" dominant-baseline="middle" class="value">BC = ?</text>
+<path d="M100.153,211.360 A30,30 0 0,1 111.683,235.000" fill="none" stroke="#4338ca" stroke-width="1.5"/>
+<text x="130.218" y="211.328" text-anchor="middle" dominant-baseline="middle" class="angle">52°</text>
+</svg>

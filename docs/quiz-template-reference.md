@@ -67,6 +67,15 @@ together. Do not put answer-key material in student-facing instructions.
 `working` should use simple HTML fragments and MathJax, not scripts or
 unreviewed markup.
 
+Questions may also include an optional `diagram` object with `src` and `alt`.
+Use a local SVG at `diagrams/<descriptive-name>.svg` beside the quiz page, and
+write meaningful alternative text describing the given information and target.
+The shared template displays it responsively between the prompt and options,
+with a "Not drawn to scale" caption. Include only given values and unknown
+labels in question diagrams; never reveal the calculated answer. Keep diagram
+assets with the quiz release. The validator checks this optional data shape;
+inspect the actual SVG and its mathematical labels separately.
+
 ## Source-to-release workflow
 
 1. For supplied sources, extract the required textbook/worksheet and answer-key pages locally with

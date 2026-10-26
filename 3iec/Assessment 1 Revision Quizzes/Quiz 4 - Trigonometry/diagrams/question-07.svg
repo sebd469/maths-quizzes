@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300">
+<title>Question 7: A 10 metre ladder leans against a vertical wall, making 67 degrees with level ground. Find the vertical height h metres.</title>
+<style>text{font-family:Arial,Helvetica,sans-serif;font-size:20px;paint-order:stroke;stroke:white;stroke-width:5px;stroke-linejoin:round} .vertex{font-size:19px;font-weight:bold;fill:#111827} .value{fill:#075985} .angle{font-size:19px;fill:#4338ca;font-weight:bold}</style>
+<polygon points="193.920,235.000 266.080,235.000 266.080,65.000" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="181.397" y="129.369" text-anchor="middle" dominant-baseline="middle" class="value">10 m ladder</text>
+<text x="296.080" y="150.000" text-anchor="middle" dominant-baseline="middle" class="value">h m</text>
+<path d="M223.920,235.000 A30,30 0 0,0 205.642,207.385" fill="none" stroke="#4338ca" stroke-width="1.5"/>
+<text x="238.949" y="205.195" text-anchor="middle" dominant-baseline="middle" class="angle">67°</text>
+<polyline points="253.080,235.000 253.080,222.000 266.080,222.000" fill="none" stroke="#111827" stroke-width="1.5"/>
+</svg>

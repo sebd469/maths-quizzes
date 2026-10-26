@@ -1,4 +1,10 @@
-# 3iec assessment revision quizzes
+# 3iec Assessment 1 revision quizzes
+
+For Assessment 2 and later cycles, follow
+[`3iec-assessment-workflow.md`](3iec-assessment-workflow.md) and the reusable
+[`assessment-and-revision brief`](../prompts/04-create-3iec-assessment-and-revision.md).
+The PDF folder is `3iec/Assessments/` locally and in the separate private backup;
+assessment papers and teacher schemes are not part of the public quiz release.
 
 Four original revision quizzes use the existing shared 2iec quiz renderer,
 visual style and behaviour. The user requested immediate publication on
@@ -39,3 +45,19 @@ approval remain pending.
 
 Releases are committed and pushed in numerical order. Verify each Pages build
 and compare each live HTML page against its released local file.
+
+## Trigonometry diagrams
+
+Each of the 18 trigonometry questions now has an original labelled SVG diagram
+in its `diagrams/` folder. These show given sides and angles, right-angle
+markers where applicable, and the target side or angle without revealing the
+answer. All diagrams include alternative text and a not-to-scale caption.
+Obtuse-angle questions are depicted with obtuse triangles.
+
+Rebuild with `python3 scripts/render-3iec-trig-diagrams.py`, then rerender the
+quiz through `scripts/render-quiz.py`. Diagram metadata is optional in the
+shared question contract; other quizzes do not need diagrams or regeneration.
+Numerical labels were checked against the geometry, all 18 diagrams were
+visually reviewed, and loading, mobile layout, scoring, feedback, solution
+reveal and reset were checked in Chrome. Question text, choices, correct-answer
+indices and worked solutions are unchanged.

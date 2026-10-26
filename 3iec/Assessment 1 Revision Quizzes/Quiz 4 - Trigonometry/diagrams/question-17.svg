@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300">
+<title>Question 17: Triangle with sides 7 cm, 10 cm and 14 cm. Find theta, the smallest angle opposite the 7 cm side.</title>
+<style>text{font-family:Arial,Helvetica,sans-serif;font-size:20px;paint-order:stroke;stroke:white;stroke-width:5px;stroke-linejoin:round} .vertex{font-size:19px;font-weight:bold;fill:#111827} .value{fill:#075985} .angle{font-size:19px;fill:#4338ca;font-weight:bold}</style>
+<polygon points="80.000,200.462 269.031,99.538 380.000,200.462" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="163.683" y="129.711" text-anchor="middle" dominant-baseline="middle" class="value">10 cm</text>
+<text x="230.000" y="223.462" text-anchor="middle" dominant-baseline="middle" class="value">14 cm</text>
+<text x="344.700" y="127.806" text-anchor="middle" dominant-baseline="middle" class="value">7 cm</text>
+<path d="M106.464,186.333 A30,30 0 0,1 110.000,200.462" fill="none" stroke="#4338ca" stroke-width="1.5"/>
+<text x="132.385" y="187.354" text-anchor="middle" dominant-baseline="middle" class="angle">θ</text>
+</svg>

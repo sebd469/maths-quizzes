@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300">
+<title>Question 13: Triangle ABC. A is 37 degrees, BC is 9 cm and AC is 13 cm. Find acute angle B.</title>
+<style>text{font-family:Arial,Helvetica,sans-serif;font-size:20px;paint-order:stroke;stroke:white;stroke-width:5px;stroke-linejoin:round} .vertex{font-size:19px;font-weight:bold;fill:#111827} .value{fill:#075985} .angle{font-size:19px;fill:#4338ca;font-weight:bold}</style>
+<polygon points="106.198,235.000 331.795,65.000 353.802,235.000" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="86.434" y="242.100" text-anchor="middle" dominant-baseline="middle" class="vertex">A</text>
+<text x="342.584" y="46.983" text-anchor="middle" dominant-baseline="middle" class="vertex">B</text>
+<text x="371.566" y="246.201" text-anchor="middle" dominant-baseline="middle" class="vertex">C</text>
+<text x="372.551" y="146.149" text-anchor="middle" dominant-baseline="middle" class="value">9 cm</text>
+<text x="230.000" y="258.000" text-anchor="middle" dominant-baseline="middle" class="value">13 cm</text>
+<path d="M130.157,216.946 A30,30 0 0,1 136.198,235.000" fill="none" stroke="#4338ca" stroke-width="1.5"/>
+<text x="157.407" y="217.866" text-anchor="middle" dominant-baseline="middle" class="angle">37°</text>
+<path d="M307.836,83.054 A30,30 0 0,0 335.647,94.752" fill="none" stroke="#4338ca" stroke-width="1.5"/>
+<text x="310.859" y="114.776" text-anchor="middle" dominant-baseline="middle" class="angle">?</text>
+</svg>

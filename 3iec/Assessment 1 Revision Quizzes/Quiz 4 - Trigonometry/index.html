@@ -134,6 +134,10 @@
       margin: 14px 0 18px;
     }
 
+    .question-diagram { margin: 14px 0 22px; text-align: center; }
+    .question-diagram img { display: block; width: 100%; max-width: 460px; height: auto; margin: 0 auto; }
+    .question-diagram figcaption { margin-top: 4px; color: #6b7280; font-size: 13px; }
+
     .options {
       display: grid;
       grid-template-columns: 1fr;
@@ -270,7 +274,7 @@
   <main>
     <section class="instructions">
       <strong>Instructions:</strong>
-      Use a calculator in degree mode. Give numerical lengths and angles to 3 significant figures unless an exact value is requested. Angles A, B and C are at the correspondingly named vertices. Sketch and label each triangle before calculating; all information needed is stated in the question.
+      Use a calculator in degree mode. Give numerical lengths and angles to 3 significant figures unless an exact value is requested. Angles are at the correspondingly named vertices. Use the labelled diagram with each question; diagrams are not drawn to scale.
       Select one answer for each part. Your score updates as you go, and the worked solution appears after checking.
     </section>
 
@@ -295,7 +299,11 @@
     "answer": 1,
     "solution": "\\(\\frac{8}{17}\\)",
     "working": "\u003cp\u003eThe hypotenuse is AC, opposite the right angle. The side opposite A is BC.\u003c/p\u003e\\[\\sin A=\\frac{\\text{opposite}}{\\text{hypotenuse}}=\\frac{8}{17}.\\]",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-01.svg",
+      "alt": "Triangle ABC, right angle at B. AB is 15 cm, BC is 8 cm and hypotenuse AC is 17 cm. Find sin A."
+    }
   },
   {
     "id": "3iec-trig-q02",
@@ -311,7 +319,11 @@
     "answer": 3,
     "solution": "\\(\\frac{7}{25}\\)",
     "working": "\u003cp\u003ePR is the hypotenuse. PQ is adjacent to P.\u003c/p\u003e\\[\\cos P=\\frac{\\text{adjacent}}{\\text{hypotenuse}}=\\frac{7}{25}.\\]",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-02.svg",
+      "alt": "Triangle PQR, right angle at Q. PQ is 7 cm, QR is 24 cm and hypotenuse PR is 25 cm. Find cos P."
+    }
   },
   {
     "id": "3iec-trig-q03",
@@ -327,7 +339,11 @@
     "answer": 0,
     "solution": "\\(5.47\\,\\mathrm{cm}\\)",
     "working": "\u003cp\u003eUse sine because the opposite side and hypotenuse are involved.\u003c/p\u003e\\[\\sin23^\\circ=\\frac{x}{14},\\qquad x=14\\sin23^\\circ=5.470235\\ldots\\,\\mathrm{cm}.\\]\u003cp\u003eHence the length is 5.47 cm.\u003c/p\u003e",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-03.svg",
+      "alt": "Right-angled triangle with a 23 degree angle, hypotenuse 14 cm and opposite side x cm to find."
+    }
   },
   {
     "id": "3iec-trig-q04",
@@ -343,7 +359,11 @@
     "answer": 2,
     "solution": "\\(14.6\\,\\mathrm{cm}\\)",
     "working": "\\[\\sin38^\\circ=\\frac{9}{h}\\quad\\Rightarrow\\quad h=\\frac{9}{\\sin38^\\circ}=14.618423\\ldots\\,\\mathrm{cm}.\\]\u003cp\u003eThe hypotenuse is 14.6 cm, which is longer than 9 cm.\u003c/p\u003e",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-04.svg",
+      "alt": "Right-angled triangle with a 38 degree angle and opposite side 9 cm. Find hypotenuse h cm."
+    }
   },
   {
     "id": "3iec-trig-q05",
@@ -359,7 +379,11 @@
     "answer": 1,
     "solution": "\\(6.47\\,\\mathrm{cm}\\)",
     "working": "\\[\\cos54^\\circ=\\frac{a}{11},\\qquad a=11\\cos54^\\circ=6.465637\\ldots\\,\\mathrm{cm}.\\]\u003cp\u003eThe adjacent side is 6.47 cm.\u003c/p\u003e",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-05.svg",
+      "alt": "Right-angled triangle with a 54 degree angle and hypotenuse 11 cm. Find the adjacent side a cm."
+    }
   },
   {
     "id": "3iec-trig-q06",
@@ -375,7 +399,11 @@
     "answer": 3,
     "solution": "\\(32.7^\\circ\\)",
     "working": "\\[\\tan\\theta=\\frac{9}{14},\\qquad\\theta=\\tan^{-1}\\!\\left(\\frac{9}{14}\\right)=32.735226\\ldots^\\circ.\\]\u003cp\u003eTherefore the angle is 32.7 degrees.\u003c/p\u003e",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-06.svg",
+      "alt": "Right-angled triangle. The side opposite theta is 9 cm and the adjacent side is 14 cm. Find theta."
+    }
   },
   {
     "id": "3iec-trig-q07",
@@ -391,7 +419,11 @@
     "answer": 0,
     "solution": "\\(9.21\\,\\mathrm{m}\\)",
     "working": "\u003cp\u003eThe ladder is the hypotenuse; the vertical height is opposite the angle at the ground.\u003c/p\u003e\\[h=10\\sin67^\\circ=9.205048\\ldots\\,\\mathrm{m}\\approx9.21\\,\\mathrm{m}.\\]",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-07.svg",
+      "alt": "A 10 metre ladder leans against a vertical wall, making 67 degrees with level ground. Find the vertical height h metres."
+    }
   },
   {
     "id": "3iec-trig-q08",
@@ -407,7 +439,11 @@
     "answer": 2,
     "solution": "\\(22.6^\\circ\\)",
     "working": "\u003cp\u003eDF is the hypotenuse and EF is opposite angle D.\u003c/p\u003e\\[\\sin D=\\frac{5}{13},\\qquad D=\\sin^{-1}\\!\\left(\\frac{5}{13}\\right)=22.619864\\ldots^\\circ.\\]\u003cp\u003eSo angle EDF is 22.6 degrees.\u003c/p\u003e",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-08.svg",
+      "alt": "Triangle DEF, right angle at E. Hypotenuse DF is 13 cm and EF is 5 cm. Find angle EDF at D."
+    }
   },
   {
     "id": "3iec-trig-q09",
@@ -423,7 +459,11 @@
     "answer": 3,
     "solution": "\\(12.7\\,\\mathrm{cm}\\)",
     "working": "\u003cp\u003eBC is opposite A and AC is opposite B. Use the sine rule.\u003c/p\u003e\\[\\frac{AC}{\\sin71^\\circ}=\\frac{9}{\\sin42^\\circ}\\quad\\Rightarrow\\quad AC=\\frac{9\\sin71^\\circ}{\\sin42^\\circ}=12.717498\\ldots\\,\\mathrm{cm}.\\]\u003cp\u003eAC = 12.7 cm.\u003c/p\u003e",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-09.svg",
+      "alt": "Triangle ABC. A is 42 degrees, B is 71 degrees and BC is 9 cm. Find AC."
+    }
   },
   {
     "id": "3iec-trig-q10",
@@ -439,7 +479,11 @@
     "answer": 1,
     "solution": "\\(38.2^\\circ\\)",
     "working": "\\[\\frac{\\sin B}{8}=\\frac{\\sin68^\\circ}{12}\\quad\\Rightarrow\\quad\\sin B=\\frac{8\\sin68^\\circ}{12}.\\]\\[B=\\sin^{-1}\\!\\left(\\frac{8\\sin68^\\circ}{12}\\right)=38.179163\\ldots^\\circ.\\]\u003cp\u003eThe required acute angle is 38.2 degrees.\u003c/p\u003e",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-10.svg",
+      "alt": "Triangle ABC. A is 68 degrees, BC is 12 cm and AC is 8 cm. Find acute angle B."
+    }
   },
   {
     "id": "3iec-trig-q11",
@@ -455,7 +499,11 @@
     "answer": 0,
     "solution": "\\(121^\\circ\\)",
     "working": "\\[\\sin B=\\frac{12\\sin35^\\circ}{8}=0.860364\\ldots.\\]\u003cp\u003eThe inverse sine gives the acute angle 59.357550... degrees. The question specifies the obtuse solution:\u003c/p\u003e\\[B=180^\\circ-59.357550\\ldots^\\circ=120.642449\\ldots^\\circ\\approx121^\\circ.\\]\u003cp\u003eThe remaining angle is positive, so this is a valid triangle.\u003c/p\u003e",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-11.svg",
+      "alt": "Triangle ABC with obtuse angle B. A is 35 degrees, BC is 8 cm and AC is 12 cm. Find B."
+    }
   },
   {
     "id": "3iec-trig-q12",
@@ -471,7 +519,11 @@
     "answer": 2,
     "solution": "\\(11.2\\,\\mathrm{cm}\\)",
     "working": "\u003cp\u003eFirst find the third angle:\u003c/p\u003e\\[C=180^\\circ-48^\\circ-76^\\circ=56^\\circ.\\]\u003cp\u003eAB is opposite C.\u003c/p\u003e\\[AB=\\frac{10\\sin56^\\circ}{\\sin48^\\circ}=11.155800\\ldots\\,\\mathrm{cm}\\approx11.2\\,\\mathrm{cm}.\\]",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-12.svg",
+      "alt": "Triangle ABC. A is 48 degrees, B is 76 degrees and BC is 10 cm. Find AB."
+    }
   },
   {
     "id": "3iec-trig-q13",
@@ -487,7 +539,11 @@
     "answer": 1,
     "solution": "\\(60.4^\\circ\\)",
     "working": "\\[\\frac{\\sin B}{13}=\\frac{\\sin37^\\circ}{9}\\quad\\Rightarrow\\quad B=\\sin^{-1}\\!\\left(\\frac{13\\sin37^\\circ}{9}\\right)=60.376048\\ldots^\\circ.\\]\u003cp\u003eThe required acute angle is 60.4 degrees. Although the sine rule also permits a supplementary angle here, it is excluded by the acute-angle condition.\u003c/p\u003e",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-13.svg",
+      "alt": "Triangle ABC. A is 37 degrees, BC is 9 cm and AC is 13 cm. Find acute angle B."
+    }
   },
   {
     "id": "3iec-trig-q14",
@@ -503,7 +559,11 @@
     "answer": 3,
     "solution": "\\(8.75\\,\\mathrm{cm}\\)",
     "working": "\u003cp\u003eThe known angle lies between the known sides, so use the cosine rule.\u003c/p\u003e\\[BC^2=8^2+11^2-2(8)(11)\\cos52^\\circ=76.643580\\ldots.\\]\\[BC=\\sqrt{76.643580\\ldots}=8.754631\\ldots\\,\\mathrm{cm}\\approx8.75\\,\\mathrm{cm}.\\]",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-14.svg",
+      "alt": "Triangle ABC. AB is 8 cm, AC is 11 cm and their included angle A is 52 degrees. Find BC."
+    }
   },
   {
     "id": "3iec-trig-q15",
@@ -519,7 +579,11 @@
     "answer": 0,
     "solution": "\\(13.0\\,\\mathrm{cm}\\)",
     "working": "\\[c^2=6^2+9^2-2(6)(9)\\cos118^\\circ=167.702928\\ldots.\\]\\[c=12.950016\\ldots\\,\\mathrm{cm}\\approx13.0\\,\\mathrm{cm}.\\]\u003cp\u003eKeep the final zero to show 3 significant figures.\u003c/p\u003e",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-15.svg",
+      "alt": "Triangle with sides 6 cm and 9 cm enclosing an obtuse angle of 118 degrees. Find third side x cm."
+    }
   },
   {
     "id": "3iec-trig-q16",
@@ -535,7 +599,11 @@
     "answer": 2,
     "solution": "\\(84.8^\\circ\\)",
     "working": "\\[\\cos\\theta=\\frac{8^2+11^2-13^2}{2(8)(11)}=\\frac{16}{176}=\\frac{1}{11}.\\]\\[\\theta=\\cos^{-1}\\!\\left(\\frac{1}{11}\\right)=84.784091\\ldots^\\circ\\approx84.8^\\circ.\\]",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-16.svg",
+      "alt": "Triangle with sides 8 cm, 11 cm and 13 cm. Find theta, the angle opposite the 13 cm side."
+    }
   },
   {
     "id": "3iec-trig-q17",
@@ -551,7 +619,11 @@
     "answer": 1,
     "solution": "\\(28.1^\\circ\\)",
     "working": "\u003cp\u003eThe smallest angle is opposite the shortest side, 7 cm.\u003c/p\u003e\\[\\cos\\theta=\\frac{10^2+14^2-7^2}{2(10)(14)}=\\frac{247}{280}.\\]\\[\\theta=\\cos^{-1}\\!\\left(\\frac{247}{280}\\right)=28.098054\\ldots^\\circ\\approx28.1^\\circ.\\]",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-17.svg",
+      "alt": "Triangle with sides 7 cm, 10 cm and 14 cm. Find theta, the smallest angle opposite the 7 cm side."
+    }
   },
   {
     "id": "3iec-trig-q18",
@@ -567,7 +639,11 @@
     "answer": 3,
     "solution": "\\(15.7\\,\\mathrm{km}\\)",
     "working": "\u003cp\u003eThe included angle AOB is 134 degrees. Apply the cosine rule to triangle AOB.\u003c/p\u003e\\[AB^2=7^2+10^2-2(7)(10)\\cos134^\\circ=246.252171\\ldots.\\]\\[AB=15.692424\\ldots\\,\\mathrm{km}\\approx15.7\\,\\mathrm{km}.\\]",
-    "source_ref": "Original"
+    "source_ref": "Original",
+    "diagram": {
+      "src": "diagrams/question-18.svg",
+      "alt": "Triangle AOB formed by two paths from O. OA is 7 km, OB is 10 km and angle AOB is 134 degrees. Find straight-line distance AB."
+    }
   }
 ];
 
@@ -621,6 +697,7 @@
             <span class="question-title">Choose the correct answer</span>
           </div>
           <div class="prompt">${escapeHTML(question.prompt)}</div>
+          ${question.diagram ? `<figure class="question-diagram"><img src="${escapeHTML(question.diagram.src)}" alt="${escapeHTML(question.diagram.alt)}" width="460" height="300"><figcaption>Not drawn to scale.</figcaption></figure>` : ""}
           <div class="options">${optionHTML}</div>
           <button class="check-button" id="check-${index}" type="button" onclick="checkQuestion(${index})" disabled>Check this question</button>
           <div class="feedback" id="feedback-${index}" aria-live="polite"></div>

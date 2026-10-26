@@ -35,6 +35,10 @@ if ! jq -e '
     (.solution | nonblank) and
     (.working | nonblank) and
     (.source_ref | nonblank) and
+    ((has("diagram") | not) or
+      ((.diagram | type == "object") and
+       (.diagram.alt | nonblank) and
+       (.diagram.src | nonblank and test("^diagrams/[A-Za-z0-9_-]+[.]svg$")))) and
     (.options | type == "array" and length >= 2 and all(.[]; nonblank)) and
     (.answer | type == "number" and floor == .) and
     (.answer >= 0 and .answer < (.options | length))

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300">
+<title>Question 8: Triangle DEF, right angle at E. Hypotenuse DF is 13 cm and EF is 5 cm. Find angle EDF at D.</title>
+<style>text{font-family:Arial,Helvetica,sans-serif;font-size:20px;paint-order:stroke;stroke:white;stroke-width:5px;stroke-linejoin:round} .vertex{font-size:19px;font-weight:bold;fill:#111827} .value{fill:#075985} .angle{font-size:19px;fill:#4338ca;font-weight:bold}</style>
+<polygon points="80.000,212.500 380.000,212.500 380.000,87.500" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="59.441" y="216.783" text-anchor="middle" dominant-baseline="middle" class="vertex">D</text>
+<text x="399.385" y="220.577" text-anchor="middle" dominant-baseline="middle" class="vertex">E</text>
+<text x="396.133" y="74.056" text-anchor="middle" dominant-baseline="middle" class="vertex">F</text>
+<text x="221.154" y="128.769" text-anchor="middle" dominant-baseline="middle" class="value">13 cm</text>
+<text x="410.000" y="150.000" text-anchor="middle" dominant-baseline="middle" class="value">5 cm</text>
+<path d="M110.000,212.500 A30,30 0 0,0 107.692,200.962" fill="none" stroke="#4338ca" stroke-width="1.5"/>
+<text x="132.951" y="201.910" text-anchor="middle" dominant-baseline="middle" class="angle">?</text>
+<polyline points="367.000,212.500 367.000,199.500 380.000,199.500" fill="none" stroke="#111827" stroke-width="1.5"/>
+</svg>

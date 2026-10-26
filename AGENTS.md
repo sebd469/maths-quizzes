@@ -60,6 +60,33 @@ for the common quiz behavior and data contract.
 - Use British English and the existing static-site conventions unless the user
   asks for a change.
 
+## 3iec assessments and revision quizzes
+
+- Read `docs/3iec-assessment-workflow.md` and use
+  `prompts/04-create-3iec-assessment-and-revision.md` before preparing a new cycle.
+- The teacher will supply four topics for Assessment 2. Preferred question
+  sources are Past Paper Penguin, IGCSE questions by topic, and Corbettmaths.
+  Locate the actual resources and matching answers; do not invent source URLs,
+  question references, permissions or answer keys.
+- Keep PDF papers and separate teacher mark schemes under `3iec/Assessments/`.
+  Preserve earlier assessments. These files are private; backup destination is
+  the separate private `sebd469/maths-assessments-private` repository, after
+  checking its visibility. Never stage them in the public quiz repository.
+- Use `3iec/Assessment <N> Revision Quizzes/` for each assessment's topic quizzes,
+  with matching local source/review folders under `Source Files/3iec/`.
+  Match folder names, page titles, menu labels and back links exactly.
+- Prepare one revision quiz per supplied topic in the existing 2iec format,
+  with mixed difficulty and worked solutions. Revision questions must practise
+  the assessed skills without disclosing the actual assessment questions.
+- Include a labelled diagram for every trigonometry question, with accessible
+  text, correct angle/side labels and a not-to-scale caption.
+- Record exact question and solution provenance, independently solve every
+  item, and check rights for the intended private or public use. Permission
+  for one provider or document is not blanket permission for other sources.
+- The immediate-publication instruction on 26 October 2026 covered Assessment 1's
+  four revision quizzes. Future cycles follow the normal teacher-review/release
+  rule unless the teacher explicitly requests immediate publication again.
+
 ## Quiz behavior
 
 - Match the behavior contract in `docs/quiz-template-reference.md`.

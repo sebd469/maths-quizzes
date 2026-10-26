@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300">
+<title>Question 1: Triangle ABC, right angle at B. AB is 15 cm, BC is 8 cm and hypotenuse AC is 17 cm. Find sin A.</title>
+<style>text{font-family:Arial,Helvetica,sans-serif;font-size:20px;paint-order:stroke;stroke:white;stroke-width:5px;stroke-linejoin:round} .vertex{font-size:19px;font-weight:bold;fill:#111827} .value{fill:#075985} .angle{font-size:19px;fill:#4338ca;font-weight:bold}</style>
+<polygon points="80.000,230.000 380.000,230.000 380.000,70.000" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="59.709" y="235.411" text-anchor="middle" dominant-baseline="middle" class="vertex">A</text>
+<text x="398.529" y="239.882" text-anchor="middle" dominant-baseline="middle" class="vertex">B</text>
+<text x="394.363" y="54.680" text-anchor="middle" dominant-baseline="middle" class="vertex">C</text>
+<text x="230.000" y="253.000" text-anchor="middle" dominant-baseline="middle" class="value">15 cm</text>
+<text x="410.000" y="150.000" text-anchor="middle" dominant-baseline="middle" class="value">8 cm</text>
+<text x="219.176" y="129.706" text-anchor="middle" dominant-baseline="middle" class="value">17 cm</text>
+<path d="M110.000,230.000 A30,30 0 0,0 106.471,215.882" fill="none" stroke="#4338ca" stroke-width="1.5"/>
+<polyline points="367.000,230.000 367.000,217.000 380.000,217.000" fill="none" stroke="#111827" stroke-width="1.5"/>
+</svg>

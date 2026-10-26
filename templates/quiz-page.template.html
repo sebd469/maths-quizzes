@@ -134,6 +134,10 @@
       margin: 14px 0 18px;
     }
 
+    .question-diagram { margin: 14px 0 22px; text-align: center; }
+    .question-diagram img { display: block; width: 100%; max-width: 460px; height: auto; margin: 0 auto; }
+    .question-diagram figcaption { margin-top: 4px; color: #6b7280; font-size: 13px; }
+
     .options {
       display: grid;
       grid-template-columns: 1fr;
@@ -332,6 +336,7 @@
             <span class="question-title">Choose the correct answer</span>
           </div>
           <div class="prompt">${escapeHTML(question.prompt)}</div>
+          ${question.diagram ? `<figure class="question-diagram"><img src="${escapeHTML(question.diagram.src)}" alt="${escapeHTML(question.diagram.alt)}" width="460" height="300"><figcaption>Not drawn to scale.</figcaption></figure>` : ""}
           <div class="options">${optionHTML}</div>
           <button class="check-button" id="check-${index}" type="button" onclick="checkQuestion(${index})" disabled>Check this question</button>
           <div class="feedback" id="feedback-${index}" aria-live="polite"></div>

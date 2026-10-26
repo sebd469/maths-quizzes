@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300">
+<title>Question 11: Triangle ABC with obtuse angle B. A is 35 degrees, BC is 8 cm and AC is 12 cm. Find B.</title>
+<style>text{font-family:Arial,Helvetica,sans-serif;font-size:20px;paint-order:stroke;stroke:white;stroke-width:5px;stroke-linejoin:round} .vertex{font-size:19px;font-weight:bold;fill:#111827} .value{fill:#075985} .angle{font-size:19px;fill:#4338ca;font-weight:bold}</style>
+<polygon points="80.000,191.243 197.802,108.757 380.000,191.243" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="59.398" y="195.310" text-anchor="middle" dominant-baseline="middle" class="vertex">A</text>
+<text x="190.166" y="89.195" text-anchor="middle" dominant-baseline="middle" class="vertex">B</text>
+<text x="400.699" y="194.784" text-anchor="middle" dominant-baseline="middle" class="vertex">C</text>
+<text x="298.387" y="129.047" text-anchor="middle" dominant-baseline="middle" class="value">8 cm</text>
+<text x="230.000" y="214.243" text-anchor="middle" dominant-baseline="middle" class="value">12 cm</text>
+<path d="M104.575,174.036 A30,30 0 0,1 110.000,191.243" fill="none" stroke="#4338ca" stroke-width="1.5"/>
+<text x="131.501" y="175.005" text-anchor="middle" dominant-baseline="middle" class="angle">35°</text>
+<path d="M173.228,125.964 A30,30 0 0,0 225.132,121.130" fill="none" stroke="#4338ca" stroke-width="1.5"/>
+<text x="202.810" y="162.524" text-anchor="middle" dominant-baseline="middle" class="angle">?</text>
+</svg>
