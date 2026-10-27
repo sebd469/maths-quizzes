@@ -96,6 +96,36 @@ for the common quiz behavior and data contract.
 - Test selection, checking, feedback, score updates, solution reveal and reset
   in a browser before publishing.
 
+## Cloudflare Web Analytics
+
+- Every public quiz and navigation page must include exactly one Cloudflare
+  Web Analytics script, using `https://static.cloudflareinsights.com/beacon.min.js`
+  and the existing `data-cf-beacon` token `f4422aa63f9d4e04b91ab57a5551ffa5`.
+- Preserve the tag when editing pages and keep it in
+  `templates/quiz-page.template.html` so generated quizzes include it.
+- Before release, check the final HTML for missing or duplicate tags and the
+  correct token. After deployment, verify the tag in the live page source at
+  `https://www.mr-d-maths.com/` and each affected page. Record access failures
+  as pending checks; source presence alone does not confirm analytics delivery.
+
+## Optional result submission
+
+- Follow `docs/quiz-results-setup.md` for the Cloudflare result service and
+  deployment checks. Keep the optional name/class form on the quiz page and
+  send a result only after every question is checked and the student presses
+  Send. Keep anonymous practice available.
+- Preserve `window.getQuizResult`, `quiz-score-change` and `quiz-reset` hooks
+  and the shared `assets/quiz-results*` files when editing or rendering quizzes.
+  Reset must clear identity fields and submission state as well as the score.
+- Rebuild `cloudflare/quiz-results/quizzes.mjs` with
+  `python3 scripts/build-results-registry.py` after adding or renaming quizzes
+  or changing their question count, then redeploy the result service.
+- Pupil submissions belong only in the private result database and protected
+  teacher downloads. Never put results, notification addresses, access keys,
+  Turnstile secrets or Cloudflare credentials in public pages or Git.
+- Treat browser-reported names and scores as practice records, not verified
+  assessment marks. Do not claim email delivery from a successful database save.
+
 ## Git and releases
 
 - Standing instruction confirmed on 16 October 2026: build new quizzes as

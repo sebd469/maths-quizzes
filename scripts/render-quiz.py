@@ -4,6 +4,7 @@
 import argparse
 import html
 import json
+import os
 from pathlib import Path
 import subprocess
 
@@ -18,7 +19,9 @@ def main():
     data = json.loads(args.data.read_text())
     quiz = data['quiz']
     template = (root / 'templates/quiz-page.template.html').read_text()
+    output = args.output or args.data.with_name('index.html')
     values = {
+        'ASSET_PREFIX': Path(os.path.relpath(root / 'assets', output.resolve().parent)).as_posix() + '/',
         'TITLE': html.escape(quiz['title']),
         'COURSE': html.escape(quiz['course']),
         'TOPIC': html.escape(quiz['topic']),
@@ -32,7 +35,6 @@ def main():
     # One pass prevents placeholders inside authored data from being replaced.
     import re
     rendered = re.sub(r'@@([A-Z_]+)@@', lambda match: values[match[1]], template)
-    output = args.output or args.data.with_name('index.html')
     output.write_text(rendered)
     print(f'Rendered {output}')
 

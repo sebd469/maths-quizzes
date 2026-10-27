@@ -1,0 +1,7 @@
+# Private Cloudflare configuration and local result stores must never reach Pages.
+cloudflare/quiz-results/wrangler.jsonc
+cloudflare/quiz-results/.dev.vars*
+cloudflare/quiz-results/.env*
+cloudflare/quiz-results/.wrangler/
+cloudflare/quiz-results/node_modules/
+cloudflare/quiz-results/*results*.csv

@@ -106,6 +106,34 @@ without asking again for a separate release instruction. Source-rights issues,
 actual failures and access blockers still need resolution; incomplete browser
 or classroom tests remain incomplete. Verify deployment and live content.
 
+## Optional result submission
+
+Follow `docs/quiz-results-setup.md` for the shared form and Cloudflare service.
+Students may enter their name and class and send their final score on the same
+quiz page after checking every question. Submission is optional and requires
+an explicit button press. Reset clears identity and submission state. Keep the
+`window.getQuizResult` adapter and `quiz-score-change` / `quiz-reset` events
+consistent with the existing score. Shared assets must use relative paths that
+resolve from the generated quiz folder. Never place teacher access keys,
+notification addresses, pupil results or backend secrets in public files.
+
+## Cloudflare Web Analytics
+
+Every public quiz and navigation page must contain exactly one copy of the
+existing Cloudflare Web Analytics tag. Preserve this tag in hand-authored pages
+and in `templates/quiz-page.template.html`:
+
+```html
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f4422aa63f9d4e04b91ab57a5551ffa5"}'></script><!-- End Cloudflare Web Analytics -->
+```
+
+Check the final generated HTML before release for exactly one beacon script,
+the correct script URL and the matching token. After deployment, repeat the
+check against the live page source on `https://www.mr-d-maths.com/` for every
+affected page. A tag found in HTML confirms inclusion only; confirming that
+analytics is delivered requires a browser network check. Report inaccessible
+live pages or unperformed network checks honestly.
+
 ## Current automation boundary
 
 The existing quiz pages are standalone HTML and remain the live implementation.

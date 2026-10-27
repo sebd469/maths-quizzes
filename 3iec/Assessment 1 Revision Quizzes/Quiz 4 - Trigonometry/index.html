@@ -256,6 +256,7 @@
       .options { grid-template-columns: 1fr 1fr; }
     }
   </style>
+  <link rel="stylesheet" href="../../../assets/quiz-results.css">
 </head>
 <body>
   <header>
@@ -761,15 +762,24 @@
       typesetMath([feedback, workingDetails]);
     }
 
+    window.getQuizResult = () => ({
+      path: decodeURIComponent(location.pathname).replace(/\/$/, "/index.html"),
+      correct: correct.filter(Boolean).length,
+      attempted: checked.filter(Boolean).length,
+      total: questions.length
+    });
+
     function updateScore() {
       const checkedCount = checked.filter(Boolean).length;
       const correctCount = correct.filter(Boolean).length;
       scoreBox.textContent = `Score: ${correctCount} / ${checkedCount} checked`;
+      document.dispatchEvent(new Event("quiz-score-change"));
     }
 
     function resetQuiz() {
       checked = new Array(questions.length).fill(false);
       correct = new Array(questions.length).fill(false);
+      document.dispatchEvent(new Event("quiz-reset"));
       renderQuiz();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -777,5 +787,7 @@
     renderQuiz();
   </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f4422aa63f9d4e04b91ab57a5551ffa5"}'></script><!-- End Cloudflare Web Analytics -->
+  <script src="../../../assets/quiz-results-config.js"></script>
+  <script src="../../../assets/quiz-results.js"></script>
 </body>
 </html>
