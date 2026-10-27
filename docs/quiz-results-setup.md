@@ -33,13 +33,81 @@
 - The teacher approved publication across all 15 current quizzes on
   27 October 2026: "ok publish so I can test it online". The release includes
   the local-preview explanation and narrow-screen layout fix. Deployment and
-  public-page verification follow the approved commit/push.
+  public-page verification completed for commit `74128b2`. GitHub Pages run
+  `40498615135` succeeded; all 15 quiz pages and three shared assets matched
+  the release exactly.
+- The teacher tested the published Laws of Indices quiz on 27 October 2026 and
+  confirmed that it worked as expected and the result email arrived. This is
+  an online teacher test of that quiz, not evidence of classroom testing or
+  an individual email test of every other quiz.
+- The teacher then requested publication of the related documentation and
+  confirmed that all new quizzes must include the result-submission feature.
 
 The actual database ID is retained in the ignored local
 `cloudflare/quiz-results/wrangler.jsonc`. The generated teacher access key and
 Turnstile secret are in the ignored, owner-readable `.dev.vars` beside it.
 Store the teacher key in a password manager before activating the feature.
 The private teacher download page is `/teacher` on the Worker address.
+
+## Collect all results in one place
+
+Open [Private quiz results](https://mr-d-quiz-results.sebd469.workers.dev/teacher),
+enter the teacher access key and select **Download results CSV**. Open that
+file in Excel to view and filter the complete retained collection by pupil,
+class, quiz or submission date. It contains UTC submission time, pupil name,
+class, quiz title/path, correct/attempted/total counts and notification status.
+It is a CSV download, not an on-screen results table.
+
+The teacher's key and a short guide are in the local, owner-readable
+`cloudflare/quiz-results/teacher-access.txt`. This file is ignored by Git and
+must never be uploaded, committed or shared with students. Save the key in a
+password manager. Use this key on the results page, not a Gmail password.
+
+Results remain in the active database for 90 days. Download them before they
+expire if they are needed longer; notification emails and downloaded copies
+are retained separately by the teacher. Downloaded pupil records stay private.
+The teacher can also inspect the private D1 `results` table through their
+signed-in Cloudflare dashboard. No collection of pupil results is public.
+
+## Required for every new quiz
+
+**Include Send result to Mr D in every new quiz.** Only the pupil's decision
+to send is optional. The standard template already supplies the feature, and
+the renderer calculates the relative paths to its shared assets.
+
+1. Author and validate the quiz data, then generate its page with
+   `python3 scripts/render-quiz.py "<quiz>/quiz-data.json"`. Preserve
+   `window.getQuizResult`, both score/reset events, the stylesheet and the
+   configuration/component script links. Use the existing public service
+   configuration; never add per-quiz credentials or email addresses.
+2. Keep the new quiz local until its normal content/rights review and teacher
+   approval are complete. Check anonymous practice, scores/reset, the local
+   explanation and relative asset paths. Adding result submission does not
+   waive the usual new-quiz approval rule.
+3. Build the local registry with
+   `python3 scripts/build-results-registry.py`. It contains only paths, titles
+   and question counts. Review the diff: the new quiz's exact decoded path
+   ending in `/index.html`, title and total must match its page. Exclude
+   unrelated drafts before deploying the approved release.
+4. After approval, deploy the updated registry with the result Worker:
+
+   ```sh
+   cd cloudflare/quiz-results
+   npx wrangler deploy --config wrangler.jsonc
+   ```
+
+   Use the existing Worker/database and private configuration. A page rebuild
+   or GitHub push does **not** update the deployed Cloudflare registry. Deploy
+   its metadata before the new quiz page; the API rejects unknown paths or
+   totals that do not match. Apply this step after renames or count changes too.
+5. Publish only the approved quiz and related navigation/docs/registry files.
+   Verify the deployed page, assets and analytics tag, then test an explicit
+   fictional submission on the published HTTPS site. Confirm matching quiz,
+   score, email and private CSV entry; remove the fictional record afterwards.
+   Never claim this passed from an earlier quiz's test alone.
+
+The create/review prompts, both build-method documents and `AGENTS.md` make
+these steps part of the standard workflow for future quizzes.
 
 ## Student experience
 

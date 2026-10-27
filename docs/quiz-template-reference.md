@@ -108,6 +108,8 @@ or classroom tests remain incomplete. Verify deployment and live content.
 
 ## Optional result submission
 
+Every new quiz must include **Send result to Mr D**. The feature is mandatory
+in the standard template; submission remains optional for each student.
 Follow `docs/quiz-results-setup.md` for the shared form and Cloudflare service.
 Students may enter their name and class and send their final score on the same
 quiz page after checking every question. Submission is optional and requires
@@ -116,6 +118,14 @@ an explicit button press. Reset clears identity and submission state. Keep the
 consistent with the existing score. Shared assets must use relative paths that
 resolve from the generated quiz folder. Never place teacher access keys,
 notification addresses, pupil results or backend secrets in public files.
+
+Before releasing a new or renamed quiz, rebuild the public quiz registry with
+`python3 scripts/build-results-registry.py` and review its exact path, title
+and question count. Deploy the approved registry to the Worker before the
+new quiz page is published; an unregistered quiz cannot submit results.
+Keep unrelated drafts out of that deployment. After publication, verify a
+fictional result, notification and private CSV entry. Local previews show a
+clear explanation and disable sending while keeping ordinary practice usable.
 
 ## Cloudflare Web Analytics
 

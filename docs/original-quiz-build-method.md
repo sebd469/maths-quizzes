@@ -53,6 +53,10 @@ class; the class links back to the main menu.
    existing CDN. Keep changes to reusable behaviour in the template; rerender
    affected quizzes afterwards. Do not edit generated pages as the source of
    truth. Worked solutions are trusted authored HTML and need manual review.
+   Every new quiz must retain the template's **Send result to Mr D** form,
+   shared assets and score/reset hooks. Submission is optional for students;
+   local previews explain that sending is disabled. Follow
+   `docs/quiz-results-setup.md` for the mandatory registry/deployment steps.
 7. Prepare a teacher review copy of every prompt, all options, the correct
    option and working. Keep comparison signs and fraction grouping legible in
    the plain-text copy. Verify it against the JSON after any content revision.
@@ -68,6 +72,10 @@ class; the class links back to the main menu.
    unless the user expressly restricts it. Resolve actual blockers and verify
    deployment, without asking for another release instruction. Do not include source
    PDFs, extracted text or unrelated changes in the commit.
+   Before publishing a new quiz, rebuild and review the result-service registry
+   and deploy the approved metadata to Cloudflare so the quiz's submissions
+   will be accepted. After publication, verify a fictional result and matching
+   email/CSV entry. Do not include unrelated draft metadata or test data.
 
 ## 6iec Unit 01 Numbers quizzes
 

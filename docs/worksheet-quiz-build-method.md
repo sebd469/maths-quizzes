@@ -86,6 +86,14 @@ The renderer validates again and produces `index.html` beside the data, using
 the existing template. Treat JSON as the content source of truth; re-render
 after changing data. Keep reusable interaction changes in the template.
 
+Every new quiz must include the template's **Send result to Mr D** form and
+shared assets, with submission optional for the student. Retain the score and
+reset hooks and the local-preview explanation. Follow
+`docs/quiz-results-setup.md`: after approval, rebuild/review the quiz registry,
+deploy the approved quiz's path/title/count to the Worker before publishing,
+then verify a fictional online submission, notification and private CSV row.
+The form's presence alone is insufficient if the quiz is not registered.
+
 Place `teacher-review.md` under
 `Source Files/<class>/<topic>/<quiz name>/`. Include all prompts, options,
 correct choices, working, exact sources, assumptions and outstanding checks.

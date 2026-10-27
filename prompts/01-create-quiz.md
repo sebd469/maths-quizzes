@@ -4,6 +4,13 @@ Read `AGENTS.md` and `docs/quiz-template-reference.md` first. Create only the
 requested quiz and question parts from the supplied worksheet, or original
 questions when the user requests them without supplying sources.
 
+Every new quiz must include **Send result to Mr D** at the end of the page.
+Submission is optional for students, but inclusion is mandatory for the quiz.
+Use the shared template/renderer, existing `assets/quiz-results*` files and
+instructions in `docs/quiz-results-setup.md`; do not create another email form
+or put private settings in the page. Keep name/class entry, final-score
+submission, anonymous practice and reset behaviour consistent with the template.
+
 For 2iec, read `docs/2iec-source-reference.md` first: Mechanics uses the Edexcel
 M1 textbook and matching Solutionbank; Pure uses Solomon Press worksheets and
 matching worked answers. Confirm the subject before selecting sources, and
@@ -115,13 +122,20 @@ verify deployment; resolve genuine blockers and report pending tests honestly.
    testing the same skill.
 6. Run `scripts/validate-quiz-data.sh` on the completed data. Remember that the
    validator does not check mathematical correctness.
-   For the shared page template, save `quiz-data.json` beside the quiz page,
+   For every new quiz, save `quiz-data.json` beside the quiz page,
    then run `python3 scripts/render-quiz.py "<path>/quiz-data.json"`.
    The renderer validates again and writes a standalone `index.html`.
    Supply `topic` and `instructions` in the quiz metadata; see
    `docs/original-quiz-build-method.md` for the full method and examples.
    Test selection, checking, feedback, locking, scoring, solution reveal and
    reset in a browser; report any testing that could not be completed.
+   Confirm the result assets and score/reset hooks are present. A local preview
+   must explain that sending is disabled there. After teacher approval, rebuild
+   `cloudflare/quiz-results/quizzes.mjs` with
+   `python3 scripts/build-results-registry.py`, review its path/title/total and
+   exclude unrelated drafts, then deploy the updated Worker before publishing
+   the new page. Test a fictional online submission and its email/CSV result;
+   keep test records out of the public repository.
 7. Do not claim teacher approval, classroom testing, or deployment unless those
    steps actually occurred. Do not commit or push before the user requests
    release or gives teacher approval under the standing instruction.

@@ -46,6 +46,11 @@ easier and harder practice, four distinct options and complete worked solutions.
 Use verified source questions when requested; label original material honestly
 when authorised. Validate JSON, render through the shared template, check all
 maths and links and test the complete student flow in a browser.
+Every new revision quiz must also include the shared **Send result to Mr D**
+feature. Follow `docs/quiz-results-setup.md`: keep submission optional, retain
+local-preview handling, and include the new quiz metadata in the approved
+Worker registry deployment before publishing. Check a fictional online result
+and its matching email/CSV record after release.
 For trigonometry, include a labelled diagram with every question, showing only
 given values and the target quantity. Check right/acute/obtuse geometry, labels,
 accessible descriptions and mobile readability.

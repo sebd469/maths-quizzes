@@ -5,3 +5,4 @@ cloudflare/quiz-results/.env*
 cloudflare/quiz-results/.wrangler/
 cloudflare/quiz-results/node_modules/
 cloudflare/quiz-results/*results*.csv
+cloudflare/quiz-results/teacher-access.txt

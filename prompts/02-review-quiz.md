@@ -59,6 +59,16 @@ and keep unperformed browser/classroom checks marked as pending.
   defensible correct choice unless the question explicitly requires otherwise.
 - Test unanswered, correct, incorrect, locked-after-check, score, and reset
   behavior in a browser.
+- Require the standard **Send result to Mr D** feature on every new quiz,
+  supplied by the shared template and assets. Verify that names/classes are
+  optional for practice, sending requires all questions checked and an explicit
+  click, and reset clears identity and submission state. Local previews must
+  explain that sending is disabled rather than show a verification failure.
+- Before release, verify the new quiz's exact path, title and question count in
+  `cloudflare/quiz-results/quizzes.mjs` and deploy that approved registry to the
+  Worker. After publication, test a fictional submission, matching notification
+  and private CSV row. Record actual results; do not infer success from another
+  quiz's test or publish any pupil data or private credentials.
 - Run `scripts/validate-quiz-data.sh` when structured quiz data is available.
 - Separate verified defects from questions requiring teacher judgement.
 - Check publication-rights concerns; do not infer permission from local access

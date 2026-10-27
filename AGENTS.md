@@ -110,6 +110,9 @@ for the common quiz behavior and data contract.
 
 ## Optional result submission
 
+- Include **Send result to Mr D** in every new quiz. It is a standard quiz
+  feature; only the student's decision to submit is optional. Generate new
+  pages with the shared template/renderer so the form is included automatically.
 - Follow `docs/quiz-results-setup.md` for the Cloudflare result service and
   deployment checks. Keep the optional name/class form on the quiz page and
   send a result only after every question is checked and the student presses
@@ -120,6 +123,12 @@ for the common quiz behavior and data contract.
 - Rebuild `cloudflare/quiz-results/quizzes.mjs` with
   `python3 scripts/build-results-registry.py` after adding or renaming quizzes
   or changing their question count, then redeploy the result service.
+- Treat the updated registry and Worker deployment as part of the approved
+  quiz release. Verify the new quiz's path, title and total are registered
+  before publishing its page; otherwise result submissions will be rejected.
+- Local previews must show the explanation that sending is disabled locally,
+  while normal practice and scoring still work. Test actual sending on the
+  published HTTPS quiz and record the outcome separately from content approval.
 - Pupil submissions belong only in the private result database and protected
   teacher downloads. Never put results, notification addresses, access keys,
   Turnstile secrets or Cloudflare credentials in public pages or Git.
