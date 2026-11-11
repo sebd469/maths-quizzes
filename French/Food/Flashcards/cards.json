@@ -1,0 +1,800 @@
+[
+  {
+    "id": 1,
+    "category": "Vegetables",
+    "fr": "une tomate",
+    "en": "tomato",
+    "emoji": "🍅"
+  },
+  {
+    "id": 2,
+    "category": "Vegetables",
+    "fr": "une pomme de terre",
+    "en": "potato",
+    "emoji": "🥔"
+  },
+  {
+    "id": 3,
+    "category": "Vegetables",
+    "fr": "un oignon",
+    "en": "onion",
+    "emoji": "🧅"
+  },
+  {
+    "id": 4,
+    "category": "Vegetables",
+    "fr": "une salade",
+    "en": "lettuce",
+    "emoji": "🥬"
+  },
+  {
+    "id": 5,
+    "category": "Vegetables",
+    "fr": "une carotte",
+    "en": "carrot",
+    "emoji": "🥕"
+  },
+  {
+    "id": 6,
+    "category": "Vegetables",
+    "fr": "un poivron",
+    "en": "pepper",
+    "emoji": "🫑"
+  },
+  {
+    "id": 7,
+    "category": "Vegetables",
+    "fr": "des petits pois",
+    "en": "peas",
+    "emoji": "🫛"
+  },
+  {
+    "id": 8,
+    "category": "Vegetables",
+    "fr": "de l’ail",
+    "en": "garlic",
+    "emoji": "🧄"
+  },
+  {
+    "id": 9,
+    "category": "Vegetables",
+    "fr": "une aubergine",
+    "en": "aubergine",
+    "emoji": "🍆"
+  },
+  {
+    "id": 10,
+    "category": "Vegetables",
+    "fr": "un champignon",
+    "en": "mushroom",
+    "emoji": "🍄"
+  },
+  {
+    "id": 11,
+    "category": "Vegetables",
+    "fr": "un chou-fleur",
+    "en": "cauliflower",
+    "emoji": "🥦"
+  },
+  {
+    "id": 12,
+    "category": "Vegetables",
+    "fr": "un brocoli",
+    "en": "broccoli",
+    "emoji": "🥦"
+  },
+  {
+    "id": 13,
+    "category": "Vegetables",
+    "fr": "une asperge",
+    "en": "asparagus",
+    "emoji": "🌱"
+  },
+  {
+    "id": 14,
+    "category": "Vegetables",
+    "fr": "un haricot vert",
+    "en": "green bean",
+    "emoji": "🫛"
+  },
+  {
+    "id": 15,
+    "category": "Vegetables",
+    "fr": "un concombre",
+    "en": "cucumber",
+    "emoji": "🥒"
+  },
+  {
+    "id": 16,
+    "category": "Vegetables",
+    "fr": "un radis",
+    "en": "radish",
+    "emoji": "🌱"
+  },
+  {
+    "id": 17,
+    "category": "Vegetables",
+    "fr": "un poireau",
+    "en": "leek",
+    "emoji": "🌱"
+  },
+  {
+    "id": 18,
+    "category": "Vegetables",
+    "fr": "un artichaut",
+    "en": "artichoke",
+    "emoji": "🌱"
+  },
+  {
+    "id": 19,
+    "category": "Vegetables",
+    "fr": "un potiron",
+    "en": "pumpkin",
+    "emoji": "🎃"
+  },
+  {
+    "id": 20,
+    "category": "Vegetables",
+    "fr": "une courge",
+    "en": "squash",
+    "emoji": "🎃"
+  },
+  {
+    "id": 21,
+    "category": "Vegetables",
+    "fr": "un navet",
+    "en": "turnip",
+    "emoji": "🌱"
+  },
+  {
+    "id": 22,
+    "category": "Vegetables",
+    "fr": "une betterave",
+    "en": "beetroot",
+    "emoji": "🌱"
+  },
+  {
+    "id": 23,
+    "category": "Vegetables",
+    "fr": "du céleri",
+    "en": "celery",
+    "emoji": "🌱"
+  },
+  {
+    "id": 24,
+    "category": "Vegetables",
+    "fr": "un chou",
+    "en": "cabbage",
+    "emoji": "🥬"
+  },
+  {
+    "id": 25,
+    "category": "Vegetables",
+    "fr": "un chou de Bruxelles",
+    "en": "Brussels sprout",
+    "emoji": "🥬"
+  },
+  {
+    "id": 26,
+    "category": "Vegetables",
+    "fr": "des épinards",
+    "en": "spinach",
+    "emoji": "🥬"
+  },
+  {
+    "id": 27,
+    "category": "Vegetables",
+    "fr": "une courgette",
+    "en": "courgette",
+    "emoji": "🥒"
+  },
+  {
+    "id": 28,
+    "category": "Vegetables",
+    "fr": "une endive",
+    "en": "chicory",
+    "emoji": "🥬"
+  },
+  {
+    "id": 29,
+    "category": "Vegetables",
+    "fr": "une patate douce",
+    "en": "sweet potato",
+    "emoji": "🍠"
+  },
+  {
+    "id": 30,
+    "category": "Pulses and cereals",
+    "fr": "une lentille",
+    "en": "lentil",
+    "emoji": "🫘"
+  },
+  {
+    "id": 31,
+    "category": "Pulses and cereals",
+    "fr": "un haricot blanc",
+    "en": "white bean",
+    "emoji": "🫘"
+  },
+  {
+    "id": 32,
+    "category": "Pulses and cereals",
+    "fr": "un pois chiche",
+    "en": "chickpea",
+    "emoji": "🫘"
+  },
+  {
+    "id": 33,
+    "category": "Pulses and cereals",
+    "fr": "les céréales",
+    "en": "cereals",
+    "emoji": "🥣"
+  },
+  {
+    "id": 34,
+    "category": "Pulses and cereals",
+    "fr": "le blé",
+    "en": "wheat",
+    "emoji": "🌾"
+  },
+  {
+    "id": 35,
+    "category": "Pulses and cereals",
+    "fr": "l’avoine",
+    "en": "oats",
+    "emoji": "🌾"
+  },
+  {
+    "id": 36,
+    "category": "Pulses and cereals",
+    "fr": "le maïs",
+    "en": "sweetcorn",
+    "emoji": "🌽"
+  },
+  {
+    "id": 37,
+    "category": "Fruit",
+    "fr": "une orange",
+    "en": "orange",
+    "emoji": "🍊"
+  },
+  {
+    "id": 38,
+    "category": "Fruit",
+    "fr": "une pomme",
+    "en": "apple",
+    "emoji": "🍎"
+  },
+  {
+    "id": 39,
+    "category": "Fruit",
+    "fr": "une poire",
+    "en": "pear",
+    "emoji": "🍐"
+  },
+  {
+    "id": 40,
+    "category": "Fruit",
+    "fr": "une banane",
+    "en": "banana",
+    "emoji": "🍌"
+  },
+  {
+    "id": 41,
+    "category": "Fruit",
+    "fr": "une fraise",
+    "en": "strawberry",
+    "emoji": "🍓"
+  },
+  {
+    "id": 42,
+    "category": "Fruit",
+    "fr": "une pêche",
+    "en": "peach",
+    "emoji": "🍑"
+  },
+  {
+    "id": 43,
+    "category": "Fruit",
+    "fr": "un ananas",
+    "en": "pineapple",
+    "emoji": "🍍"
+  },
+  {
+    "id": 44,
+    "category": "Fruit",
+    "fr": "un raisin",
+    "en": "grape",
+    "emoji": "🍇"
+  },
+  {
+    "id": 45,
+    "category": "Fruit",
+    "fr": "un citron",
+    "en": "lemon",
+    "emoji": "🍋"
+  },
+  {
+    "id": 46,
+    "category": "Fruit",
+    "fr": "une pastèque",
+    "en": "watermelon",
+    "emoji": "🍉"
+  },
+  {
+    "id": 47,
+    "category": "Fruit",
+    "fr": "un melon",
+    "en": "melon",
+    "emoji": "🍈"
+  },
+  {
+    "id": 48,
+    "category": "Fruit",
+    "fr": "un kiwi",
+    "en": "kiwi",
+    "emoji": "🥝"
+  },
+  {
+    "id": 49,
+    "category": "Fruit",
+    "fr": "une cerise",
+    "en": "cherry",
+    "emoji": "🍒"
+  },
+  {
+    "id": 50,
+    "category": "Fruit",
+    "fr": "un avocat",
+    "en": "avocado",
+    "emoji": "🥑"
+  },
+  {
+    "id": 51,
+    "category": "Fruit",
+    "fr": "un abricot",
+    "en": "apricot",
+    "emoji": "🍑"
+  },
+  {
+    "id": 52,
+    "category": "Fruit",
+    "fr": "une noix de coco",
+    "en": "coconut",
+    "emoji": "🥥"
+  },
+  {
+    "id": 53,
+    "category": "Fruit",
+    "fr": "une framboise",
+    "en": "raspberry",
+    "emoji": "🍓"
+  },
+  {
+    "id": 54,
+    "category": "Fruit",
+    "fr": "un pamplemousse",
+    "en": "grapefruit",
+    "emoji": "🍊"
+  },
+  {
+    "id": 55,
+    "category": "Fruit",
+    "fr": "une clémentine",
+    "en": "clementine",
+    "emoji": "🍊"
+  },
+  {
+    "id": 56,
+    "category": "Fruit",
+    "fr": "une mûre",
+    "en": "blackberry",
+    "emoji": "🫐"
+  },
+  {
+    "id": 57,
+    "category": "Fruit",
+    "fr": "une mangue",
+    "en": "mango",
+    "emoji": "🥭"
+  },
+  {
+    "id": 58,
+    "category": "Fruit",
+    "fr": "une grenade",
+    "en": "pomegranate",
+    "emoji": "🍎"
+  },
+  {
+    "id": 59,
+    "category": "Fruit",
+    "fr": "une papaye",
+    "en": "papaya",
+    "emoji": "🥭"
+  },
+  {
+    "id": 60,
+    "category": "Meat, poultry and fish",
+    "fr": "le bœuf",
+    "en": "beef",
+    "emoji": "🥩"
+  },
+  {
+    "id": 61,
+    "category": "Meat, poultry and fish",
+    "fr": "le veau",
+    "en": "veal",
+    "emoji": "🥩"
+  },
+  {
+    "id": 62,
+    "category": "Meat, poultry and fish",
+    "fr": "le porc",
+    "en": "pork",
+    "emoji": "🥩"
+  },
+  {
+    "id": 63,
+    "category": "Meat, poultry and fish",
+    "fr": "l’agneau",
+    "en": "lamb",
+    "emoji": "🥩"
+  },
+  {
+    "id": 64,
+    "category": "Meat, poultry and fish",
+    "fr": "le mouton",
+    "en": "mutton",
+    "emoji": "🥩"
+  },
+  {
+    "id": 65,
+    "category": "Meat, poultry and fish",
+    "fr": "la viande hachée",
+    "en": "minced meat",
+    "emoji": "🥩"
+  },
+  {
+    "id": 66,
+    "category": "Meat, poultry and fish",
+    "fr": "la saucisse",
+    "en": "sausage",
+    "emoji": "🌭"
+  },
+  {
+    "id": 67,
+    "category": "Meat, poultry and fish",
+    "fr": "le lard",
+    "en": "bacon / pork fat",
+    "emoji": "🥓"
+  },
+  {
+    "id": 68,
+    "category": "Meat, poultry and fish",
+    "fr": "le hamburger",
+    "en": "hamburger",
+    "emoji": "🍔"
+  },
+  {
+    "id": 69,
+    "category": "Meat, poultry and fish",
+    "fr": "le jambon",
+    "en": "ham",
+    "emoji": "🍖"
+  },
+  {
+    "id": 70,
+    "category": "Meat, poultry and fish",
+    "fr": "le poisson",
+    "en": "fish",
+    "emoji": "🐟"
+  },
+  {
+    "id": 71,
+    "category": "Meat, poultry and fish",
+    "fr": "le poulet",
+    "en": "chicken",
+    "emoji": "🐔"
+  },
+  {
+    "id": 72,
+    "category": "Meat, poultry and fish",
+    "fr": "la dinde",
+    "en": "turkey",
+    "emoji": "🦃"
+  },
+  {
+    "id": 73,
+    "category": "Meat, poultry and fish",
+    "fr": "le canard",
+    "en": "duck",
+    "emoji": "🦆"
+  },
+  {
+    "id": 74,
+    "category": "Meat, poultry and fish",
+    "fr": "l’oie",
+    "en": "goose",
+    "emoji": "🪿"
+  },
+  {
+    "id": 75,
+    "category": "Meat, poultry and fish",
+    "fr": "un œuf",
+    "en": "egg",
+    "emoji": "🥚"
+  },
+  {
+    "id": 76,
+    "category": "Dairy",
+    "fr": "le lait",
+    "en": "milk",
+    "emoji": "🥛"
+  },
+  {
+    "id": 77,
+    "category": "Dairy",
+    "fr": "le fromage",
+    "en": "cheese",
+    "emoji": "🧀"
+  },
+  {
+    "id": 78,
+    "category": "Dairy",
+    "fr": "le beurre",
+    "en": "butter",
+    "emoji": "🧈"
+  },
+  {
+    "id": 79,
+    "category": "Dairy",
+    "fr": "le yaourt",
+    "en": "yoghurt",
+    "emoji": "🥣"
+  },
+  {
+    "id": 80,
+    "category": "Dairy",
+    "fr": "la crème chantilly",
+    "en": "whipped cream",
+    "emoji": "🍨"
+  },
+  {
+    "id": 81,
+    "category": "Dairy",
+    "fr": "la glace",
+    "en": "ice cream",
+    "emoji": "🍦"
+  },
+  {
+    "id": 82,
+    "category": "Dairy",
+    "fr": "le milk-shake",
+    "en": "milkshake",
+    "emoji": "🥤"
+  },
+  {
+    "id": 83,
+    "category": "Bread, pasta and rice",
+    "fr": "le pain",
+    "en": "bread",
+    "emoji": "🍞"
+  },
+  {
+    "id": 84,
+    "category": "Bread, pasta and rice",
+    "fr": "les pâtes",
+    "en": "pasta",
+    "emoji": "🍝"
+  },
+  {
+    "id": 85,
+    "category": "Bread, pasta and rice",
+    "fr": "les lasagnes",
+    "en": "lasagne",
+    "emoji": "🍝"
+  },
+  {
+    "id": 86,
+    "category": "Bread, pasta and rice",
+    "fr": "la pizza",
+    "en": "pizza",
+    "emoji": "🍕"
+  },
+  {
+    "id": 87,
+    "category": "Bread, pasta and rice",
+    "fr": "le riz",
+    "en": "rice",
+    "emoji": "🍚"
+  },
+  {
+    "id": 88,
+    "category": "Bread, pasta and rice",
+    "fr": "la semoule",
+    "en": "semolina",
+    "emoji": "🥣"
+  },
+  {
+    "id": 89,
+    "category": "Oils and condiments",
+    "fr": "l’huile",
+    "en": "oil",
+    "emoji": "🫒"
+  },
+  {
+    "id": 90,
+    "category": "Oils and condiments",
+    "fr": "le vinaigre",
+    "en": "vinegar",
+    "emoji": "🍶"
+  },
+  {
+    "id": 91,
+    "category": "Oils and condiments",
+    "fr": "le sel",
+    "en": "salt",
+    "emoji": "🧂"
+  },
+  {
+    "id": 92,
+    "category": "Oils and condiments",
+    "fr": "le poivre",
+    "en": "pepper (spice)",
+    "emoji": "🧂"
+  },
+  {
+    "id": 93,
+    "category": "Oils and condiments",
+    "fr": "le ketchup",
+    "en": "ketchup",
+    "emoji": "🍅"
+  },
+  {
+    "id": 94,
+    "category": "Oils and condiments",
+    "fr": "la moutarde",
+    "en": "mustard",
+    "emoji": "🫙"
+  },
+  {
+    "id": 95,
+    "category": "Oils and condiments",
+    "fr": "la mayonnaise",
+    "en": "mayonnaise",
+    "emoji": "🫙"
+  },
+  {
+    "id": 96,
+    "category": "Sweet foods",
+    "fr": "le sucre",
+    "en": "sugar",
+    "emoji": "🥄"
+  },
+  {
+    "id": 97,
+    "category": "Sweet foods",
+    "fr": "le miel",
+    "en": "honey",
+    "emoji": "🍯"
+  },
+  {
+    "id": 98,
+    "category": "Sweet foods",
+    "fr": "le sirop",
+    "en": "syrup",
+    "emoji": "🍶"
+  },
+  {
+    "id": 99,
+    "category": "Sweet foods",
+    "fr": "la confiture",
+    "en": "jam",
+    "emoji": "🫙"
+  },
+  {
+    "id": 100,
+    "category": "Sweet foods",
+    "fr": "le chocolat",
+    "en": "chocolate",
+    "emoji": "🍫"
+  },
+  {
+    "id": 101,
+    "category": "Sweet foods",
+    "fr": "le biscuit",
+    "en": "biscuit",
+    "emoji": "🍪"
+  },
+  {
+    "id": 102,
+    "category": "Sweet foods",
+    "fr": "le gâteau",
+    "en": "cake",
+    "emoji": "🍰"
+  },
+  {
+    "id": 103,
+    "category": "Sweet foods",
+    "fr": "le croissant",
+    "en": "croissant",
+    "emoji": "🥐"
+  },
+  {
+    "id": 104,
+    "category": "Sweet foods",
+    "fr": "le bonbon",
+    "en": "sweet",
+    "emoji": "🍬"
+  },
+  {
+    "id": 105,
+    "category": "Drinks",
+    "fr": "l’eau plate",
+    "en": "still water",
+    "emoji": "💧"
+  },
+  {
+    "id": 106,
+    "category": "Drinks",
+    "fr": "l’eau gazeuse",
+    "en": "sparkling water",
+    "emoji": "🫧"
+  },
+  {
+    "id": 107,
+    "category": "Drinks",
+    "fr": "le vin",
+    "en": "wine",
+    "emoji": "🍷"
+  },
+  {
+    "id": 108,
+    "category": "Drinks",
+    "fr": "la bière",
+    "en": "beer",
+    "emoji": "🍺"
+  },
+  {
+    "id": 109,
+    "category": "Drinks",
+    "fr": "le jus d’orange",
+    "en": "orange juice",
+    "emoji": "🍊"
+  },
+  {
+    "id": 110,
+    "category": "Drinks",
+    "fr": "le jus de fruit",
+    "en": "fruit juice",
+    "emoji": "🧃"
+  },
+  {
+    "id": 111,
+    "category": "Drinks",
+    "fr": "le soda",
+    "en": "fizzy drink",
+    "emoji": "🥤"
+  },
+  {
+    "id": 112,
+    "category": "Drinks",
+    "fr": "le café",
+    "en": "coffee",
+    "emoji": "☕"
+  },
+  {
+    "id": 113,
+    "category": "Drinks",
+    "fr": "le thé",
+    "en": "tea",
+    "emoji": "🍵"
+  },
+  {
+    "id": 114,
+    "category": "Drinks",
+    "fr": "la tisane",
+    "en": "herbal tea",
+    "emoji": "🍵"
+  }
+]
